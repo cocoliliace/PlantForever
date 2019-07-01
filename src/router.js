@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import About from "./views/Home.vue";
-import TreeRegistration from "./views/TreeRegistration.vue";
+import About from "./views/About.vue";
+import Store from "./views/Store.vue";
 import Volunteer from "./views/Volunteer.vue";
 import Contact from "./views/Contact.vue";
 import Donate from "./views/Donate.vue";
@@ -11,7 +11,7 @@ import Error from "./views/Error.vue";
 Vue.use(Router);
 
 const router =  new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
@@ -31,15 +31,15 @@ const router =  new Router({
       }
     },
     {
-      path: "/tree-registration",
-      name: "TreeRegistration",
-      component: TreeRegistration,
+      path: "/store",
+      name: "Store",
+      component: Store,
       meta: {
         title: "PlantForever | Edmonton Nonprofit"
       }
     },
     {
-      path: "/contact",
+      path: "/contact-us",
       name: "Contact",
       component: Contact,
       meta: {
@@ -47,7 +47,7 @@ const router =  new Router({
       }
     },
     {
-      path: "/Volunteer",
+      path: "/volunteer",
       name: "Volunteer",
       component: Volunteer,
       meta: {
@@ -67,9 +67,9 @@ const router =  new Router({
       name: "Error",
       component: Error,
       meta: {
-        title: "PlantForever | Edmonton Nonprofit"
+        title: "Page Not Found"
       }
-    },
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

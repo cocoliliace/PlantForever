@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "TreeRegistration"
+  name: "Store"
 }
 </script>

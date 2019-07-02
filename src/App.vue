@@ -3,6 +3,7 @@
     <header>
       <router-link :to="{ name: 'Home' }"><img src="@/assets/logo.jpg" /></router-link>
       <div id="nav">
+        <div id="logo-overlay"></div>
         <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" src="@/assets/logo.png" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">About Us</router-link>
@@ -51,9 +52,11 @@ export default {
     },
     scrollEffect() {
       if (window.scrollY >= 90) {
+        document.querySelector("#logo-overlay").style.display = "none";
         document.querySelector("#logo").style.transitionDuration = "1s";
         document.querySelector("#logo").style.opacity = 100;
       } else {
+        document.querySelector("#logo-overlay").style.display = "block";
         document.querySelector("#logo").style.transitionDuration = "0s";
         document.querySelector("#logo").style.opacity = 0;
       }
@@ -73,10 +76,10 @@ body {
 .banner-container {
   position: relative;
   text-align: center;
-  user-select: none;
   .banner {
     width: 100vw;
     filter: brightness(67%);
+    user-select: none;
   }
   .title {
     position: absolute;
@@ -101,9 +104,7 @@ body {
   border: 2px $green solid;
   transition-duration: 0.3s;
   &:hover {
-    background-color: darken($green, 10%);
-    border: 2px darken($green, 10%) solid;
-    color: darken(white, 10%);
+    filter: brightness(80%);
   }
 }
 .secondary-button {
@@ -132,6 +133,14 @@ header {
   z-index: 5;
   img {
     height: 60px;
+  }
+  #logo-overlay {
+    width: 50px;
+    height: 50px;
+    margin-right: -50px;
+    position: relative;
+    z-index: 6;
+    float: left;
   }
   #logo {
     width: 50px;

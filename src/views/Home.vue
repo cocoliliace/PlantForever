@@ -1,66 +1,248 @@
 <template>
   <div>
     <div class="carousel">
-      <img src="@/assets/1.jpg" class="carousel-img" />
-      <div class="text-container">
-        <div class="primary-text">We are PlantForever</div>
-        <div class="secondary-text">Your first tree is free</div>
-        <div class="secondary-text">Free planting in Edmonton area</div>
-        <div class="buttons-container">
-          <router-link :to="{ name: 'TreeRegistration' }" class="primary-button">Get A Tree</router-link>
-          <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
+      <div id="slide-one" class="slide">
+        <img :src="require(`@/assets/${ slideOnePhoto }.jpg`)" class="carousel-img" />
+        <div class="text-container">
+          <div class="primary-text">We are PlantForever</div>
+          <div class="secondary-text">Your first tree is free</div>
+          <div class="secondary-text">Free planting in Edmonton area</div>
+          <div class="button-container">
+            <router-link :to="{ name: 'Store' }" class="primary-button">Get A Tree</router-link>
+            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
+          </div>
         </div>
       </div>
+      <div id="slide-two" class="slide">
+        <img :src="require(`@/assets/${ slideTwoPhoto }.jpg`)" class="carousel-img" />
+        <div class="text-container">
+          <div class="primary-text">Free doggos</div>
+          <div class="secondary-text">Exclusive offer, get a doggo for free, with the purchase of a tree</div>
+          <div class="secondary-text">Spicy</div>
+          <div class="button-container">
+            <router-link :to="{ name: 'Store' }" class="primary-button">Get A Tree</router-link>
+            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-container">
+        <img src="@/assets/arrow.svg" style="transform: rotateY(180deg);" @click="userRotates(false)" />
+        <img src="@/assets/arrow.svg" @click="userRotates(true)" />
+      </div>
     </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id vehicula eros, quis sagittis orci. Nullam id risus eu erat laoreet mollis. Phasellus scelerisque porttitor risus, tempor pharetra ipsum pretium auctor. Morbi tincidunt est at odio semper, ut consequat leo convallis. Fusce imperdiet tellus et tincidunt fringilla. Maecenas pellentesque magna ut ultrices tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque et ligula dapibus, ultricies libero ut, ornare erat. Integer lacus nisi, lobortis a interdum vestibulum, mollis nec sapien. Mauris mattis mauris nec orci lacinia, ut elementum odio molestie. Aenean mollis augue nunc, sed malesuada lacus vehicula fermentum. Pellentesque lobortis faucibus congue. Nullam ante arcu, euismod sit amet laoreet ac, venenatis eu ante. Nam ac pulvinar lacus. Donec pharetra velit eu orci pellentesque dapibus. Maecenas et dui lectus.
-
-      Nunc orci ligula, semper eget viverra sit amet, mollis sit amet felis. Mauris tristique sagittis porttitor. Pellentesque eu metus ut ante congue ultrices non eu est. Nullam volutpat fermentum felis in feugiat. Curabitur blandit mauris eu aliquam consectetur. Aenean lobortis orci non erat malesuada lacinia. Sed aliquam dolor in dui tincidunt, nec cursus lacus sodales. Fusce vestibulum est id ex fringilla, sit amet euismod magna volutpat. Sed porttitor metus sit amet diam convallis vulputate. Duis eget accumsan arcu, et auctor justo. Ut imperdiet viverra venenatis. Quisque a dapibus arcu, quis laoreet mauris. Proin vulputate hendrerit lectus a dapibus. Duis posuere neque velit, sed viverra dui ultricies sit amet. In in metus est. Suspendisse quis tempus purus.
-
-      Nulla tempor erat rutrum consequat laoreet. Vestibulum in commodo arcu. Nunc tincidunt, felis ut molestie aliquam, velit libero interdum purus, quis auctor nulla magna at urna. Morbi in metus risus. Quisque et risus quis ipsum malesuada sodales. Donec tortor leo, fringilla id sapien porttitor, hendrerit laoreet diam. Nullam a neque quis orci vestibulum fringilla ac nec magna. Nulla nisl felis, vestibulum convallis consectetur quis, bibendum in urna. Morbi dapibus sapien sit amet sagittis pellentesque. Phasellus eu arcu vitae nisi viverra auctor. Sed laoreet quam ut est iaculis, ut tempor velit accumsan. Donec auctor urna sed ligula mollis auctor. Etiam ac eros ligula. Donec tincidunt fermentum neque, ac auctor justo pharetra ornare. Integer a dictum massa.
-
-      Quisque auctor quam ac consectetur viverra. In blandit eros sit amet auctor porttitor. Proin consequat diam eget mauris ullamcorper, at commodo arcu consectetur. Sed porta vestibulum massa, quis posuere ipsum sodales sit amet. Nulla efficitur quis erat sed iaculis. Donec nec nunc dolor. Duis dictum lacus magna, quis aliquam diam pellentesque feugiat. Vivamus lobortis quam quis metus facilisis, non imperdiet diam ultrices. Aenean posuere, odio et consectetur dignissim, dolor nisi fermentum erat, eu vehicula elit nunc vitae magna. Integer lacinia, purus quis euismod maximus, massa nisi tristique lectus, blandit facilisis felis risus vel velit. Sed vulputate lectus ut erat viverra dapibus a non erat. Phasellus vestibulum auctor neque, id fermentum nisi. Suspendisse elementum est lacus. Ut venenatis, velit id tempus efficitur, dolor nulla elementum augue, viverra feugiat nunc odio eget dolor. Sed laoreet nisl a finibus tincidunt.
-
-      Praesent molestie, nibh et maximus vehicula, metus ipsum pulvinar lorem, nec tristique dolor diam varius libero. Proin id volutpat nibh. Nunc posuere, lacus ac sagittis sagittis, ipsum leo interdum arcu, ut fermentum magna neque sed nulla. Suspendisse tortor nisi, egestas non orci non, pharetra condimentum metus. Phasellus ut venenatis tellus. Phasellus nisi dui, mollis id orci ac, placerat commodo risus. Maecenas fringilla laoreet lectus, rhoncus pharetra tellus ullamcorper eu. Etiam lectus massa, gravida quis nulla ut, efficitur euismod ex. Pellentesque maximus nibh lectus, ut ornare ante bibendum a. Suspendisse pharetra id neque in scelerisque. Sed elementum pretium lorem in facilisis. Aenean lacus justo, porttitor ut purus sit amet, sagittis auctor tellus. Maecenas vestibulum odio ac risus lacinia, sit amet rutrum sem bibendum. Mauris massa nibh, condimentum mattis tortor eget, malesuada dignissim sem. Praesent ac ex ac erat vestibulum condimentum.
-
-      Phasellus eu sem a est pretium rhoncus. Donec sagittis sit amet orci a mattis. Nullam ut porttitor dolor. Morbi vel sapien pellentesque, vestibulum neque eget, egestas orci. Nullam commodo id nisi tristique ornare. Integer efficitur bibendum leo, in euismod eros. Phasellus in diam a lacus ultricies feugiat ac eget massa. Vestibulum pharetra risus in purus posuere sodales. Proin laoreet quam metus, elementum faucibus felis tempus eget. Duis luctus nisi eu nisi commodo, et tincidunt nisl mattis. Cras et sollicitudin est. Nulla pharetra mattis est eget pretium. Sed erat sem, maximus ac neque ut, faucibus accumsan diam. Duis a metus id eros porttitor ultrices efficitur eget ligula.
+    <div class="section">
+      <div class="title" style="width: 616px;">
+        <div class="title-text" style="padding-left: 0px; border-left: none;">WHERE WE HAVE PLANTED</div>
+      </div>
+      <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
+    </div>
+    <div class="section" style="height: 370px;">
+      <div class="title">
+        <img src="@/assets/logo.png" class="title-logo" />
+        <div class="title-text">
+          <div>HOW YOU CAN</div>
+          <div style="color: #00A849;">HELP US</div>
+        </div>
+      </div>
+      <img src="@/assets/download.jpg" />
+      <div class="primary-text">There are many ways that you can help and support PlantForever and the environment:</div>
+      <div id="ways-to-help-buttons" class="button-container">
+        <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">DONATE</div>
+        <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">ACCEPT A TREE</div>
+        <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">VOLUNTEER</div>
+        <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">RAISE AWARENESS</div>
+      </div>
+      <div class="seconday-text">
+        <div v-if="checkedButton === 1">
+          One of the largest ways to contribute to PlantForever is donating money or supplies.
+          Relocating a coffee’s worth of money aids us drastically as it allows us to become more
+          capable and efficient at planting trees and spreading awareness.
+        </div>
+        <div v-else-if="checkedButton === 2">
+          By having us plant a tree on your property, and you nurture it as it grows, you are
+          promoting our goal and organization. Moreover, you are clearly helping the environment as
+          the tree absorbs thousands of pounds of carbon dioxide in its lifetime.
+        </div>
+        <div v-else-if="checkedButton === 3">
+          As a nonprofit, we rely heavily on volunteers contributing their effort and time to
+          operate. Volunteering could include planting and/or organizing trees, advertising,
+          providing transportation, developing content for our social media/website, and helping
+          with specific department-based needs like marketing or human resources.
+        </div>
+        <div v-else>
+          If finance or commitment is an issue, telling others about PlantForever is a very simple
+          and fast way to help us grow. You can contribute by informing family, friends, colleagues,
+          and neighbours about the organization and what we do to donate to the community.
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      currentPhoto: 1,
+      slideOnePhoto: 1,
+      slideTwoPhoto: 2,
+      timerIntervalID: 0,
+      userIntervalID: 0,
+      checkedButton: 1
+    };
+  },
+  mounted() {
+    this.timerIntervalID = setInterval(this.rotateSlides(true), 3000);
+  },
+  methods: {
+    userRotates(forward) {
+      this.userIntervalID ? clearInterval(this.userIntervalID) : clearInterval(this.timerIntervalID);
+      this.userIntervalID = setInterval(this.rotateSlides(forward).bind(this), 3000);
+    },
+    rotateSlides(forward) {
+      if (forward) {
+        // slide to the right
+      } else {
+        // slide to the left
+      }
+    }
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 .carousel {
-  .carousel-img {
-    width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  transition-duration: 0.5s;
+  margin-bottom: 90px;
+  #slide-two .text-container {
+    transform: translate(calc(-80% + 100vw), -50%);
   }
-  .text-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-80%, -35%);
-    .primary-text {
-      color: white;
-      font-size: 60px;
-      font-weight: 700;
-      text-shadow: 5px 5px 10px black;
+  .slide {
+    .carousel-img {
+      width: 100vw;
+      filter: brightness(80%);
     }
-    .secondary-text {
-      color: white;
-      font-size: 50px;
-      text-shadow: 5px 5px 10px black;
+    .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-80%, -50%);
+      .primary-text {
+        color: white;
+        font-size: 60px;
+        font-weight: 700;
+        text-shadow: 5px 5px 10px black;
+      }
+      .secondary-text {
+        color: white;
+        font-size: 50px;
+        text-shadow: 5px 5px 10px black;
+      }
+      .button-container {
+        display: flex;
+        margin-top: 40px;
+        width: 55%;
+        justify-content: space-between;
+      }
+    }
+  }
+  .arrow-container {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    width: 100vw;
+    img {
+      width: 45px;
+      padding: 15px;
     }
   }
 }
-.buttons-container {
-  display: flex;
-  margin-top: 40px;
-  width: 50%;
-  justify-content: space-between;
+.section {
+  margin-left: 10vw;
+  margin-bottom: 25px;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    width: 420px;
+    .title-logo {
+      width: 75px;
+      height: 75px;
+      margin-top: 10px;
+      border: none;
+    }
+    .title-text {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      padding-left: 25px;
+      border-left: 2px #cccccc solid;
+    }
+  }
+  img {
+    width: 350px;
+    border: 10px black solid;
+    float: left;
+    margin-right: 25px;
+  }
+  .primary-text {
+    font-size: 24px;
+    color: #222222;
+    margin-right: 10vw;
+  }
+  .seconday-text {
+    color: #666666;
+    font-family: Open Sans;
+    margin-right: 10vw;
+  }
+  .button-container {
+    margin: 35px 0px;
+    .button {
+      color: #222222;
+      padding: 14px 30px;
+      font-size: 14px;
+      border: 2px #cccccc solid;
+      display: inline;
+      margin-right: 15px;
+      cursor: pointer;
+      background-image: linear-gradient(to bottom, transparent 50%, $green 50%);
+      background-size: 100% 200%;
+      transition-duration: 0.5s;
+      background-position: 100% 200%;
+      &:hover {
+        background-position: 100% 100%;
+        color: white;
+      }
+      &.checked {
+        border-color: $green;
+        background-color: $green;
+        color: white;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.map-overlay {
+  position: relative;
+  width: 80vw;
+  height: 30vw;
+  top: 30vw;
+  margin-top: -30vw;
+  margin-left: 10vw;
+  z-index: 1;
+}
+iframe {
+  width: 80vw;
+  height: 30vw;
 }
 </style>

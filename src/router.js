@@ -1,12 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import About from "./views/About.vue";
-import Store from "./views/Store.vue";
-import Volunteer from "./views/Volunteer.vue";
-import Contact from "./views/Contact.vue";
-import Donate from "./views/Donate.vue";
-import Error from "./views/Error.vue";
 
 Vue.use(Router);
 
@@ -25,7 +19,7 @@ const router =  new Router({
     {
       path: "/about",
       name: "About",
-      component: About,
+      component: () => import("./views/About.vue"),
       meta: {
         title: "PlantForever | Edmonton Nonprofit"
       }
@@ -33,7 +27,7 @@ const router =  new Router({
     {
       path: "/store",
       name: "Store",
-      component: Store,
+      component: () => import("./views/Store.vue"),
       meta: {
         title: "PlantForever | Edmonton Nonprofit"
       }
@@ -41,7 +35,7 @@ const router =  new Router({
     {
       path: "/contact-us",
       name: "Contact",
-      component: Contact,
+      component: () => import("./views/Contact.vue"),
       meta: {
         title: "PlantForever | Edmonton Nonprofit"
       }
@@ -49,7 +43,7 @@ const router =  new Router({
     {
       path: "/volunteer",
       name: "Volunteer",
-      component: Volunteer,
+      component: () => import("./views/Volunteer.vue"),
       meta: {
         title: "PlantForever | Edmonton Nonprofit"
       }
@@ -57,7 +51,7 @@ const router =  new Router({
     {
       path: "/donate",
       name: "Donate",
-      component: Donate,
+      component: () => import("./views/Donate.vue"),
       meta: {
         title: "PlantForever | Edmonton Nonprofit"
       }
@@ -65,7 +59,7 @@ const router =  new Router({
     {
       path: "*",
       name: "Error",
-      component: Error,
+      component: () => import("./views/Error.vue"),
       meta: {
         title: "Page Not Found"
       }

@@ -53,7 +53,7 @@
         <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">VOLUNTEER</div>
         <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">RAISE AWARENESS</div>
       </div>
-      <div class="seconday-text">
+      <div class="secondary-text">
         <div v-if="checkedButton === 1">
           One of the largest ways to contribute to PlantForever is donating money or supplies.
           Relocating a coffee’s worth of money aids us drastically as it allows us to become more
@@ -168,8 +168,6 @@ export default {
   }
 }
 .section {
-  margin-left: 10vw;
-  margin-bottom: 25px;
   .title {
     display: flex;
     justify-content: space-between;
@@ -177,13 +175,10 @@ export default {
     .title-logo {
       width: 75px;
       height: 75px;
-      margin-top: 10px;
+      margin-top: 5px;
       border: none;
     }
     .title-text {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 25px;
       padding-left: 25px;
       border-left: 2px #cccccc solid;
     }
@@ -194,16 +189,6 @@ export default {
     float: left;
     margin-right: 25px;
   }
-  .primary-text {
-    font-size: 24px;
-    color: #222222;
-    margin-right: 10vw;
-  }
-  .seconday-text {
-    color: #666666;
-    font-family: Open Sans;
-    margin-right: 10vw;
-  }
   .button-container {
     margin: 35px 0px;
     .button {
@@ -211,6 +196,7 @@ export default {
       padding: 14px 30px;
       font-size: 14px;
       border: 2px #cccccc solid;
+      border-radius: 5px;
       display: inline;
       margin-right: 15px;
       cursor: pointer;
@@ -238,7 +224,6 @@ export default {
   height: 30vw;
   top: 30vw;
   margin-top: -30vw;
-  margin-left: 10vw;
   z-index: 1;
 }
 iframe {

@@ -21,7 +21,7 @@ const router =  new Router({
       name: "About",
       component: () => import("./views/About.vue"),
       meta: {
-        title: "PlantForever | Edmonton Nonprofit"
+        title: "About - PlantForever"
       }
     },
     {
@@ -29,7 +29,7 @@ const router =  new Router({
       name: "Store",
       component: () => import("./views/Store.vue"),
       meta: {
-        title: "PlantForever | Edmonton Nonprofit"
+        title: "Store - PlantForever"
       }
     },
     {
@@ -37,7 +37,7 @@ const router =  new Router({
       name: "Contact",
       component: () => import("./views/Contact.vue"),
       meta: {
-        title: "PlantForever | Edmonton Nonprofit"
+        title: "Contact Us - PlantForever"
       }
     },
     {
@@ -45,7 +45,7 @@ const router =  new Router({
       name: "Volunteer",
       component: () => import("./views/Volunteer.vue"),
       meta: {
-        title: "PlantForever | Edmonton Nonprofit"
+        title: "Volunteer Registration - PlantForever"
       }
     },
     {
@@ -53,7 +53,7 @@ const router =  new Router({
       name: "Donate",
       component: () => import("./views/Donate.vue"),
       meta: {
-        title: "PlantForever | Edmonton Nonprofit"
+        title: "Donate - PlantForever"
       }
     },
     {

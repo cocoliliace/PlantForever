@@ -68,7 +68,6 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
-// General Style
 body {
   margin: 0px;
   font-family: Montserrat;
@@ -178,6 +177,25 @@ footer {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.section {
+  margin: 0vw 10vw 25px 10vw;
+  .title-text {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+  .primary-text {
+    font-size: 24px;
+    color: #222222;
+    margin-bottom: 10px;
+  }
+  .secondary-text {
+    color: #666666;
+    font-family: Open Sans;
+    margin-bottom: 20px;
   }
 }
 </style>

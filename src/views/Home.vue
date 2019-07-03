@@ -5,11 +5,10 @@
         <img :src="require(`@/assets/${ slideOnePhoto }.jpg`)" class="carousel-img" />
         <div class="text-container">
           <div class="primary-text">We are PlantForever</div>
-          <div class="secondary-text">Your first tree is free</div>
           <div class="secondary-text">Free planting in Edmonton area</div>
           <div class="button-container">
-            <router-link :to="{ name: 'Store' }" class="primary-button">Get A Tree</router-link>
-            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
+            <router-link :to="{ name: 'GetATree' }" class="primary-button">Get A Tree</router-link>
+            <a href="https://bit.ly/2Yw2AAO" target="_blank" class="secondary-button">Donate Funds</a>
           </div>
         </div>
       </div>
@@ -28,6 +27,31 @@
       <div class="arrow-container">
         <img src="@/assets/arrow.svg" style="transform: rotateY(180deg);" @click="userRotates(false)" />
         <img src="@/assets/arrow.svg" @click="userRotates(true)" />
+      </div>
+    </div>
+    <div class="about-us-images">
+      <img src="@/assets/3.jpg" />
+      <img src="@/assets/4.jpg" />
+      <div id="left" class="text-container">
+        <div class="primary-text">WHAT IS PLANTFOREVER</div>
+        <div class="secondary-text">
+          PlantForever is a nonprofit organization that develops urban forests through
+          house-to-house tree plantation in order to fight climate change.
+        </div>
+        <div class="button-container">
+          <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
+          <router-link :to="{ name: 'GetATree' }" class="secondary-button">Want A Tree?</router-link>
+        </div>
+      </div>
+      <div id="right" class="text-container">
+        <div class="primary-text">WHY DO WE PLANT TREES</div>
+        <div class="secondary-text">
+          PlantForever plants trees in order to combat the climate crisis and spread awareness.
+        </div>
+        <div class="button-container">
+          <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
+          <a href="https://bit.ly/2Yw2AAO" target="_blank" class="secondary-button">Donate</a>
+        </div>
       </div>
     </div>
     <div class="section">
@@ -121,7 +145,7 @@ export default {
   display: flex;
   flex-direction: row;
   transition-duration: 0.5s;
-  margin-bottom: 90px;
+  margin-bottom: 75px;
   #slide-two .text-container {
     transform: translate(calc(-80% + 100vw), -50%);
   }
@@ -151,6 +175,9 @@ export default {
         margin-top: 40px;
         width: 55%;
         justify-content: space-between;
+        .primary-button, .secondary-button {
+          padding: 20px 30px;
+        }
       }
     }
   }
@@ -164,6 +191,59 @@ export default {
     img {
       width: 45px;
       padding: 15px;
+    }
+  }
+}
+.about-us-images {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 90px;
+  img {
+    vertical-align: middle;
+    transform: translateY(-15%);
+    filter: brightness(50%);
+    width: 50%;
+    display: inline;
+  }
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 540px;
+    &#left {
+      transform: translate(-115%, -50%);
+      .secondary-button {
+        background-position: 100% 100%;
+        &:hover {
+          background-position: 0% 100%;
+        }
+      }
+    }
+    &#right {
+      transform: translate(20%, -50%);
+    }
+    .primary-text {
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      text-shadow: 5px 5px 10px black;
+    }
+    .secondary-text {
+      margin-top: 10px;
+      font-family: Open Sans;
+      color: white;
+      font-size: 16px;
+      text-shadow: 5px 5px 10px black;
+    }
+    .button-container {
+      display: flex;
+      margin-top: 25px;
+      width: 80%;
+      justify-content: space-between;
+      .primary-button, .secondary-button {
+        padding: 15px 20px;
+      }
     }
   }
 }

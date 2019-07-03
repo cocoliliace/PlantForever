@@ -7,10 +7,11 @@
         <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" src="@/assets/logo.png" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">About Us</router-link>
-        <router-link :to="{ name: 'Store' }">Get A Tree</router-link>
+        <router-link :to="{ name: 'GetATree' }">Get A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
+        <router-link :to="{ name: 'Store' }">Store</router-link>
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
-        <router-link :to="{ name: 'Donate' }">Donate</router-link>
+        <a href="https://bit.ly/2Yw2AAO" target="_blank">Donate</a>
       </div>
     </header>
 
@@ -68,59 +69,16 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
-body {
-  margin: 0px;
-  font-family: Montserrat;
-}
-.banner-container {
-  position: relative;
-  text-align: center;
-  .banner {
-    width: 100vw;
-    filter: brightness(67%);
-    user-select: none;
-  }
-  .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 700;
-    font-size: 70px;
-    color: white;
-    text-shadow: 5px 5px 5px black;
-  }
-}
-.primary-button, .secondary-button {
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  padding: 20px 30px;
-  border-radius: 5px;
-}
-.primary-button {
-  background-color: $green;
-  border: 2px $green solid;
-  transition-duration: 0.3s;
-  &:hover {
-    filter: brightness(80%);
-  }
-}
-.secondary-button {
-  border: 2px white solid;
-  background-image: linear-gradient(to right, transparent 50%, $green 50%);
-  background-size: 200% 100%;
-  transition-duration: 0.5s;
-  &:hover {
-    background-position: 100% 100%;
-  }
-}
 .fade-enter-active, .fade-leave-active {
   transition-duration: 0.3s;
   transition-property: height, opacity;
 }
 .fade-enter, .fade-leave-active {
   opacity: 0;
+}
+::selection {
+  background-color: $green;
+  color: white;
 }
 
 header {
@@ -152,7 +110,7 @@ header {
     overflow: hidden;
     a:not(#logo-container) {
       float: left;
-      padding: 15px 40px;
+      padding: 15px 30px;
       text-decoration: none;
       color: black;
       font-size: 20px;
@@ -169,6 +127,7 @@ footer {
   background-color: #2B2B2B;
   height: 50px;
   padding: 20px 20vw;
+  margin-top: 35px;
   a {
     float: right;
     color: #ABABAB;
@@ -180,8 +139,31 @@ footer {
   }
 }
 
+body {
+  margin: 0px;
+  font-family: Montserrat;
+}
+.banner-container {
+  position: relative;
+  text-align: center;
+  .banner {
+    width: 100vw;
+    filter: brightness(67%);
+    user-select: none;
+  }
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 70px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+  }
+}
 .section {
-  margin: 0vw 10vw 25px 10vw;
+  margin: 25px 10vw 0 10vw;
   .title-text {
     font-size: 36px;
     font-weight: 700;
@@ -196,6 +178,30 @@ footer {
     color: #666666;
     font-family: Open Sans;
     margin-bottom: 20px;
+  }
+}
+.primary-button, .secondary-button {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.primary-button {
+  background-color: $green;
+  border: 2px $green solid;
+  transition-duration: 0.3s;
+  &:hover {
+    filter: brightness(80%);
+  }
+}
+.secondary-button {
+  border: 2px white solid;
+  background-image: linear-gradient(to left, transparent 50%, $green 50%);
+  background-size: 200% 100%;
+  transition-duration: 0.5s;
+  background-position: 100% 100%;
+  &:hover {
+    background-position: 200% 100%;
   }
 }
 </style>

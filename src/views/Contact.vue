@@ -13,7 +13,7 @@
       </div>
       <textarea v-model="message" type="text" placeholder="Message" required />
       <br />
-      <input id="send" type="submit" value="Send" />
+      <input class="primary-button" type="submit" value="Send" />
     </form>
   </div>
 </template>
@@ -64,17 +64,12 @@ form {
     height: 250px;
     padding: 10px;
   }
-  #send {
+  .primary-button {
     border: none;
-    background-color: $green;
-    color: white;
     width: 120px;
     height: 50px;
     margin: 25px 0px 5px calc(100% - 120px);
     cursor: pointer;
-    &:hover {
-      filter: brightness(80%);
-    }
   }
 }
 </style>

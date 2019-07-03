@@ -10,9 +10,9 @@
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">
-            PlantForever strongly advocates for developing urban forests and spreading awareness about
-            the critical climate crisis. As a result, PlantForever plant trees in urban environments,
-            usually homes and business locations.
+            PlantForever strongly advocates for developing urban forests and spreading awareness
+            about the critical climate crisis. As a result, PlantForever plant trees in urban
+            environments, usually homes and business locations.
           </div>
           <div class="secondary-text">
             Patrons first register for a tree. Once a date is selected, volunteers go the desired
@@ -102,10 +102,10 @@ export default {
       box-shadow: 2px 2px 5px #cccccc;
     }
     .paragraph {
-      width: 570px
+      width: 50%;
     }
     .column {
-      width: 540px;
+      width: 45%;
     }
   }
 }

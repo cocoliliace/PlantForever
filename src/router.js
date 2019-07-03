@@ -25,6 +25,14 @@ const router =  new Router({
       }
     },
     {
+      path: "/get-a-tree",
+      name: "GetATree",
+      component: () => import("./views/GetATree.vue"),
+      meta: {
+        title: "Get A Tree - PlantForever"
+      }
+    },
+    {
       path: "/store",
       name: "Store",
       component: () => import("./views/Store.vue"),
@@ -33,19 +41,19 @@ const router =  new Router({
       }
     },
     {
-      path: "/contact-us",
-      name: "Contact",
-      component: () => import("./views/Contact.vue"),
-      meta: {
-        title: "Contact Us - PlantForever"
-      }
-    },
-    {
       path: "/volunteer",
       name: "Volunteer",
       component: () => import("./views/Volunteer.vue"),
       meta: {
         title: "Volunteer Registration - PlantForever"
+      }
+    },
+    {
+      path: "/contact-us",
+      name: "Contact",
+      component: () => import("./views/Contact.vue"),
+      meta: {
+        title: "Contact Us - PlantForever"
       }
     },
     {

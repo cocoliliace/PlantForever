@@ -11,7 +11,11 @@
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <router-link :to="{ name: 'Store' }">Store</router-link>
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
-        <a href="https://bit.ly/2Yw2AAO" target="_blank">Donate</a>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="UMPE77Y2R9L46" />
+          <input type="submit" value="Donate" style="padding-bottom: 16px;" />
+        </form>
       </div>
     </header>
 
@@ -61,6 +65,13 @@ export default {
         document.querySelector("#logo").style.transitionDuration = "0s";
         document.querySelector("#logo").style.opacity = 0;
       }
+      if (window.scrollY < 400 && this.$route.name !== "Home") {
+        try {
+          document.querySelector(".banner-container .title").style.transform = `translate(-50%, calc(-50% + ${ Math.round(window.scrollY / 10) }px))`;
+        } catch (TypeError) {
+          // Changing pages, title still loading
+        }
+      }
     }
   }
 }
@@ -108,7 +119,10 @@ header {
   }
   #nav {
     overflow: hidden;
-    a:not(#logo-container) {
+    a:not(#logo-container), input {
+      border: none;
+      cursor: pointer;
+      outline-width: 0px;
       float: left;
       padding: 15px 30px;
       text-decoration: none;
@@ -152,6 +166,7 @@ body {
     user-select: none;
   }
   .title {
+    width: 100vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -181,6 +196,7 @@ body {
   }
 }
 .primary-button, .secondary-button {
+  outline-width: 0px;
   color: white;
   font-size: 18px;
   text-decoration: none;

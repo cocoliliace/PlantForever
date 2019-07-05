@@ -4,15 +4,14 @@
       <img src="@/assets/banner.jpg" class="banner" />
       <div class="title">CONTACT US</div>
     </div>
-    <form method="post" :action="`mailto:plantforever.org@gmail.com?subject=${ name }: ${ subject }&body=${ message }`">
+    <form id="gform" method="post" action="https://script.google.com/macros/s/AKfycbz5mc2RObBEVrrM7NBTNz08Xf80UAJNFoR0JYkSa4Tiw_m5-_U/exec">
       <div class="text">Please feel free to contact us</div>
       <div class="input-container">
-        <input v-model="name" type="text" name="name" placeholder="Name" required />
-        <input v-model="email" type="text" name="email" placeholder="Email" required />
-        <input v-model="subject" type="text" placeholder="Subject" required />
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="email" placeholder="Email" required />
+        <input type="text" name="subject" placeholder="Subject" autocomplete="off" />
       </div>
-      <textarea v-model="message" type="text" placeholder="Message" required />
-      <br />
+      <textarea type="text" name="message" placeholder="Message" autocomplete="off" required />
       <input class="primary-button" type="submit" value="Send" />
     </form>
   </div>
@@ -20,15 +19,7 @@
 
 <script>
 export default {
-  name: "Contact",
-  data() {
-    return {
-      name: null,
-      email: null,
-      subject: null,
-      message: null
-    };
-  }
+  name: "Contact"
 }
 </script>
 
@@ -42,7 +33,6 @@ form {
   input, textarea {
     font-size: 24px;
     border: 2px #CCCCCC solid;
-    outline: none;
     transition-duration: 0.3s;
     border-radius: 5px;
     &:focus {
@@ -54,7 +44,7 @@ form {
     justify-content: space-between;
     margin: 25px 0px;
     input {
-      width: 23vw;
+      width: 28%;
       padding: 10px;
     }
   }

@@ -4,6 +4,13 @@
       <img src="@/assets/banner.jpg" class="banner" />
       <div class="title">STORE</div>
     </div>
+    <div class="section">
+      <router-link :to="{ name: 'Shirt' }" class="card">
+        <img src="@/assets/shirt.jpg" />
+        <div class="title">WHITE LOGO CREWNECK T-SHIRT</div>
+        <div class="price"><span style="text-decoration: line-through;">$25.00</span>   $20.00</div>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -12,3 +19,38 @@ export default {
   name: "Store"
 }
 </script>
+
+<style lang="scss" scoped>
+.section {
+  display: flex;
+  justify-content: space-around;
+  .card {
+    border-radius: 4px;
+    text-align: center;
+    width: 300px;
+    height: 450px;
+    box-shadow: inset -1px -1px 4px #666, 0px 4px 12px rgba(#666, 0.3);
+    text-decoration: none;
+    display: block;
+    transition-duration: 0.4s;
+    img {
+      width: 100%;
+    }
+    .title {
+      color: $blue;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 15px;
+    }
+    .price {
+      color: #222222;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    &:hover {
+      box-shadow: inset -1px -1px 4px #666, 2px 6px 12px rgba(#666, 0.9);
+      transform: translateY(-8px);
+    }
+  }
+}
+</style>

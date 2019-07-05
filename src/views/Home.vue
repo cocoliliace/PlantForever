@@ -118,7 +118,14 @@ export default {
     };
   },
   mounted() {
+    this.aboutUsAnimation();
     this.timerIntervalID = setInterval(this.rotateSlides(true), 3000);
+    window.addEventListener("scroll", this.carouselTitleParallax);
+    window.addEventListener("scroll", this.aboutUsAnimation);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.carouselTitleParallax);
+    window.removeEventListener("scroll", this.aboutUsAnimation);
   },
   methods: {
     userRotates(forward) {
@@ -130,6 +137,19 @@ export default {
         // slide to the right
       } else {
         // slide to the left
+      }
+    },
+    carouselTitleParallax() {
+      if (window.scrollY < 700) {
+        document.querySelector(".carousel .text-container").style.transform = `translate(-80%, calc(-50% + ${ Math.round(window.scrollY / 15) }px))`;
+      }
+    },
+    aboutUsAnimation() {
+      if (window.scrollY > 300) {
+        document.querySelector("#left").classList.add("slided");
+        document.querySelector("#right").classList.add("slided");
+        window.removeEventListener("scroll", this.aboutUsAnimation);
+
       }
     }
   }
@@ -211,8 +231,13 @@ export default {
     top: 50%;
     left: 50%;
     width: 540px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.45, 0.85, 0.7, 1.1);
     &#left {
-      transform: translate(-115%, -50%);
+      transform: translate(-100vw, -50%);
+      &.slided {
+        transform: translate(-115%, -50%);
+      }
       .secondary-button {
         background-position: 100% 100%;
         &:hover {
@@ -221,7 +246,10 @@ export default {
       }
     }
     &#right {
-      transform: translate(20%, -50%);
+      transform: translate(100vw, -50%);
+      &.slided {
+        transform: translate(20%, -50%);
+      }
     }
     .primary-text {
       color: white;

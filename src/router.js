@@ -41,6 +41,14 @@ const router =  new Router({
       }
     },
     {
+      path: "/store/white-logo-crewneck-t-shirt",
+      name: "Shirt",
+      component: () => import("./views/merch/Shirt.vue"),
+      meta: {
+        title: "White Logo Crewneck T-Shirt - PlantForever"
+      }
+    },
+    {
       path: "/volunteer",
       name: "Volunteer",
       component: () => import("./views/Volunteer.vue"),

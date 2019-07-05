@@ -11,7 +11,7 @@
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">
             PlantForever strongly advocates for developing urban forests and spreading awareness
-            about the critical climate crisis. As a result, PlantForever plant trees in urban
+            about the critical climate crisis. As a result, PlantForever plants trees in urban
             environments, usually homes and business locations.
           </div>
           <div class="secondary-text">
@@ -41,21 +41,20 @@
             by Nasa.
           </div>
           <div class="secondary-text">
-            As you might know, higher global temperatures have detrimental effects on our planet.
-            Just a few are listed here: ocean acidification, the loss of our ice caps, rising sea
-            levels, decrease in biodiversity, loss of forests, and negative effects on human health
-            and economy. To prevent further irreversible bad impacts, right now actions must take
-            place.
+            Higher global temperatures have detrimental effects on our planet. Just a few are listed
+            here: ocean acidification, the loss of our ice caps, rising sea levels, decrease in
+            biodiversity, loss of forests, and negative effects on human health and economy. To
+            prevent further irreversible impacts, immediate actions must take place.
           </div>
           <div class="secondary-text">
             The Paris Agreement signed in 2016 aims to keep global temperature rise this century
-            below 2°C, in regards to levels in the pre-industrial era. A reports conducted by the
+            below 2°C, in regards to levels in the pre-industrial era. As reports conducted by the
             Intergovernmental Panel on Climate Change (IPCC) in 2018 found that many adverse effects
             of climate change appear after a rise about 1.5°C.
           </div>
           <div class="secondary-text">
-            To keep levels below a 1.5°C rise, PlantForever takes a step forward to become a leader
-            for the billions of people and creatures impacted by climate change.
+            To keep levels below a 1.5°C rise, PlantForever takes a step forward as a leader for the
+            billions of people and creatures impacted by climate change.
           </div>
         </div>
         <div class="column">

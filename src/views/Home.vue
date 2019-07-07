@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="carousel">
-      <div id="slide-one" class="slide">
-        <img :src="require(`@/assets/${ slideOnePhoto }.jpg`)" class="carousel-img" />
+      <div class="slide">
+        <img src="@/assets/1.jpg" class="carousel-img" />
         <div class="text-container">
           <div class="primary-text">We are PlantForever</div>
           <div class="secondary-text">Free planting in Edmonton area</div>
@@ -11,22 +11,6 @@
             <a href="https://bit.ly/2Yw2AAO" target="_blank" class="secondary-button">Donate Funds</a>
           </div>
         </div>
-      </div>
-      <div id="slide-two" class="slide">
-        <img :src="require(`@/assets/${ slideTwoPhoto }.jpg`)" class="carousel-img" />
-        <div class="text-container">
-          <div class="primary-text">Free doggos</div>
-          <div class="secondary-text">Exclusive offer, get a doggo for free, with the purchase of a tree</div>
-          <div class="secondary-text">Spicy</div>
-          <div class="button-container">
-            <router-link :to="{ name: 'Store' }" class="primary-button">Get A Tree</router-link>
-            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
-          </div>
-        </div>
-      </div>
-      <div class="arrow-container">
-        <img src="@/assets/arrow.svg" style="transform: rotateY(180deg);" @click="userRotates(false)" />
-        <img src="@/assets/arrow.svg" @click="userRotates(true)" />
       </div>
     </div>
     <div class="about-us-images">
@@ -109,47 +93,22 @@ export default {
   name: "Home",
   data() {
     return {
-      currentPhoto: 1,
-      slideOnePhoto: 1,
-      slideTwoPhoto: 2,
-      timerIntervalID: 0,
-      userIntervalID: 0,
       checkedButton: 1
     };
   },
   mounted() {
     this.aboutUsAnimation();
-    this.timerIntervalID = setInterval(this.rotateSlides(true), 3000);
-    window.addEventListener("scroll", this.carouselTitleParallax);
     window.addEventListener("scroll", this.aboutUsAnimation);
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.carouselTitleParallax);
     window.removeEventListener("scroll", this.aboutUsAnimation);
   },
   methods: {
-    userRotates(forward) {
-      this.userIntervalID ? clearInterval(this.userIntervalID) : clearInterval(this.timerIntervalID);
-      this.userIntervalID = setInterval(this.rotateSlides(forward).bind(this), 3000);
-    },
-    rotateSlides(forward) {
-      if (forward) {
-        // slide to the right
-      } else {
-        // slide to the left
-      }
-    },
-    carouselTitleParallax() {
-      if (window.scrollY < 700) {
-        document.querySelector(".carousel .text-container").style.transform = `translate(-80%, calc(-50% + ${ Math.round(window.scrollY / 15) }px))`;
-      }
-    },
     aboutUsAnimation() {
       if (window.scrollY > 300) {
         document.querySelector("#left").classList.add("slided");
         document.querySelector("#right").classList.add("slided");
         window.removeEventListener("scroll", this.aboutUsAnimation);
-
       }
     }
   }
@@ -161,14 +120,7 @@ export default {
 
 .carousel {
   position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  transition-duration: 0.5s;
   margin-bottom: 75px;
-  #slide-two .text-container {
-    transform: translate(calc(-80% + 100vw), -50%);
-  }
   .slide {
     .carousel-img {
       width: 100vw;
@@ -199,18 +151,6 @@ export default {
           padding: 20px 30px;
         }
       }
-    }
-  }
-  .arrow-container {
-    position: absolute;
-    display: flex;
-    top: 50%;
-    transform: translateY(-50%);
-    justify-content: space-between;
-    width: 100vw;
-    img {
-      width: 45px;
-      padding: 15px;
     }
   }
 }
@@ -258,7 +198,7 @@ export default {
       text-shadow: 5px 5px 10px black;
     }
     .secondary-text {
-      margin-top: 10px;
+      margin-top: 1em;
       font-family: Open Sans;
       color: white;
       font-size: 16px;

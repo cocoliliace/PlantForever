@@ -65,14 +65,6 @@ const router =  new Router({
       }
     },
     {
-      path: "/donate",
-      name: "Donate",
-      component: () => import("./views/Donate.vue"),
-      meta: {
-        title: "Donate - PlantForever"
-      }
-    },
-    {
       path: "*",
       name: "Error",
       component: () => import("./views/Error.vue"),

@@ -35,6 +35,7 @@ form {
     border: 2px #CCCCCC solid;
     transition-duration: 0.3s;
     border-radius: 5px;
+    outline-width: 0px;
     &:focus {
       border: 2px $green solid;
     }

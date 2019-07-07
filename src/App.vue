@@ -65,9 +65,9 @@ export default {
         document.querySelector("#logo").style.transitionDuration = "0s";
         document.querySelector("#logo").style.opacity = 0;
       }
-      if (window.scrollY < 400 && this.$route.name !== "Home") {
+      if (window.scrollY < 420 && this.$route.name !== "Home") {
         try {
-          document.querySelector(".banner-container .title").style.transform = `translate(-50%, calc(-50% + ${ Math.round(window.scrollY / 10) }px))`;
+          document.querySelector(".banner-container .banner").style.transform = `translateY(${ window.scrollY }px)`;
         } catch (TypeError) {
           // Changing pages, title still loading
         }
@@ -160,9 +160,14 @@ body {
 .banner-container {
   position: relative;
   text-align: center;
+  overflow: hidden;
+  height: 320px;
   .banner {
     width: 100vw;
-    filter: brightness(67%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    filter: brightness(66%);
     user-select: none;
   }
   .title {

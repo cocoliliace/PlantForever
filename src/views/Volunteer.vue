@@ -9,32 +9,38 @@
       <div>We will email you back for updates on volunteering opportunities!</div>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
-    <div class="text">
-      Anyone, regardless of their age, gender, or skill level, is able to volunteer their time to
-      the organization. You could volunteer by assisting in planting trees, advertising, and/or by
-      helping facilitate the organization. As this is a nonprofit, volunteers are the main pillars
-      keeping this organization alive.
-    </div>
-    <div class="text">
-      Most activities do not require skill or materials to bring. For tree plantation,
-      transportation will be provided to the planting locations.
+    <div class="section">
+      <div class="text">
+        Anyone, regardless of their age, gender, or skill level, is able to volunteer their time to
+        the organization. You could volunteer by assisting in planting trees, advertising, and/or by
+        helping facilitate the organization. As this is a nonprofit, volunteers are the main pillars
+        keeping this organization alive.
+      </div>
+      <div class="text">
+        Most activities do not require skill or materials to bring. For tree plantation,
+        transportation will be provided to the planting locations.
+      </div>
     </div>
     <form id="volunteer-form" @submit.prevent="submit">
       <div style="color: red;">* Required</div>
       <div class="row">
-        <input v-model="name" type="text" name="name" placeholder="Name" required />
-        <input v-model="email" type="text" name="email" placeholder="Email" required />
+        <input v-model="name" type="text" name="name" placeholder="Name" required /><span class="star" style="transform: translateX(-1em);">*</span>
+        <input v-model="email" type="text" name="email" placeholder="Email" required /><span class="star" style="transform: translateX(-1em);">*</span>
         <input v-model="phone" type="text" name="phone" placeholder="phone" />
       </div>
+      <div class="text">Do you have a preferred task in mind?</div>
       <div class="checkbox-container">
-        <label><input v-model="preferredTaskList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree plantation</label>
-        <label><input v-model="preferredTaskList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Advertising (ex. handing out brochures)</label>
-        <label><input v-model="preferredTaskList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Providing Transportation (ex. delivering trees)</label>
-        <label><input v-model="preferredTaskList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Other: <input v-if="preferredTaskList[3]" id="other-option" v-model="otherOption" placeholder="Please specify" /></label>
-        <input v-model="preferredTaskList" type="hidden" name="preferred_task" />
+        <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree plantation</label>
+        <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Advertising (ex. handing out brochures)</label>
+        <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Providing Transportation (ex. delivering trees)</label>
+        <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Other: <input v-if="preferredList[3]" id="other-option" v-model="otherOption" placeholder="Please specify" /></label>
+        <input v-model="preferredList" type="hidden" name="preferred_task" />
       </div>
+      <div class="text">What gardening materials/tools can you bring?</div>
       <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="Materials" autocomplete="off" />
+      <div class="text">When are you available to volunteer? <span class="star">*</span></div>
       <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="Availability" autocomplete="off" required />
+      <div class="text">Any questions or comments?</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <button id="submit-form" class="primary-button" type="submit">Submit</button>
     </form>
@@ -51,14 +57,13 @@ export default {
       email: "",
       name: "",
       phone: "",
-      preferredTaskList: [false, false, false, false],
       taskList: ["Planting", "Advertising", "Transporting", "Other"],
-      preferredTask: "",
       otherOption: "",
+      preferredList: [false, false, false, false],
+      preferredTask: "",
       availability: "",
       materials: "",
       comments: "",
-      date: new Date(),
       thankYouMessage: false
     };
   },
@@ -66,7 +71,7 @@ export default {
     submit() {
       this.taskList[3] = this.otherOption;
       for (let taskIndex = 0; taskIndex < 4; taskIndex++) {
-        if (this.preferredTaskList[taskIndex]) {
+        if (this.preferredList[taskIndex]) {
           this.preferredTask += `${ this.taskList[taskIndex] }/`;
         }
       }
@@ -79,12 +84,11 @@ export default {
           preferred_task: this.preferredTask,
           availability: this.availability,
           materials: this.materials,
-          comments: this.comments,
-          timestamp: `${ this.date.getDate() }/${ this.date.getMonth() }/${ this.date.getFullYear() } ${ this.date.getHours() }:${ this.date.getMinutes() }`
+          comments: this.comments
         }
       });
       this.email = this.name = this.phone = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
-      this.preferredTaskList = [false, false, false, false];
+      this.preferredList = [false, false, false, false];
       this.thankYouMessage = true;
     }
   }
@@ -94,11 +98,14 @@ export default {
 <style lang="scss" scoped>
 .text {
   font-size: 18px;
-  margin: 15px 10vw;
+  margin: 15px 5px;
 }
 form {
+  border: 5px $blue double;
+  padding: 15px;
+  border-radius: 5px;
   margin: 25px 10vw;
-  width: 80vw;
+  width: calc(80vw - 30px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -112,10 +119,10 @@ form {
     margin-bottom: 15px;
     &#other-option {
       font-size: 16px;
-      padding: 0px;
-      border-top: none;
-      border-left: none;
-      border-right: none;
+      padding: 0px 0px 3px 5px;
+      margin-bottom: -5px;
+      border: none;
+      border-bottom: 2px #CCCCCC solid;
       border-radius: 2px;
     }
     &:focus {
@@ -178,7 +185,11 @@ form {
     }
   }
   .short-answer {
-    width: calc(80vw - 24px);
+    width: calc(80vw - 24px - 30px);
+  }
+  .star {
+    color: red;
+    font-size: 18px;
   }
 }
 #thank-you-message {

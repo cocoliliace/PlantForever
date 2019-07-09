@@ -1,10 +1,9 @@
 <template>
   <div>
     <div class="banner-container">
-      <img src="@/assets/banner.jpg" class="banner" />
       <div class="title">STORE</div>
     </div>
-    <div class="section">
+    <div class="card-container">
       <router-link :to="{ name: 'Shirt' }" class="card">
         <img src="@/assets/shirt.jpg" />
         <div class="title">WHITE LOGO CREWNECK T-SHIRT</div>
@@ -21,7 +20,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section {
+.card-container {
+  margin: 25px 2.5vw 0 2.5vw;
+  width: 95vw;
   display: flex;
   justify-content: space-around;
   .card {

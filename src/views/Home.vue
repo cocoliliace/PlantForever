@@ -2,7 +2,7 @@
   <div>
     <div class="carousel">
       <div class="slide">
-        <img src="@/assets/1.jpg" class="carousel-img" />
+        <img src="@/assets/carousel-1.jpg" class="carousel-img" />
         <div class="text-container">
           <div class="primary-text">We are PlantForever</div>
           <div class="secondary-text">Free planting in Edmonton area</div>
@@ -45,7 +45,7 @@
       <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
     </div>
-    <div class="section" style="height: 370px;">
+    <div id="ways-to-help" class="section">
       <div class="title">
         <img src="@/assets/logo.png" class="title-logo" />
         <div class="title-text">
@@ -53,7 +53,7 @@
           <div style="color: #00A849;">HELP US</div>
         </div>
       </div>
-      <img src="@/assets/download.jpg" />
+      <img class="image" src="@/assets/ways-to-help.jpg" />
       <div class="primary-text">There are many ways that you can help and support PlantForever and the environment:</div>
       <div id="ways-to-help-buttons" class="button-container">
         <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">DONATE</div>
@@ -84,6 +84,10 @@
           and neighbours about the organization and what we do to donate to the community.
         </div>
       </div>
+    </div>
+    <div class="section">
+      <div class="title-text">SUPPORTER</div>
+      <img id="sponsor-img" src="@/assets/infokidz.jpg" />
     </div>
   </div>
 </template>
@@ -145,7 +149,7 @@ export default {
       .button-container {
         display: flex;
         margin-top: 40px;
-        width: 55%;
+        width: 70%;
         justify-content: space-between;
         .primary-button, .secondary-button {
           padding: 20px 30px;
@@ -231,7 +235,10 @@ export default {
       border-left: 2px #cccccc solid;
     }
   }
-  img {
+}
+#ways-to-help {
+  height: 370px;
+  .image {
     width: 350px;
     border: 10px black solid;
     float: left;
@@ -240,6 +247,7 @@ export default {
   .button-container {
     margin: 35px 0px;
     .button {
+      white-space: nowrap;
       color: #222222;
       padding: 14px 30px;
       font-size: 14px;
@@ -265,17 +273,148 @@ export default {
     }
   }
 }
+#sponsor-img {
+  width: 50%;
+}
 
 .map-overlay {
   position: relative;
-  width: 80vw;
-  height: 30vw;
-  top: 30vw;
-  margin-top: -30vw;
+  width: 100%;
+  height: 450px;
+  top: 450px;
+  margin-top: -450px;
   z-index: 1;
 }
 iframe {
-  width: 80vw;
-  height: 30vw;
+  width: 100%;
+  height: 450px;
+}
+
+@media (max-width: 1288px) {
+  .carousel {
+    .slide {
+      .text-container {
+        .primary-text {
+          font-size: 50px;
+        }
+        .secondary-text {
+          font-size: 40px;
+        }
+        .button-container {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1250px) {
+  .section {
+    width: 970px;
+    img {
+      width: 250px;
+      margin-bottom: 50px;
+    }
+  }
+}
+@media (max-width: 1074px) {
+  .carousel {
+    .slide {
+      .text-container {
+        width: 80vw;
+        transform: translate(-50%, -50%);
+        .button-container {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1040px) {
+  .carousel {
+    .slide {
+      .text-container {
+        .button-container {
+          width: 90%;
+        }
+      }
+    }
+  }
+  .section {
+    width: 780px;
+    .primary-text {
+      font-size: 20px;
+    }
+    .secondary-text {
+      font-size: 14px;
+    }
+    .button-container {
+      margin: 35px 0px;
+      .button {
+        padding: 10px 15px;
+      }
+    }
+  }
+  #ways-to-help {
+    height: auto;
+  }
+}
+@media (max-width: 800px) {
+  .section {
+    width: 95vw;
+  }
+  #ways-to-help {
+    height: auto;
+    .image {
+      float: none;
+      position: relative;
+      width: calc(100% - 20px);
+      margin-right: 0;
+    }
+  }
+  #sponsor-img {
+    width: 100%;
+  }
+}
+@media (max-width: 780px) {
+  .carousel {
+    .slide {
+      .text-container {
+        .primary-text {
+          font-size: 45px;
+        }
+        .secondary-text {
+          font-size: 35px;
+        }
+        .button-container {
+          width: 90%;
+          .primary-button, .secondary-button {
+            padding: 15px 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 615px) {
+  .carousel {
+    .slide {
+      .text-container {
+        .primary-text {
+          font-size: 30px;
+        }
+        .secondary-text {
+          margin-top: 5px;
+          font-size: 20px;
+        }
+        .button-container {
+          margin-top: 25px;
+          width: 90%;
+          .primary-button, .secondary-button {
+            padding: 15px 20px;
+          }
+        }
+      }
+    }
+  }
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="body">
     <div class="banner-container">
-      <img src="@/assets/banner.jpg" class="banner" />
       <div class="title">VOLUNTEER</div>
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
@@ -9,7 +8,7 @@
       <div>We will email you back for updates on volunteering opportunities!</div>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
-    <div class="section">
+    <div class="text-container">
       <div class="text">
         Anyone, regardless of their age, gender, or skill level, is able to volunteer their time to
         the organization. You could volunteer by assisting in planting trees, advertising, and/or by
@@ -26,7 +25,7 @@
       <div class="row">
         <input v-model="name" type="text" name="name" placeholder="Name" required /><span class="star" style="transform: translateX(-1em);">*</span>
         <input v-model="email" type="text" name="email" placeholder="Email" required /><span class="star" style="transform: translateX(-1em);">*</span>
-        <input v-model="phone" type="text" name="phone" placeholder="phone" />
+        <input v-model="phone" type="text" name="phone" placeholder="Phone" />
       </div>
       <div class="text">Do you have a preferred task in mind?</div>
       <div class="checkbox-container">
@@ -96,6 +95,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.text-container {
+  margin: 25px 10vw 0 10vw;
+}
 .text {
   font-size: 18px;
   margin: 15px 5px;

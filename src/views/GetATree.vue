@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="banner-container">
-      <img src="@/assets/banner.jpg" class="banner" />
       <div class="title">GET A TREE</div>
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
@@ -9,7 +8,7 @@
       <div>We will email you back for updates!</div>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
-    <div class="section">
+    <div class="text-container">
       <div class="text">
         If you live in the Edmonton area and are looking for young trees to plant on your property,
         PlantForever is here to help!
@@ -23,7 +22,7 @@
       <div class="row">
         <input v-model="name" type="text" name="name" placeholder="Name" required /><span class="star" style="transform: translateX(-1em);">*</span>
         <input v-model="email" type="text" name="email" placeholder="Email" required /><span class="star" style="transform: translateX(-1em);">*</span>
-        <input v-model="phone" type="text" name="phone" placeholder="phone" />
+        <input v-model="phone" type="text" name="phone" placeholder="Phone" />
       </div>
       <div class="row">
         <input v-model="address" class="short-answer" type="text" name="address" placeholder="Address" style="width: 75vw;" />
@@ -73,10 +72,21 @@ export default {
   computed: {
     numberOfTrees() {
       let count = 0;
-      for (let number in this.amountList) {
-        count += this.amountList[number];
+      for (let index in this.amountList) {
+        count += parseInt(this.amountList[index]);
       }
       return count;
+    }
+  },
+  watch: {
+    preferredList() {
+      for (let index in this.preferredList) {
+        if (this.preferredList[index] && !this.amountList[index]) {
+          this.$set(this.amountList, index, 1);
+        } else if (!this.preferredList[index] && this.amountList[index]) {
+          this.$set(this.amountList, index, 0);
+        }
+      }
     }
   },
   methods: {
@@ -113,6 +123,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.text-container {
+  margin: 25px 10vw 0 10vw;
+}
 .text {
   font-size: 18px;
   margin: 15px 5px;

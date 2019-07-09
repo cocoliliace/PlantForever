@@ -2,9 +2,9 @@
   <div id="app">
     <header>
       <router-link :to="{ name: 'Home' }"><img src="@/assets/logo.jpg" /></router-link>
-      <div id="nav">
+      <div v-if="showNav" id="nav" @click="hideNav">
         <div id="logo-overlay"></div>
-        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" src="@/assets/logo.png" /></router-link>
+        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/logo.png" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">About Us</router-link>
         <router-link :to="{ name: 'GetATree' }">Get A Tree</router-link>
@@ -14,9 +14,11 @@
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="UMPE77Y2R9L46" />
-          <input type="submit" value="Donate" style="padding-bottom: 16px;" />
+          <input type="submit" value="Donate" />
         </form>
       </div>
+      <div v-if="showNav" id="hide-nav" @click="hideNav"></div>
+      <img v-if="!showNav" id="nav-activator" src="@/assets/nav.png" @click="showNav = true" />
     </header>
 
     <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
@@ -34,11 +36,14 @@ export default {
   name: "App",
   data() {
     return {
+      showNav: true,
       previousHeight: 0
     };
   },
   mounted() {
+    window.addEventListener("resize", this.hideNav);
     window.addEventListener("scroll", this.scrollEffect);
+    this.hideNav();
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.scrollEffect);
@@ -56,22 +61,16 @@ export default {
       this.previousHeight = getComputedStyle(element).height;
     },
     scrollEffect() {
-      if (window.scrollY >= 90) {
-        document.querySelector("#logo-overlay").style.display = "none";
-        document.querySelector("#logo").style.transitionDuration = "1s";
-        document.querySelector("#logo").style.opacity = 100;
-      } else {
-        document.querySelector("#logo-overlay").style.display = "block";
-        document.querySelector("#logo").style.transitionDuration = "0s";
-        document.querySelector("#logo").style.opacity = 0;
+      if (window.scrollY >= 90 && window.innerWidth > 880) {
+        document.querySelector("#logo-overlay").classList.add("hide");
+        document.querySelector("#logo").classList.remove("hide");
+      } else if (window.innerWidth > 880) {
+        document.querySelector("#logo-overlay").classList.remove("hide");
+        document.querySelector("#logo").classList.add("hide");
       }
-      if (window.scrollY < 420 && this.$route.name !== "Home") {
-        try {
-          document.querySelector(".banner-container .banner").style.transform = `translateY(${ window.scrollY }px)`;
-        } catch (TypeError) {
-          // Changing pages, title still loading
-        }
-      }
+    },
+    hideNav() {
+      this.showNav = window.innerWidth > 880;
     }
   }
 }
@@ -98,7 +97,7 @@ header {
   margin-bottom: 20px;
   position: sticky;
   top: -80px;
-  z-index: 5;
+  z-index: 3;
   img {
     height: 60px;
   }
@@ -107,15 +106,24 @@ header {
     height: 50px;
     margin-right: -50px;
     position: relative;
-    z-index: 6;
+    z-index: 4;
     float: left;
+    display: block;
+    &.hide {
+      display: none;
+    }
   }
   #logo {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    opacity: 0;
     float: left;
+    opacity: 100;
+    transition-duration: 1s;
+    &.hide {
+      opacity: 0;
+      transition-duration: 0s;
+    }
   }
   #nav {
     overflow: hidden;
@@ -128,6 +136,7 @@ header {
       text-decoration: none;
       color: black;
       font-size: 20px;
+      font-family: Montserrat;
       transition-duration: 0s;
       &:hover, &.router-link-exact-active {
         transition-duration: 0.3s;
@@ -136,6 +145,28 @@ header {
       }
     }
   }
+}
+#nav-activator {
+  top: 10px;
+  right: 10px;
+  opacity: 0.4;
+  position: fixed;
+  cursor: pointer;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  background-color: $green;
+  border-radius: 15px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+#hide-nav {
+  display: none;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
 }
 footer {
   background-color: #2B2B2B;
@@ -162,14 +193,11 @@ body {
   text-align: center;
   overflow: hidden;
   height: 320px;
-  .banner {
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    filter: brightness(66%);
-    user-select: none;
-  }
+  background-size: contain;
+  background-position: 0 60px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-image: url("assets/banner.jpg");
   .title {
     width: 100vw;
     position: absolute;
@@ -183,7 +211,9 @@ body {
   }
 }
 .section {
-  margin: 25px 10vw 0 10vw;
+  margin: auto;
+  margin-top: 25px;
+  width: 1200px;
   .title-text {
     font-size: 36px;
     font-weight: 700;
@@ -195,6 +225,7 @@ body {
     margin-bottom: 10px;
   }
   .secondary-text {
+    font-size: 16px;
     color: #666666;
     font-family: Open Sans;
     margin-bottom: 20px;
@@ -223,6 +254,60 @@ body {
   background-position: 100% 100%;
   &:hover {
     background-position: 200% 100%;
+  }
+}
+
+@media (max-width: 1288px) {
+  header {
+    #nav {
+      a:not(#logo-container), input {
+        padding: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 1040px) {
+  header {
+    padding-right: 25px;
+    #nav {
+      a:not(#logo-container), input {
+        padding: 15px 10px;
+      }
+    }
+  }
+}
+@media (max-width: 880px) {
+  header {
+    text-align: center;
+    padding: 0;
+    top: 0;
+    img:not(#nav-activator) {
+      padding-top: 5px;
+      height: 60px;
+    }
+    #nav {
+      width: 100vw;
+      a:not(#logo-container), input {
+        width: 100%;
+        &.router-link-exact-active {
+          background-color: white;
+          color: black;
+        }
+        &:hover {
+          background-color: $green;
+          color: white;
+        }
+      }
+      input {
+        width: calc(100% + 20px);
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+  #hide-nav {
+    display: block;
   }
 }
 </style>

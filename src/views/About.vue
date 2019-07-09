@@ -1,12 +1,11 @@
 <template>
   <div>
     <div class="banner-container">
-      <img src="@/assets/banner.jpg" class="banner" />
       <div class="title">ABOUT US</div>
     </div>
     <div class="section">
       <div class="columns">
-        <img src="@/assets/blue-tree-2.jpg" />
+        <img src="@/assets/about-us.jpg" />
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">

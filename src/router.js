@@ -21,7 +21,7 @@ const router =  new Router({
       name: "About",
       component: () => import("./views/About.vue"),
       meta: {
-        title: "About - PlantForever"
+        title: "About – PlantForever"
       }
     },
     {
@@ -29,7 +29,7 @@ const router =  new Router({
       name: "GetATree",
       component: () => import("./views/GetATree.vue"),
       meta: {
-        title: "Get A Tree - PlantForever"
+        title: "Get A Tree – PlantForever"
       }
     },
     {
@@ -37,7 +37,7 @@ const router =  new Router({
       name: "Store",
       component: () => import("./views/Store.vue"),
       meta: {
-        title: "Store - PlantForever"
+        title: "Store – PlantForever"
       }
     },
     {
@@ -45,7 +45,7 @@ const router =  new Router({
       name: "Shirt",
       component: () => import("./views/merch/Shirt.vue"),
       meta: {
-        title: "White Logo Crewneck T-Shirt - PlantForever"
+        title: "White Logo Crewneck T-Shirt – PlantForever"
       }
     },
     {
@@ -53,7 +53,7 @@ const router =  new Router({
       name: "Volunteer",
       component: () => import("./views/Volunteer.vue"),
       meta: {
-        title: "Volunteer Registration - PlantForever"
+        title: "Volunteer Registration – PlantForever"
       }
     },
     {
@@ -61,7 +61,15 @@ const router =  new Router({
       name: "Contact",
       component: () => import("./views/Contact.vue"),
       meta: {
-        title: "Contact Us - PlantForever"
+        title: "Contact Us – PlantForever"
+      }
+    },
+    {
+      path: "/donate",
+      name: "Donate",
+      component: () => import("./views/Donate.vue"),
+      meta: {
+        title: "Donate – PlantForever"
       }
     },
     {

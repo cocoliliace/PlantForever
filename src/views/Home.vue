@@ -8,7 +8,7 @@
           <div class="secondary-text">Free planting in Edmonton area</div>
           <div class="button-container">
             <router-link :to="{ name: 'GetATree' }" class="primary-button">Get A Tree</router-link>
-            <a href="https://bit.ly/2Yw2AAO" target="_blank" class="secondary-button">Donate Funds</a>
+            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
-          <a href="https://bit.ly/2Yw2AAO" target="_blank" class="secondary-button">Donate</a>
+          <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate</router-link>
         </div>
       </div>
     </div>
@@ -86,8 +86,11 @@
       </div>
     </div>
     <div class="section">
-      <div class="title-text">SUPPORTER</div>
-      <img id="sponsor-img" src="@/assets/infokidz.jpg" />
+      <div class="title-text">SUPPORTERS</div>
+      <div class="sponsor-container">
+        <a href="https://infokidz.ca" ><img class="sponsor-img" src="@/assets/infokidz.jpg" /></a>
+        <a href="https://www.boosterjuice.com"><img class="sponsor-img" src="@/assets/booster-juice.png" /></a>
+      </div>
     </div>
   </div>
 </template>
@@ -273,8 +276,15 @@ export default {
     }
   }
 }
-#sponsor-img {
-  width: 50%;
+.sponsor-container {
+  display: flex;
+  justify-content: space-between;
+  a {
+    width: 45%;
+    .sponsor-img {
+      width: 100%;
+    }
+  }
 }
 
 .map-overlay {

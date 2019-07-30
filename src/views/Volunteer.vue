@@ -207,6 +207,7 @@ form {
   width: 60vw;
   left: 50vw;
   transform: translate(-50%, calc(-50% - 100px));
+  z-index: 3;
   #dismiss-button {
     position: absolute;
     left: 50%;

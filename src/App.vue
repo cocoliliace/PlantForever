@@ -9,13 +9,9 @@
         <router-link :to="{ name: 'About' }">About Us</router-link>
         <router-link :to="{ name: 'GetATree' }">Get A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
-        <router-link :to="{ name: 'Store' }">Store</router-link>
+        <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="UMPE77Y2R9L46" />
-          <input type="submit" value="Donate" />
-        </form>
+        <router-link :to="{ name: 'Donate' }">Donate</router-link>
       </div>
       <div v-if="showNav" id="hide-nav" @click="hideNav"></div>
       <img v-if="!showNav" id="nav-activator" src="@/assets/nav.png" @click="showNav = true" />
@@ -127,7 +123,7 @@ header {
   }
   #nav {
     overflow: hidden;
-    a:not(#logo-container), input {
+    a:not(#logo-container) {
       border: none;
       cursor: pointer;
       outline-width: 0px;
@@ -260,7 +256,7 @@ body {
 @media (max-width: 1288px) {
   header {
     #nav {
-      a:not(#logo-container), input {
+      a:not(#logo-container) {
         padding: 15px;
       }
     }
@@ -270,7 +266,7 @@ body {
   header {
     padding-right: 25px;
     #nav {
-      a:not(#logo-container), input {
+      a:not(#logo-container) {
         padding: 15px 10px;
       }
     }
@@ -287,7 +283,7 @@ body {
     }
     #nav {
       width: 100vw;
-      a:not(#logo-container), input {
+      a:not(#logo-container) {
         width: 100%;
         &.router-link-exact-active {
           background-color: white;
@@ -298,9 +294,6 @@ body {
           color: white;
         }
       }
-      input {
-        width: calc(100% + 20px);
-      }
       img {
         display: none;
       }
@@ -308,6 +301,9 @@ body {
   }
   #hide-nav {
     display: block;
+  }
+  .banner-container {
+    height: 250px;
   }
 }
 </style>

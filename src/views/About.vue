@@ -9,15 +9,16 @@
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">
-            PlantForever strongly advocates for developing urban forests and spreading awareness
-            about the critical climate crisis. As a result, PlantForever plants trees in urban
-            environments, usually homes and business locations.
+            PlantForever advocates for developing urban forests and spreading awareness about the
+            critical climate crisis. As a result, PlantForever plants trees in urban environments,
+            usually homes and business locations.
           </div>
           <div class="secondary-text">
-            Patrons first register for a tree. Once a date is selected, volunteers go the desired
-            planting location to plant which consists of selecting an area, digging, planting, and
-            filling the space with patron-provided soil and water. Currently, PlantForever plants in
-            Edmonton, but will be planning to expand to other cities!
+            Patrons first <router-link :to="{ name: 'GetATree' }">register for a tree</router-link>.
+            Once a date is selected, volunteers go the desired planting location to plant trees,
+            consisting of choosing an area, digging, planting, and filling the space with
+            patron-provided soil and water. Currently, PlantForever plants in Edmonton, but plans to
+            expand to other cities!
           </div>
         </div>
       </div>
@@ -37,7 +38,7 @@
             trapping of heat. The United Nations states that “quantities of greenhouse gases in the
             atmosphere have risen to record levels not seen in three million years.” Since the late
             19th century, the earth’s average surface temperature has risen about 0.9°C, as stated
-            by Nasa.
+            by NASA.
           </div>
           <div class="secondary-text">
             Higher global temperatures have detrimental effects on our planet. Just a few are listed
@@ -104,6 +105,35 @@ export default {
     }
     .column {
       width: 45%;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .section {
+    width: 90%;
+    .columns {
+      img {
+        width: 45%;
+      }
+    }
+  }
+}
+@media (max-width: 915px) {
+  .section {
+    width: 90%;
+    .columns {
+      flex-direction: column;
+      img {
+        display: none;
+      }
+      .paragraph {
+        width: 100%;
+      }
+      .column {
+        width: 100%;
+        margin-top: 35px;
+      }
     }
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <router-link :to="{ name: 'Home' }"><img src="@/assets/logo.jpg" /></router-link>
+      <router-link :to="{ name: 'Home' }"><img src="@/assets/plantforever.jpg" alt="PlantForever" /></router-link>
       <div v-if="showNav" id="nav" @click="hideNav">
         <div id="logo-overlay"></div>
-        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/logo.png" /></router-link>
+        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">About Us</router-link>
         <router-link :to="{ name: 'GetATree' }">Get A Tree</router-link>
@@ -14,7 +14,7 @@
         <router-link :to="{ name: 'Donate' }">Donate</router-link>
       </div>
       <div v-if="showNav" id="hide-nav" @click="hideNav"></div>
-      <img v-if="!showNav" id="nav-activator" src="@/assets/nav.png" @click="showNav = true" />
+      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.jpg" @click="showNav = true" />
     </header>
 
     <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
@@ -22,7 +22,14 @@
     </transition>
 
     <footer>
-      <a href="mailto:plantforever.org@gmail.com">plantforever.org@gmail.com</a>
+      <div class="column">
+        <a href="mailto:plantforever.org@gmail.com">plantforever.org@gmail.com</a>
+        <div class="social-media-container">
+          <span><a href="https://www.instagram.com/plantforeverorg" target="_blank"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
+          <span><a href="https://www.facebook.com/PlantForever"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |
+          <span><a href="https://twitter.com/PlantForeverorg" target="_blank"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -151,7 +158,6 @@ header {
   z-index: 2;
   width: 50px;
   height: 50px;
-  background-color: $green;
   border-radius: 15px;
   &:hover {
     opacity: 0.9;
@@ -167,15 +173,32 @@ header {
 footer {
   background-color: #2B2B2B;
   height: 50px;
-  padding: 20px 20vw;
+  padding: 20px 20vw 40px 20vw;
   margin-top: 35px;
-  a {
+  .column {
     float: right;
     color: #ABABAB;
-    text-decoration: none;
-    transition-duration: 1s;
-    &:hover {
-      text-decoration: underline;
+    .social-media-container {
+      text-align: right;
+      cursor: default;
+      margin-top: 15px;
+      a {
+        padding: 7px 10px;
+        transition-duration: 0.2s;
+        cursor: pointer;
+        border-radius: 5px;
+        &:hover {
+          background-color: $green;
+        }
+      }
+    }
+    a {
+      color: #ABABAB;
+      text-decoration: none;
+      transition-duration: 1s;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

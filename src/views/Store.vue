@@ -5,7 +5,7 @@
     </div>
     <div class="card-container">
       <router-link :to="{ name: 'Shirt' }" class="card">
-        <img src="@/assets/shirt.jpg" />
+        <img src="@/assets/shirt.jpg" alt="white logo crewneck t-shirt" />
         <div class="title">WHITE LOGO CREWNECK T-SHIRT</div>
         <div class="price"><span style="text-decoration: line-through;">$25.00</span>   $20.00</div>
       </router-link>

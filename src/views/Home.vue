@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="about-us-images">
-      <img src="@/assets/3.jpg" />
-      <img src="@/assets/4.jpg" />
+      <img src="@/assets/6.jpg" />
+      <img src="@/assets/5.jpg" />
       <div id="left" class="text-container">
         <div class="primary-text">WHAT IS PLANTFOREVER</div>
         <div class="secondary-text">
@@ -38,8 +38,8 @@
         </div>
       </div>
     </div>
-    <div class="section">
-      <div class="title" style="width: 616px;">
+    <div id="map" class="section">
+      <div class="title">
         <div class="title-text" style="padding-left: 0px; border-left: none;">WHERE WE HAVE PLANTED</div>
       </div>
       <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
@@ -47,7 +47,7 @@
     </div>
     <div id="ways-to-help" class="section">
       <div class="title">
-        <img src="@/assets/logo.png" class="title-logo" />
+        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>HOW YOU CAN</div>
           <div style="color: #00A849;">HELP US</div>
@@ -55,13 +55,13 @@
       </div>
       <img class="image" src="@/assets/ways-to-help.jpg" />
       <div class="primary-text">There are many ways that you can help and support PlantForever and the environment:</div>
-      <div id="ways-to-help-buttons" class="button-container">
+      <div class="button-container">
         <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">DONATE</div>
         <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">ACCEPT A TREE</div>
         <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">VOLUNTEER</div>
         <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">RAISE AWARENESS</div>
       </div>
-      <div class="secondary-text">
+      <div class="secondary-text" style="display: table;">
         <div v-if="checkedButton === 1">
           One of the largest ways to contribute to PlantForever is donating money or supplies.
           Relocating a coffee’s worth of money aids us drastically as it allows us to become more
@@ -88,8 +88,8 @@
     <div class="section">
       <div class="title-text">SUPPORTERS</div>
       <div class="sponsor-container">
-        <a href="https://infokidz.ca" ><img class="sponsor-img" src="@/assets/infokidz.jpg" /></a>
-        <a href="https://www.boosterjuice.com"><img class="sponsor-img" src="@/assets/booster-juice.png" /></a>
+        <a href="https://infokidz.ca" ><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
+        <a href="https://www.boosterjuice.com"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
       </div>
     </div>
   </div>
@@ -223,6 +223,11 @@ export default {
   }
 }
 .section {
+  &#map {
+    .title {
+      width: 80vw;
+    }
+  }
   .title {
     display: flex;
     justify-content: space-between;
@@ -250,13 +255,15 @@ export default {
   .button-container {
     margin: 35px 0px;
     .button {
-      white-space: nowrap;
       color: #222222;
-      padding: 14px 30px;
+      width: 200px;
+      padding: 14px 0;
+      text-align: center;
+      margin-bottom: 5px;
       font-size: 14px;
       border: 2px #cccccc solid;
       border-radius: 5px;
-      display: inline;
+      display: inline-block;
       margin-right: 15px;
       cursor: pointer;
       background-image: linear-gradient(to bottom, transparent 50%, $green 50%);
@@ -316,6 +323,20 @@ iframe {
       }
     }
   }
+  .about-us-images {
+    .text-container {
+      &#left {
+        &.slided {
+          transform: translate(-105%, -50%);
+        }
+      }
+      &#right {
+        &.slided {
+          transform: translate(10%, -50%);
+        }
+      }
+    }
+  }
 }
 @media (max-width: 1250px) {
   .section {
@@ -323,6 +344,16 @@ iframe {
     img {
       width: 250px;
       margin-bottom: 50px;
+    }
+  }
+  #ways-to-help {
+    height: 460px;
+  }
+}
+@media (max-width: 1150px) {
+  .about-us-images {
+    .text-container {
+      width: 450px;
     }
   }
 }
@@ -349,6 +380,31 @@ iframe {
       }
     }
   }
+  .about-us-images {
+    height: 700px;
+    img {
+      width: 100%;
+      height: 350px;
+      transform: none;
+    }
+    .text-container {
+      width: 90vw;
+      &#left {
+        top: 25%;
+        transform: translate(-50%, -50%);
+        &.slided {
+          transform: translate(-50%, -50%);
+        }
+      }
+      &#right {
+        top: 70%;
+        transform: translate(-50%, -50%);
+        &.slided {
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
   .section {
     width: 780px;
     .primary-text {
@@ -365,12 +421,17 @@ iframe {
     }
   }
   #ways-to-help {
-    height: auto;
+    height: 560px;
   }
 }
 @media (max-width: 800px) {
   .section {
     width: 95vw;
+    &#map {
+      .title {
+        width: 95vw;
+      }
+    }
   }
   #ways-to-help {
     height: auto;

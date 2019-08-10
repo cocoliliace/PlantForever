@@ -64,8 +64,8 @@
       <div class="secondary-text" style="display: table;">
         <div v-if="checkedButton === 1">
           One of the largest ways to contribute to PlantForever is donating money or supplies.
-          Relocating a coffee’s worth of money aids us drastically as it allows us to become more
-          capable and efficient at planting trees and spreading awareness.
+          Relocating a coffee’s worth of money aids us to become more capable and efficient at
+          planting trees and spreading awareness.
         </div>
         <div v-else-if="checkedButton === 2">
           By having us plant a tree on your property, and you nurture it as it grows, you are

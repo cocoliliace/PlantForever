@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="banner-container">
-      <div class="title">ABOUT US</div>
+      <div class="title">WHAT WE DO</div>
     </div>
     <div class="section">
       <div class="columns">

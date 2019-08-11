@@ -407,12 +407,6 @@ iframe {
   }
   .section {
     width: 780px;
-    .primary-text {
-      font-size: 20px;
-    }
-    .secondary-text {
-      font-size: 14px;
-    }
     .button-container {
       margin: 35px 0px;
       .button {

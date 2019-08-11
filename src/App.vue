@@ -6,7 +6,15 @@
         <div id="logo-overlay"></div>
         <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'About' }">About Us</router-link>
+        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
+          <div>About Us</div>
+          <div class="dropdown">
+            <router-link :to="{ name: 'About' }">What We Do</router-link>
+            <router-link :to="{ name: 'Team' }">Meet Our Team</router-link>
+          </div>
+        </a>
+        <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
+        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
         <router-link :to="{ name: 'GetATree' }">Get A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
@@ -14,7 +22,7 @@
         <router-link :to="{ name: 'Donate' }">Donate</router-link>
       </div>
       <div v-if="showNav" id="hide-nav" @click="hideNav"></div>
-      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.jpg" @click="showNav = true" />
+      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.svg" @click="showNav = true" />
     </header>
 
     <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
@@ -40,6 +48,7 @@ export default {
   data() {
     return {
       showNav: true,
+      hasDropdown: true,
       previousHeight: 0
     };
   },
@@ -74,6 +83,12 @@ export default {
     },
     hideNav() {
       this.showNav = window.innerWidth > 880;
+      this.hasDropdown = window.innerWidth > 880;
+    },
+    childIsActive(input) {
+      return input.some(path => {
+        return this.$route.path.indexOf(path) === 0;
+      });
     }
   }
 }
@@ -141,10 +156,27 @@ header {
       font-size: 20px;
       font-family: Montserrat;
       transition-duration: 0s;
+      user-select: none;
+      .dropdown {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 150px;
+        margin: 15px 0 0 -30px;
+        a {
+          float: none;
+          display: block;
+        }
+      }
       &:hover, &.router-link-exact-active {
         transition-duration: 0.3s;
         background-color: $green;
         color: white;
+      }
+      &:hover {
+        .dropdown {
+          display: block;
+        }
       }
     }
   }
@@ -158,7 +190,6 @@ header {
   z-index: 2;
   width: 50px;
   height: 50px;
-  border-radius: 15px;
   &:hover {
     opacity: 0.9;
   }
@@ -212,7 +243,7 @@ body {
   text-align: center;
   overflow: hidden;
   height: 320px;
-  background-size: contain;
+  background-size: cover;
   background-position: 0 60px;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -276,7 +307,7 @@ body {
   }
 }
 
-@media (max-width: 1288px) {
+@media (max-width: 1165px) {
   header {
     #nav {
       a:not(#logo-container) {
@@ -285,9 +316,8 @@ body {
     }
   }
 }
-@media (max-width: 1040px) {
+@media (max-width: 940px) {
   header {
-    padding-right: 25px;
     #nav {
       a:not(#logo-container) {
         padding: 15px 10px;
@@ -327,6 +357,7 @@ body {
   }
   .banner-container {
     height: 250px;
+    background-size: contain;
   }
 }
 </style>

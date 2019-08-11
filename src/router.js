@@ -17,11 +17,19 @@ const router =  new Router({
       }
     },
     {
-      path: "/about",
+      path: "/about-us",
       name: "About",
       component: () => import("./views/About.vue"),
       meta: {
         title: "About – PlantForever"
+      }
+    },
+    {
+      path: "/meet-our-team",
+      name: "Team",
+      component: () => import("./views/Team.vue"),
+      meta: {
+        title: "Team – PlantForever"
       }
     },
     {
@@ -32,14 +40,14 @@ const router =  new Router({
         title: "Get A Tree – PlantForever"
       }
     },
-    {
-      path: "/store",
-      name: "Store",
-      component: () => import("./views/Store.vue"),
-      meta: {
-        title: "Store – PlantForever"
-      }
-    },
+    // {
+    //   path: "/store",
+    //   name: "Store",
+    //   component: () => import("./views/Store.vue"),
+    //   meta: {
+    //     title: "Store – PlantForever"
+    //   }
+    // },
     {
       path: "/store/white-logo-crewneck-t-shirt",
       name: "Shirt",
@@ -49,7 +57,7 @@ const router =  new Router({
       }
     },
     {
-      path: "/volunteer",
+      path: "/volunteer-registration",
       name: "Volunteer",
       component: () => import("./views/Volunteer.vue"),
       meta: {

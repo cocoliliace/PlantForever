@@ -3,17 +3,15 @@
     <div class="banner-container">
       <div class="title">DONATE</div>
     </div>
-    <div class="section">
-      <div class="text">PlantForever is not a registered charity and cannot issue official donation receipts for income tax purposes.</div>
-      <div class="text">For non-monetary donations, please contact us through our <router-link :to="{ name: 'Contact'}">contact form</router-link>.</div>
-      <div class="text">
-        For monetary donations, please continue
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="UMPE77Y2R9L46" />
-          <input type="submit" value="here" />
-        </form>.
-      </div>
+    <div class="text">PlantForever is not a registered charity and cannot issue official donation receipts for income tax purposes.</div>
+    <div class="text">For non-monetary donations, please contact us through our <router-link :to="{ name: 'Contact'}">contact form</router-link>.</div>
+    <div class="text">
+      For monetary donations, please continue
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="UMPE77Y2R9L46" />
+        <input type="submit" value="here" />
+      </form>.
     </div>
   </div>
 </template>
@@ -26,8 +24,9 @@
 
 <style lang="scss" scoped>
 .text {
+  width: 80vw;
   font-size: 18px;
-  margin: 15px 5px;
+  margin: 15px 10vw;
   a {
     color: $green;
     text-decoration: none;
@@ -52,4 +51,5 @@
     }
   }
 }
+
 </style>

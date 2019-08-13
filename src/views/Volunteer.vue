@@ -10,10 +10,9 @@
     </div>
     <div class="text-container">
       <div class="text">
-        Anyone, regardless of their age, gender, or skill level, is able to volunteer their time to
-        the organization. You could volunteer by assisting in planting trees, advertising, and/or by
-        helping facilitate the organization. As this is a nonprofit, volunteers are the main pillars
-        keeping this organization alive.
+        Anyone is able to volunteer their time for PlantForever. You could volunteer by planting
+        trees, advertising, and/or by helping facilitate the organization. As this is a nonprofit,
+        volunteers are the main pillars keeping this organization alive.
       </div>
       <div class="text">
         Most activities do not require skill or materials to bring. For tree plantation,
@@ -39,7 +38,7 @@
       <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="Materials" autocomplete="off" />
       <div class="text">When are you available to volunteer? <span class="star">*</span></div>
       <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="Availability" autocomplete="off" required />
-      <div class="text">Any questions or comments?</div>
+      <div class="text">Any questions or comments? (Any medical concerns?)</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <button id="submit-form" class="primary-button" type="submit">Submit</button>
     </form>

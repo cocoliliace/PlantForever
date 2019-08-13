@@ -6,7 +6,8 @@
         <div id="logo-overlay"></div>
         <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
-        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
+        <router-link :to="{ name: 'About' }">About Us</router-link>
+        <!-- <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
@@ -14,8 +15,8 @@
           </div>
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
-        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
-        <router-link :to="{ name: 'GetATree' }">Get A Tree</router-link>
+        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link> -->
+        <router-link :to="{ name: 'GetATree' }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
@@ -35,7 +36,8 @@
         <div class="social-media-container">
           <span><a href="https://www.instagram.com/plantforeverorg" target="_blank"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
           <span><a href="https://www.facebook.com/PlantForever"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |
-          <span><a href="https://twitter.com/PlantForeverorg" target="_blank"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span>
+          <span><a href="https://twitter.com/PlantForeverorg" target="_blank"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span> |
+          <span><a href="https://ca.linkedin.com/company/plantforever" target="_blank"><img src="@/assets/icons/linkedin.svg" alt="linkedin" /></a></span>
         </div>
       </div>
     </footer>
@@ -307,7 +309,7 @@ body {
   }
 }
 
-@media (max-width: 1165px) {
+@media (max-width: 1205px) {
   header {
     #nav {
       a:not(#logo-container) {
@@ -316,7 +318,7 @@ body {
     }
   }
 }
-@media (max-width: 940px) {
+@media (max-width: 980px) {
   header {
     #nav {
       a:not(#logo-container) {

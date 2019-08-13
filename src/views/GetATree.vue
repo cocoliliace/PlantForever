@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="banner-container">
-      <div class="title">GET A TREE</div>
+      <div class="title">ACCEPT A TREE</div>
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
       <div>Thank you for helping the environment!</div>
@@ -14,8 +14,11 @@
         PlantForever is here to help!
       </div>
       <div class="text">
-      Plantation of up to one tree is free, while each extra tree requires a donation of $10
-    </div>
+        Plantation of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
+      </div>
+      <div class="text">
+        It is recommended that you visit <a href="http://albertaonecall.com">Call before you dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
+      </div>
     </div>
     <form id="volunteer-form" @submit.prevent="submit">
       <div style="color: red;">* Required</div>
@@ -25,16 +28,15 @@
         <input v-model="phone" type="text" name="phone" placeholder="Phone" />
       </div>
       <div class="row">
-        <input v-model="address" class="short-answer" type="text" name="address" placeholder="Address" style="width: 75vw;" />
+        <input v-model="address" class="short-answer" type="text" name="address" placeholder="Planting address" style="width: 75vw;" />
         <span class="star">*</span>
       </div>
-      <div class="text">What type(s) of tree would you like? <span class="star">*</span></div>
+      <div class="text">What type(s) of tree and how many would you like? <span class="star">*</span></div>
       <div class="checkbox-container" required>
         <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Black Cherry<input v-if="preferredList[0]" v-model="amountList[0]" class="amount" /></label>
         <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Colorado Spruce<input v-if="preferredList[1]" v-model="amountList[1]" class="amount" /></label>
-        <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Norway Maple<input v-if="preferredList[2]" v-model="amountList[2]" class="amount" /></label>
-        <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Red Maple<input v-if="preferredList[3]" v-model="amountList[3]" class="amount" /></label>
-        <label><input v-model="preferredList[4]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<input v-if="preferredList[4]" v-model="amountList[4]" class="amount" /></label>
+        <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Red Maple<input v-if="preferredList[2]" v-model="amountList[2]" class="amount" /></label>
+        <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<input v-if="preferredList[3]" v-model="amountList[3]" class="amount" /></label>
         <input v-model="amountList" type="hidden" name="preferred_task" />
       </div>
       <div class="text">Are you able to provide any supplies?</div>
@@ -59,9 +61,9 @@ export default {
       name: "",
       address: "",
       phone: "",
-      treeList: ["Black Cherry", "Colorado Spruce", "Norway Maplpe", "Red Maple", "Schubert Chokecherry"],
-      preferredList: [false, false, false, false, false],
-      amountList: [0, 0, 0, 0, 0],
+      treeList: ["Black Cherry", "Colorado Spruce", "Red Maple", "Schubert Chokecherry"],
+      preferredList: [false, false, false, false],
+      amountList: [0, 0, 0, 0],
       preferredTrees: "",
       availability: "",
       materials: "",
@@ -92,7 +94,7 @@ export default {
   methods: {
     submit() {
       if (this.numberOfTrees > 0) {
-        for (let treeIndex = 0; treeIndex < 5; treeIndex++) {
+        for (let treeIndex = 0; treeIndex < this.treeList.length; treeIndex++) {
           if (this.preferredList[treeIndex]) {
             this.preferredTrees += `${ this.treeList[treeIndex] }(${ this.amountList[treeIndex] })/`;
           }
@@ -112,7 +114,7 @@ export default {
         });
         this.email = this.name = this.address = this.phone = this.preferredTrees = this.availability = this.materials = this.comments = "";
         this.preferredList = [false, false, false, false];
-        this.amountList = [0, 0, 0, 0, 0];
+        this.amountList = [0, 0, 0, 0];
         this.thankYouMessage = true;
       } else {
         alert("Please select at least one tree");
@@ -129,6 +131,14 @@ export default {
 .text {
   font-size: 18px;
   margin: 15px 5px;
+  a {
+    color: $green;
+    text-decoration: none;
+    text-shadow: 0px 0px 1px #cccccc;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 form {
   border: 5px $blue double;

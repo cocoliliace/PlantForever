@@ -2,10 +2,10 @@
   <div>
     <div class="carousel">
       <div class="slide">
-        <img src="@/assets/carousel-1.jpg" class="carousel-img" />
+        <img src="@/assets/image2.jpg" class="carousel-img" />
         <div class="text-container">
           <div class="primary-text">We are PlantForever</div>
-          <div class="secondary-text">Free planting in Edmonton area</div>
+          <div class="secondary-text">Free tree planting</div>
           <div class="button-container">
             <router-link :to="{ name: 'GetATree' }" class="primary-button">Get A Tree</router-link>
             <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
@@ -34,19 +34,12 @@
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
-          <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate</router-link>
+          <router-link :to="{ name: 'Donate' }" class="secondary-button">Support Us</router-link>
         </div>
       </div>
     </div>
-    <div id="map" class="section">
-      <div class="title">
-        <div class="title-text" style="padding-left: 0px; border-left: none;">WHERE WE HAVE PLANTED</div>
-      </div>
-      <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
-    </div>
     <div id="ways-to-help" class="section">
-      <div class="title">
+      <div class="title" style="width: 420px;">
         <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>HOW YOU CAN</div>
@@ -54,7 +47,7 @@
         </div>
       </div>
       <img class="image" src="@/assets/ways-to-help.jpg" />
-      <div class="primary-text">There are many ways that you can help and support PlantForever and the environment:</div>
+      <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
       <div class="button-container">
         <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">DONATE</div>
         <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">ACCEPT A TREE</div>
@@ -85,11 +78,30 @@
         </div>
       </div>
     </div>
+    <div id="map" class="section">
+      <div class="title" style="width: 470px;">
+        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <div class="title-text">
+          <div>WHERE WE HAVE</div>
+          <div style="color: #00A849;">PLANTED</div>
+        </div>
+        <!-- <div class="title-text" style="padding-left: 0px; border-left: none;">WHERE WE HAVE PLANTED</div> -->
+      </div>
+      <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
+    </div>
     <div class="section">
-      <div class="title-text">SUPPORTERS</div>
+      <div class="title" style="width: 390px;">
+        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <div class="title-text">
+          <div>OUR</div>
+          <div style="color: #00A849;">SUPPORTERS</div>
+        </div>
+      </div>
       <div class="sponsor-container">
-        <a href="https://infokidz.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
         <a href="https://www.boosterjuice.com" target="_blank"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
+        <a href="https://infokidz.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
+        <a href="https://www.simply-health.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" /></a>
       </div>
     </div>
   </div>
@@ -152,7 +164,7 @@ export default {
       .button-container {
         display: flex;
         margin-top: 40px;
-        width: 70%;
+        width: 60%;
         justify-content: space-between;
         .primary-button, .secondary-button {
           padding: 20px 30px;
@@ -223,15 +235,9 @@ export default {
   }
 }
 .section {
-  &#map {
-    .title {
-      width: 80vw;
-    }
-  }
   .title {
     display: flex;
     justify-content: space-between;
-    width: 420px;
     .title-logo {
       width: 75px;
       height: 75px;
@@ -245,7 +251,7 @@ export default {
   }
 }
 #ways-to-help {
-  height: 370px;
+  height: 460px;
   .image {
     width: 350px;
     border: 10px black solid;
@@ -288,7 +294,9 @@ export default {
   justify-content: space-between;
   a {
     width: 45%;
+    display: flex;
     .sponsor-img {
+      vertical-align: middle;
       width: 100%;
     }
   }
@@ -303,7 +311,9 @@ export default {
   z-index: 1;
 }
 iframe {
-  width: 100%;
+  border: 6px $green ridge;
+  border-radius: 4px;
+  width: calc(100% - 12px);
   height: 450px;
 }
 

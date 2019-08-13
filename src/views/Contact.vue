@@ -4,7 +4,7 @@
       <div class="title">CONTACT US</div>
     </div>
     <form id="gform" method="post" action="https://script.google.com/macros/s/AKfycbz5mc2RObBEVrrM7NBTNz08Xf80UAJNFoR0JYkSa4Tiw_m5-_U/exec">
-      <div class="text">Please feel free to contact us</div>
+      <div class="text">Please feel free to contact us.</div>
       <div class="row">
         <input type="text" name="name" placeholder="Name" required />
         <input type="text" name="email" placeholder="Email" required />

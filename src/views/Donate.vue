@@ -3,7 +3,7 @@
     <div class="banner-container">
       <div class="title">DONATE</div>
     </div>
-    <div class="text">PlantForever is not a registered charity and cannot issue official donation receipts for income tax purposes.</div>
+    <div class="text">PlantForever is registered as a nonprofit organization, but is not registered as a charitable organization with the CRA. We can accept donations, but can not issue official donation receipts for income tax purposes. Therefore, you can not receive any income tax credit for the donation(s) you have made.</div>
     <div class="text">For non-monetary donations, please contact us through our <router-link :to="{ name: 'Contact'}">contact form</router-link>.</div>
     <div class="text">
       For monetary donations, please continue

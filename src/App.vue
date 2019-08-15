@@ -249,7 +249,7 @@ body {
   background-position: 0 60px;
   background-repeat: repeat;
   background-attachment: fixed;
-  background-image: url("assets/banner.jpg");
+  background-image: url("assets/6.jpg");
   .title {
     width: 100vw;
     position: absolute;

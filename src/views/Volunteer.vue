@@ -26,6 +26,9 @@
         <input v-model="email" type="text" name="email" placeholder="Email" required /><span class="star" style="transform: translateX(-1em);">*</span>
         <input v-model="phone" type="text" name="phone" placeholder="Phone" />
       </div>
+      <div>
+        Age: <input id="age" v-model="age" name="age" autocomplete="off" required /><span class="star">*</span>
+      </div>
       <div class="text">Do you have a preferred task in mind?</div>
       <div class="checkbox-container">
         <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree plantation</label>
@@ -55,6 +58,7 @@ export default {
       email: "",
       name: "",
       phone: "",
+      age: "",
       taskList: ["Planting", "Advertising", "Transporting", "Other"],
       otherOption: "",
       preferredList: [false, false, false, false],
@@ -67,27 +71,33 @@ export default {
   },
   methods: {
     submit() {
-      this.taskList[3] = this.otherOption;
-      for (let taskIndex = 0; taskIndex < 4; taskIndex++) {
-        if (this.preferredList[taskIndex]) {
-          this.preferredTask += `${ this.taskList[taskIndex] }/`;
+      if (this.age > 3 && this. age < 99) {
+        this.taskList[3] = this.otherOption;
+        for (let taskIndex = 0; taskIndex < 4; taskIndex++) {
+          if (this.preferredList[taskIndex]) {
+            this.preferredTask += `${ this.taskList[taskIndex] }/`;
+          }
         }
+        this.preferredTask = this.preferredTask.slice(0, -1);
+        axios.get("https://script.google.com/macros/s/AKfycbztewbGWefJfM0yaQBOKHOhYgmuZgZ1DR8XhkyUHSkavoPCdm8/exec", {
+          params: {
+            email: this.email,
+            name: this.name,
+            phone: this.phone,
+            preferred_task: this.preferredTask,
+            availability: this.availability,
+            materials: this.materials,
+            comments: this.comments
+          }
+        });
+        this.email = this.name = this.phone = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
+        this.preferredList = [false, false, false, false];
+        this.thankYouMessage = true;
+      } else {
+        alert("Please enter a valid age");
+        document.querySelector("#volunteer-form").scrollIntoView({behavior: "smooth"});
+        document.querySelector("#age").focus();
       }
-      this.preferredTask = this.preferredTask.slice(0, -1);
-      axios.get("https://script.google.com/macros/s/AKfycbztewbGWefJfM0yaQBOKHOhYgmuZgZ1DR8XhkyUHSkavoPCdm8/exec", {
-        params: {
-          email: this.email,
-          name: this.name,
-          phone: this.phone,
-          preferred_task: this.preferredTask,
-          availability: this.availability,
-          materials: this.materials,
-          comments: this.comments
-        }
-      });
-      this.email = this.name = this.phone = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
-      this.preferredList = [false, false, false, false];
-      this.thankYouMessage = true;
     }
   }
 }
@@ -118,6 +128,14 @@ form {
     transition-duration: 0.3s;
     border-radius: 5px;
     margin-bottom: 15px;
+    &#age {
+      border: none;
+      border-bottom: 2px #CCCCCC solid;
+      width: 31px;
+      &:focus {
+        border-bottom: 2px $green solid;
+      }
+    }
     &#other-option {
       font-size: 16px;
       padding: 0px 0px 3px 5px;

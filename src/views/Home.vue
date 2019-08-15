@@ -39,7 +39,7 @@
       </div>
     </div>
     <div id="ways-to-help" class="section">
-      <div class="title" style="width: 420px;">
+      <div class="title">
         <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>HOW YOU CAN</div>
@@ -79,7 +79,7 @@
       </div>
     </div>
     <div id="map" class="section">
-      <div class="title" style="width: 470px;">
+      <div class="title">
         <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>WHERE WE HAVE</div>
@@ -91,7 +91,7 @@
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
     </div>
     <div class="section">
-      <div class="title" style="width: 390px;">
+      <div class="title">
         <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>OUR</div>
@@ -237,12 +237,12 @@ export default {
 .section {
   .title {
     display: flex;
-    justify-content: space-between;
     .title-logo {
       width: 75px;
       height: 75px;
       margin-top: 5px;
       border: none;
+      padding-right: 25px;
     }
     .title-text {
       padding-left: 25px;
@@ -260,6 +260,7 @@ export default {
   }
   .button-container {
     margin: 35px 0px;
+    text-align: center;
     .button {
       color: #222222;
       width: 200px;
@@ -373,9 +374,6 @@ iframe {
       .text-container {
         width: 80vw;
         transform: translate(-50%, -50%);
-        .button-container {
-          width: 60%;
-        }
       }
     }
   }
@@ -431,11 +429,6 @@ iframe {
 @media (max-width: 800px) {
   .section {
     width: 95vw;
-    &#map {
-      .title {
-        width: 95vw;
-      }
-    }
   }
   #ways-to-help {
     height: auto;
@@ -488,6 +481,42 @@ iframe {
             padding: 15px 20px;
           }
         }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .carousel {
+    .slide {
+      .text-container {
+        .primary-text {
+          font-size: 26px;
+        }
+        .button-container {
+          width: 100%;
+          .primary-button, .secondary-button {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+  .about-us-images {
+    .text-container {
+      .button-container {
+        width: 100%;
+      }
+    }
+  }
+  .section {
+    width: 90vw;
+    .title {
+      .title-logo {
+        display: none;
+      }
+      .title-text {
+        padding-left: 0;
+        border-left: none;
       }
     }
   }

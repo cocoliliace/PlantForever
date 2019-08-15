@@ -17,7 +17,10 @@
         Plantation of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
       </div>
       <div class="text">
-        It is recommended that you visit <a href="http://albertaonecall.com">Call before you dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
+        Homeowners must provide potting soil
+      </div>
+      <div class="text">
+        It is recommended that you visit <a href="http://albertaonecall.com" target="_blank">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
       </div>
     </div>
     <form id="volunteer-form" @submit.prevent="submit">

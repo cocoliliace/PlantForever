@@ -20,7 +20,7 @@
         Homeowners must provide potting soil
       </div>
       <div class="text">
-        It is recommended that you visit <a href="http://albertaonecall.com" target="_blank">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
+        It is recommended that you visit <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
       </div>
     </div>
     <form id="volunteer-form" @submit.prevent="submit">

@@ -1,8 +1,9 @@
 import Vue from "vue";
+import Meta from "vue-meta";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 
 Vue.use(Router);
+Vue.use(Meta);
 
 const router =  new Router({
   mode: "history",
@@ -11,7 +12,7 @@ const router =  new Router({
     {
       path: "/",
       name: "Home",
-      component: Home
+      component: () => import("./views/Home.vue")
     },
     {
       path: "/about-us",

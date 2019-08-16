@@ -2,7 +2,7 @@
   <div>
     <div class="carousel">
       <div class="slide">
-        <img src="@/assets/carousel.jpg" class="carousel-img" />
+        <img src="@/assets/carousel.jpg" class="carousel-img" alt="marmik planting" />
         <div class="text-container">
           <div class="primary-text">We are PlantForever</div>
           <div class="secondary-text">Free tree planting</div>
@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="about-us-images">
-      <img src="@/assets/6.jpg" />
-      <img src="@/assets/5.jpg" />
+      <img src="@/assets/6.jpg" alt="plantforever members" />
+      <img src="@/assets/5.jpg" alt="plantforever transplanting trees" />
       <div id="left" class="text-container">
         <div class="primary-text">WHAT IS PLANTFOREVER</div>
         <div class="secondary-text">
@@ -46,35 +46,41 @@
           <div style="color: #00A849;">HELP US</div>
         </div>
       </div>
-      <img class="image" src="@/assets/ways-to-help.jpg" />
+      <img class="image" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
       <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
       <div class="button-container">
-        <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">DONATE</div>
-        <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">ACCEPT A TREE</div>
-        <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">VOLUNTEER</div>
-        <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">RAISE AWARENESS</div>
+        <div :class="{ checked: checkedButton === 0 }" class="button" @click="checkedButton = 0">DONATE</div>
+        <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">ACCEPT A TREE</div>
+        <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">VOLUNTEER</div>
+        <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">RAISE AWARENESS</div>
+        <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">OTHERS</div>
       </div>
       <div class="secondary-text" style="display: table;">
-        <div v-if="checkedButton === 1">
-          One of the largest ways to contribute to PlantForever is donating money or supplies.
-          Relocating a coffee’s worth of money aids us to become more capable and efficient at
-          planting trees and spreading awareness.
+        <div v-if="checkedButton === 0">
+          A meaningful way to support PlantForever is by contributing funds or supplies. Donating a
+          coffee’s worth of money significantly assists PlantForever in planting trees and spreading
+          awareness about the climate crisis. As PlantForever is a nonprofit, 100% of all donations
+          go towards the organization (staff nor volunteers get paid). If you would like to support
+          us, click <router-link :to="{ name: 'Donate' }">here</router-link>.
+        </div>
+        <div v-else-if="checkedButton === 1">
+          By accepting a tree, you contribute to developing urban forests and fighting the climate
+          crisis!
         </div>
         <div v-else-if="checkedButton === 2">
-          By having us plant a tree on your property, and you nurture it as it grows, you are
-          promoting our goal and organization. Moreover, you are clearly helping the environment as
-          the tree absorbs thousands of pounds of carbon dioxide in its lifetime.
+          As a nonprofit, PlantForever relies fully on volunteers to operate. Volunteering could
+          include planting trees, raising awareness, providing transportation, and/or assisting with
+          other daily-tasks. If you would like to volunteer, click
+          <router-link :to="{ name: 'Volunteer' }">here</router-link>.
         </div>
         <div v-else-if="checkedButton === 3">
-          As a nonprofit, we rely heavily on volunteers contributing their effort and time to
-          operate. Volunteering could include planting and/or organizing trees, advertising,
-          providing transportation, developing content for our social media/website, and helping
-          with specific department-based needs like marketing or human resources.
+          An outstanding way to create positive change is by raising awareness. Let family, friends,
+          and colleagues know about what PlantForever is doing to combat climate change and how they
+          can help PlantForever achieve their green goals.
         </div>
         <div v-else>
-          If finance or commitment is an issue, telling others about PlantForever is a very simple
-          and fast way to help us grow. You can contribute by informing family, friends, colleagues,
-          and neighbours about the organization and what we do to donate to the community.
+          Takes matters into your own hands by creating positive changes in your lifestyle.
+          Understand how you can reduce your carbon footprint and inspire others to do the same.
         </div>
       </div>
     </div>
@@ -85,7 +91,6 @@
           <div>WHERE WE HAVE</div>
           <div style="color: #00A849;">PLANTED</div>
         </div>
-        <!-- <div class="title-text" style="padding-left: 0px; border-left: none;">WHERE WE HAVE PLANTED</div> -->
       </div>
       <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
@@ -115,11 +120,14 @@ export default {
     meta: [
       { name: "description", content: "We are a nonprofit organization that develops urban forests through house-to-house tree plantation in order to combat climate crisis and spread awareness." },
       { name: "keywords", content: "PlantForever, Alberta, climate change, Edmonton, environment, free, global warming, organization, tree" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org" }
     ]
   },
   data() {
     return {
-      checkedButton: 1
+      checkedButton: 0
     };
   },
   mounted() {

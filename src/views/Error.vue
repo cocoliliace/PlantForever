@@ -8,7 +8,11 @@
 
 <script>
 export default {
-  name: "Error"
+  name: "Error",
+  metaInfo: {
+    title: "Page Not Found",
+    titleTemplate: null
+  }
 }
 </script>
 

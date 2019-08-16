@@ -58,6 +58,9 @@ export default {
     meta: [
       { name: "description", content: "We rely heavily on volunteers's contribution to operate. Volunteering could include planting, organizing trees, advertising, and providing transportation." },
       { name: "keywords", content: "PlantForever, organization, volunteer, experience, climate change, global warming, environment, community, work, help" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/volunteer-registration" }
     ]
   },
   data() {

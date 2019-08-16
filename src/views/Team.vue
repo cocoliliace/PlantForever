@@ -14,6 +14,9 @@ export default {
     meta: [
       // { name: "description", content: "" },
       { name: "keywords", content: "PlantForever, organization, team, who, meet, funder, people, environmentalist, Marmik Patel, Ching Chang" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/meet-our-team" }
     ]
   }
 }

@@ -21,6 +21,9 @@ export default {
     meta: [
       { name: "description", content: "" },
       { name: "keywords", content: "" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/store" }
     ]
   }
 }

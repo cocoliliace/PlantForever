@@ -11,82 +11,52 @@ const router =  new Router({
     {
       path: "/",
       name: "Home",
-      component: Home,
-      meta: {
-        title: "PlantForever | Edmonton Nonprofit"
-      }
+      component: Home
     },
     {
       path: "/about-us",
       name: "About",
-      component: () => import("./views/About.vue"),
-      meta: {
-        title: "About Us – PlantForever"
-      }
+      component: () => import("./views/About.vue")
     },
     {
       path: "/meet-our-team",
       name: "Team",
-      component: () => import("./views/Team.vue"),
-      meta: {
-        title: "Meet Our Team – PlantForever"
-      }
+      component: () => import("./views/Team.vue")
     },
     {
       path: "/accept-a-tree",
-      name: "AcceptATree",
-      component: () => import("./views/AcceptATree.vue"),
-      meta: {
-        title: "Accept A Tree – PlantForever"
-      }
+      name: "Tree",
+      component: () => import("./views/Tree.vue")
     },
     // {
     //   path: "/store",
     //   name: "Store",
-    //   component: () => import("./views/Store.vue"),
-    //   meta: {
-    //     title: "Store – PlantForever"
-    //   }
+    //   component: () => import("./views/Store.vue")
     // },
     {
       path: "/store/white-logo-crewneck-t-shirt",
       name: "Shirt",
-      component: () => import("./views/merch/Shirt.vue"),
-      meta: {
-        title: "White Logo Crewneck T-Shirt – PlantForever"
-      }
+      component: () => import("./views/merch/Shirt.vue")
     },
     {
       path: "/volunteer-registration",
       name: "Volunteer",
-      component: () => import("./views/Volunteer.vue"),
-      meta: {
-        title: "Volunteer Registration – PlantForever"
-      }
+      component: () => import("./views/Volunteer.vue")
     },
     {
       path: "/contact-us",
       name: "Contact",
-      component: () => import("./views/Contact.vue"),
-      meta: {
-        title: "Contact Us – PlantForever"
-      }
+      component: () => import("./views/Contact.vue")
     },
     {
       path: "/donate",
       name: "Donate",
-      component: () => import("./views/Donate.vue"),
-      meta: {
-        title: "Donate – PlantForever"
-      }
+      component: () => import("./views/Donate.vue")
     },
     {
       path: "*",
       name: "Error",
-      component: () => import("./views/Error.vue"),
-      meta: {
-        title: "Page Not Found"
-      }
+      component: () => import("./views/Error.vue")
     }
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -96,11 +66,6 @@ const router =  new Router({
       return { x: 0, y: 0 };
     }
   }
-});
-
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || "PlantForever | Edmonton Nonprofit";
-  next();
 });
 
 export default router;

@@ -14,7 +14,7 @@
             usually homes and business locations.
           </div>
           <div class="secondary-text">
-            Patrons first <router-link :to="{ name: 'AcceptATree' }">register for a tree</router-link>.
+            Patrons first <router-link :to="{ name: 'Tree' }">register for a tree</router-link>.
             Once a date is selected, volunteers go the desired planting location to plant trees,
             consisting of choosing an area, digging, planting, and filling the space with
             patron-provided soil and water. Currently, PlantForever plants in Edmonton, but plans to
@@ -88,12 +88,35 @@
         </div>
       </div>
     </div>
+    <div class="section">
+      <div class="title-text">REFERENCES</div>
+      <hr />
+      <div class="secondary-text">
+        1.
+      </div>
+      <div class="secondary-text">
+        2.
+      </div>
+      <div class="secondary-text">
+        3.
+      </div>
+      <div class="secondary-text">
+        4.
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  metaInfo: {
+    title: "About Us",
+    meta: [
+      { name: "description", content: "PlantForever advocates for developing urban forests and spreading awareness about the critical climate crisis. PlantForever plants trees in urban environments." },
+      { name: "keywords", content: "PlantForever, about, what is, why, environment, initiative, organization, climate change, global warming, spread awareness" }
+    ]
+  }
 }
 </script>
 

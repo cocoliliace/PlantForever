@@ -16,7 +16,7 @@
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
         <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link> -->
-        <router-link :to="{ name: 'AcceptATree' }">Accept A Tree</router-link>
+        <router-link :to="{ name: 'Tree' }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
@@ -47,6 +47,9 @@
 <script>
 export default {
   name: "App",
+  metaInfo: {
+    titleTemplate: "%s – PlantForever | Edmonton Nonprofit"
+  },
   data() {
     return {
       showNav: true,

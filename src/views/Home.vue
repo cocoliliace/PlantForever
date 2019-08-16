@@ -7,7 +7,7 @@
           <div class="primary-text">We are PlantForever</div>
           <div class="secondary-text">Free tree planting</div>
           <div class="button-container">
-            <router-link :to="{ name: 'AcceptATree' }" class="primary-button">Accept A Tree</router-link>
+            <router-link :to="{ name: 'Tree' }" class="primary-button">Accept A Tree</router-link>
             <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
           </div>
         </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
-          <router-link :to="{ name: 'AcceptATree' }" class="secondary-button">Want A Tree?</router-link>
+          <router-link :to="{ name: 'Tree' }" class="secondary-button">Want A Tree?</router-link>
         </div>
       </div>
       <div id="right" class="text-container">
@@ -110,6 +110,13 @@
 <script>
 export default {
   name: "Home",
+  metaInfo: {
+    title: "Home",
+    meta: [
+      { name: "description", content: "We are a nonprofit organization that develops urban forests through house-to-house tree plantation in order to combat climate crisis and spread awareness." },
+      { name: "keywords", content: "PlantForever, Alberta, climate change, Edmonton, environment, free, global warming, organization, tree" }
+    ]
+  },
   data() {
     return {
       checkedButton: 1

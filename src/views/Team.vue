@@ -8,6 +8,13 @@
 
 <script>
 export default {
-  name: "Team"
+  name: "Team",
+  metaInfo: {
+    title: "Meet Our Team",
+    meta: [
+      // { name: "description", content: "" },
+      { name: "keywords", content: "PlantForever, organization, team, who, meet, funder, people, environmentalist, Marmik Patel, Ching Chang" }
+    ]
+  }
 }
 </script>

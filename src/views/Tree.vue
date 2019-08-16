@@ -57,7 +57,14 @@
 import axios from "axios";
 
 export default {
-  name: "AcceptATree",
+  name: "Tree",
+  metaInfo: {
+    title: "Accept A Tree",
+    meta: [
+      { name: "description", content: "PlantForever is a nonprofit organization that develops urban forests through house-to-house tree plantation in order to fight climate change." },
+      { name: "keywords", content: "PlantForever, Alberta, climate change, Edmonton, environment, free, global warming, organization, tree" }
+    ]
+  },
   data() {
     return {
       email: "",
@@ -243,13 +250,12 @@ form {
 #thank-you-message {
   position: fixed;
   text-align: center;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 30px;
   color: white;
   background-color: $green;
-  border: 10px $blue solid;
+  border: 4px $blue solid;
   border-radius: 100px;
-  padding: 50px;
+  padding: 40px;
   width: 60vw;
   left: 50vw;
   transform: translate(-50%, calc(-50% - 100px));
@@ -258,9 +264,9 @@ form {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5px);
-    background-color: #cccccc;
+    background-color: #a0a0a0;
     padding: 20px 50px;
-    border: 10px $blue solid;
+    border: 4px $blue solid;
     border-radius: 100px;
     cursor: pointer;
     &:hover {

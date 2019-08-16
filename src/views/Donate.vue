@@ -17,9 +17,16 @@
 </template>
 
 <script>
-  export default {
-    name: "Donate",
+export default {
+  name: "Donate",
+  metaInfo: {
+    title: "Donate",
+    meta: [
+      { name: "description", content: "The largest ways to contribute to PlantForever is donating money or supplies. It aids us to become more capable at planting trees and spreading awareness." },
+      { name: "keywords", content: "PlantForever, nonprofit, organization, donate, fund, help, money, world, globe, support" }
+    ]
   }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -15,7 +15,14 @@
 
 <script>
 export default {
-  name: "Store"
+  name: "Store",
+  metaInfo: {
+    title: "Store",
+    meta: [
+      { name: "description", content: "" },
+      { name: "keywords", content: "" }
+    ]
+  }
 }
 </script>
 

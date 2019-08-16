@@ -53,6 +53,13 @@ import axios from "axios";
 
 export default {
   name: "Volunteer",
+  metaInfo: {
+    title: "Volunteer Registration",
+    meta: [
+      { name: "description", content: "We rely heavily on volunteers's contribution to operate. Volunteering could include planting, organizing trees, advertising, and providing transportation." },
+      { name: "keywords", content: "PlantForever, organization, volunteer, experience, climate change, global warming, environment, community, work, help" }
+    ]
+  },
   data() {
     return {
       email: "",
@@ -215,13 +222,12 @@ form {
 #thank-you-message {
   position: fixed;
   text-align: center;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 30px;
   color: white;
   background-color: $green;
-  border: 10px $blue solid;
+  border: 4px $blue solid;
   border-radius: 100px;
-  padding: 50px;
+  padding: 40px;
   width: 60vw;
   left: 50vw;
   transform: translate(-50%, calc(-50% - 100px));
@@ -230,9 +236,9 @@ form {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5px);
-    background-color: #cccccc;
+    background-color: #a0a0a0;
     padding: 20px 50px;
-    border: 10px $blue solid;
+    border: 4px $blue solid;
     border-radius: 100px;
     cursor: pointer;
     &:hover {

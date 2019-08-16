@@ -18,7 +18,14 @@
 
 <script>
 export default {
-  name: "Contact"
+  name: "Contact",
+  metaInfo: {
+    title: "Contact Us",
+    meta: [
+      { name: "description", content: "Get in contact with the official team of PlantForever to ask questions and get help in regards of anything. Expect a quick response from us within 24 hours." },
+      { name: "keywords", content: "PlantForever, organization, contact, get help, support, review, rate, bad, what is, talk to" }
+    ]
+  }
 }
 </script>
 

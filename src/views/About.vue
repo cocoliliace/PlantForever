@@ -5,7 +5,7 @@
     </div>
     <div class="section">
       <div class="columns">
-        <img src="@/assets/about-us.jpg" />
+        <img src="@/assets/about-us.jpg" alt="PlantForever" />
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">
@@ -115,6 +115,9 @@ export default {
     meta: [
       { name: "description", content: "PlantForever advocates for developing urban forests and spreading awareness about the critical climate crisis. PlantForever plants trees in urban environments." },
       { name: "keywords", content: "PlantForever, about, what is, why, environment, initiative, organization, climate change, global warming, spread awareness" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/about-us" }
     ]
   }
 }

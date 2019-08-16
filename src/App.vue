@@ -23,7 +23,7 @@
         <router-link :to="{ name: 'Donate' }">Donate</router-link>
       </div>
       <div v-if="showNav" id="hide-nav" @click="hideNav"></div>
-      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.svg" @click="showNav = true" />
+      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.svg" alt="button" @click="showNav = true" />
     </header>
 
     <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">

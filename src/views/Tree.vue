@@ -144,14 +144,6 @@ export default {
 .text {
   font-size: 18px;
   margin: 15px 5px;
-  a {
-    color: $green;
-    text-decoration: none;
-    text-shadow: 0px 0px 1px #cccccc;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 form {
   border: 5px $blue double;

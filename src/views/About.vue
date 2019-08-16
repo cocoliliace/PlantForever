@@ -129,13 +129,6 @@ export default {
   .columns {
     display: flex;
     justify-content: space-between;
-    a {
-      color: $green;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
     img {
       float: left;
       width: 500px;

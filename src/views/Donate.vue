@@ -45,14 +45,6 @@ export default {
   width: 80vw;
   font-size: 18px;
   margin: 15px 10vw;
-  a {
-    color: $green;
-    text-decoration: none;
-    text-shadow: 0px 0px 1px #cccccc;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
   form {
     display: inline;
     input {
@@ -69,5 +61,4 @@ export default {
     }
   }
 }
-
 </style>

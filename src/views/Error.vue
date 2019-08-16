@@ -15,13 +15,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-a {
-  text-decoration: none;
-  color: $green;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-</style>

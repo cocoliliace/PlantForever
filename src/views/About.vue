@@ -38,9 +38,9 @@
             These greenhouse gases trap heat from escaping into space and contribute to the warming
             of our planet. The United Nations states that “quantities of greenhouse gases in the
             atmosphere have risen to record levels not seen in three million
-            years”<sup>[<a href="https://www.un.org/en/sections/issues-depth/climate-change/index.html" target="_blank">1</a>]</sup>.
+            years”<sup>[<a href="https://www.un.org/en/sections/issues-depth/climate-change/index.html" target="_blank" rel="noopener noreferrer">1</a>]</sup>.
             Since the late 19th century, the earth’s average surface temperature has risen about
-            0.9°C!<sup>[<a href="https://climate.nasa.gov/evidence" target="_blank">2</a>]</sup>
+            0.9°C!<sup>[<a href="https://climate.nasa.gov/evidence" target="_blank" rel="noopener noreferrer">2</a>]</sup>
           </div>
           <div class="secondary-text">
             Greater global temperatures have detrimental effects on our planet; ocean acidification,
@@ -50,10 +50,10 @@
           <div class="secondary-text">
             The Paris Agreement signed in 2016 aims to keep global temperature rise this century
             below 2°C, in regards to levels in the pre-industrial
-            era.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank">3</a>]</sup>
+            era.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank" rel="noopener noreferrer">3</a>]</sup>
             However, reports conducted by the Intergovernmental Panel on Climate Change (IPCC) in
             2018 found that many irreversible effects of climate change appear after a rise of only
-            1.5°C.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank">4</a>]</sup>
+            1.5°C.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank" rel="noopener noreferrer">4</a>]</sup>
           </div>
           <div class="secondary-text">
             To keep levels below a 1.5°C rise, PlantForever takes a step forward as a leader for the

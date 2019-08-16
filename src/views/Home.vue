@@ -104,9 +104,9 @@
         </div>
       </div>
       <div class="sponsor-container">
-        <a href="https://www.boosterjuice.com" target="_blank"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
-        <a href="https://infokidz.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
-        <a href="https://www.simply-health.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" /></a>
+        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
+        <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
+        <a href="https://www.simply-health.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" /></a>
       </div>
     </div>
   </div>

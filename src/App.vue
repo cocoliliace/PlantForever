@@ -26,18 +26,20 @@
       <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.svg" alt="button" @click="showNav = true" />
     </header>
 
-    <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
-      <router-view />
-    </transition>
+    <main>
+      <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
+        <router-view />
+      </transition>
+    </main>
 
     <footer>
       <div class="column">
         <a href="mailto:plantforever.org@gmail.com">plantforever.org@gmail.com</a>
         <div class="social-media-container">
-          <span><a href="https://www.instagram.com/plantforeverorg" target="_blank"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
-          <span><a href="https://www.facebook.com/PlantForever"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |
-          <span><a href="https://twitter.com/PlantForeverorg" target="_blank"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span> |
-          <span><a href="https://ca.linkedin.com/company/plantforever" target="_blank"><img src="@/assets/icons/linkedin.svg" alt="linkedin" /></a></span>
+          <span><a href="https://www.instagram.com/plantforeverorg" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
+          <span><a href="https://www.facebook.com/PlantForever" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |
+          <span><a href="https://twitter.com/PlantForeverorg" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span> |
+          <span><a href="https://ca.linkedin.com/company/plantforever" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/linkedin.svg" alt="linkedin" /></a></span>
         </div>
       </div>
     </footer>

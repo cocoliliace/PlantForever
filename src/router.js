@@ -21,7 +21,7 @@ const router =  new Router({
       name: "About",
       component: () => import("./views/About.vue"),
       meta: {
-        title: "About – PlantForever"
+        title: "About Us – PlantForever"
       }
     },
     {
@@ -29,15 +29,15 @@ const router =  new Router({
       name: "Team",
       component: () => import("./views/Team.vue"),
       meta: {
-        title: "Team – PlantForever"
+        title: "Meet Our Team – PlantForever"
       }
     },
     {
-      path: "/get-a-tree",
-      name: "GetATree",
-      component: () => import("./views/GetATree.vue"),
+      path: "/accept-a-tree",
+      name: "AcceptATree",
+      component: () => import("./views/AcceptATree.vue"),
       meta: {
-        title: "Get A Tree – PlantForever"
+        title: "Accept A Tree – PlantForever"
       }
     },
     // {
@@ -99,7 +99,7 @@ const router =  new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || "PlantForever";
+  document.title = to.meta.title || "PlantForever | Edmonton Nonprofit";
   next();
 });
 

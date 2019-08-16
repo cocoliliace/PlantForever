@@ -61,8 +61,8 @@ export default {
   metaInfo: {
     title: "Accept A Tree",
     meta: [
-      { name: "description", content: "PlantForever is a nonprofit organization that develops urban forests through house-to-house tree plantation in order to fight climate change." },
-      { name: "keywords", content: "PlantForever, Alberta, climate change, Edmonton, environment, free, global warming, organization, tree" }
+      { name: "description", content: "Get a free tree of your choice planted in your property and nurture it as it grows. Help the environment as the tree absorbs thousands of pounds of CO2." },
+      { name: "keywords", content: "PlantForever, free, tree, plant, organization, backyard, black cherry, colorado spruce, red maple, schubert chokecherry" }
     ]
   },
   data() {

@@ -243,6 +243,14 @@ body {
   margin: 0px;
   font-family: Montserrat;
 }
+a {
+  color: $green;
+  text-decoration: none;
+  text-shadow: 0px 0px 1px #cccccc;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .banner-container {
   position: relative;
   text-align: center;

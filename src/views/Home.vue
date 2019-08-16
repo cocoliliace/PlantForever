@@ -2,12 +2,12 @@
   <div>
     <div class="carousel">
       <div class="slide">
-        <img src="@/assets/image2.jpg" class="carousel-img" />
+        <img src="@/assets/carousel.jpg" class="carousel-img" />
         <div class="text-container">
           <div class="primary-text">We are PlantForever</div>
           <div class="secondary-text">Free tree planting</div>
           <div class="button-container">
-            <router-link :to="{ name: 'GetATree' }" class="primary-button">Get A Tree</router-link>
+            <router-link :to="{ name: 'AcceptATree' }" class="primary-button">Accept A Tree</router-link>
             <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
           </div>
         </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
-          <router-link :to="{ name: 'GetATree' }" class="secondary-button">Want A Tree?</router-link>
+          <router-link :to="{ name: 'AcceptATree' }" class="secondary-button">Want A Tree?</router-link>
         </div>
       </div>
       <div id="right" class="text-container">
@@ -164,7 +164,7 @@ export default {
       .button-container {
         display: flex;
         margin-top: 40px;
-        width: 60%;
+        width: 420px;
         justify-content: space-between;
         .primary-button, .secondary-button {
           padding: 20px 30px;
@@ -328,9 +328,6 @@ iframe {
         .secondary-text {
           font-size: 40px;
         }
-        .button-container {
-          width: 80%;
-        }
       }
     }
   }
@@ -379,15 +376,6 @@ iframe {
   }
 }
 @media (max-width: 1040px) {
-  .carousel {
-    .slide {
-      .text-container {
-        .button-container {
-          width: 90%;
-        }
-      }
-    }
-  }
   .about-us-images {
     height: 700px;
     img {
@@ -454,7 +442,6 @@ iframe {
           font-size: 35px;
         }
         .button-container {
-          width: 90%;
           .primary-button, .secondary-button {
             padding: 15px 20px;
           }
@@ -476,7 +463,6 @@ iframe {
         }
         .button-container {
           margin-top: 25px;
-          width: 90%;
           .primary-button, .secondary-button {
             padding: 15px 20px;
           }
@@ -493,7 +479,8 @@ iframe {
           font-size: 26px;
         }
         .button-container {
-          width: 100%;
+          width: 90vw;
+          margin-left: -5vw;
           .primary-button, .secondary-button {
             padding: 15px;
           }

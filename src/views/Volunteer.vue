@@ -84,6 +84,7 @@ export default {
             email: this.email,
             name: this.name,
             phone: this.phone,
+            age: this.age,
             preferred_task: this.preferredTask,
             availability: this.availability,
             materials: this.materials,

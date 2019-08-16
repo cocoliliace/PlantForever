@@ -16,7 +16,7 @@
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
         <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link> -->
-        <router-link :to="{ name: 'GetATree' }">Accept A Tree</router-link>
+        <router-link :to="{ name: 'AcceptATree' }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
@@ -75,17 +75,17 @@ export default {
       this.previousHeight = getComputedStyle(element).height;
     },
     scrollEffect() {
-      if (window.scrollY >= 90 && window.innerWidth > 880) {
+      if (window.scrollY >= 90 && window.innerWidth > 905) {
         document.querySelector("#logo-overlay").classList.add("hide");
         document.querySelector("#logo").classList.remove("hide");
-      } else if (window.innerWidth > 880) {
+      } else if (window.innerWidth > 905) {
         document.querySelector("#logo-overlay").classList.remove("hide");
         document.querySelector("#logo").classList.add("hide");
       }
     },
     hideNav() {
-      this.showNav = window.innerWidth > 880;
-      this.hasDropdown = window.innerWidth > 880;
+      this.showNav = window.innerWidth > 905;
+      this.hasDropdown = window.innerWidth > 905;
     },
     childIsActive(input) {
       return input.some(path => {
@@ -327,7 +327,7 @@ body {
     }
   }
 }
-@media (max-width: 880px) {
+@media (max-width: 905px) {
   header {
     text-align: center;
     padding: 0;

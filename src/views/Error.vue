@@ -2,6 +2,7 @@
   <div style="text-align: center;">
     <h1>Page Not Found</h1>
     <h3>The link that you entered never existed or doesn't work anymore</h3>
+    <h3>Click <router-link :to="{ name: 'Home'}">here</router-link> to get redirected</h3>
   </div>
 </template>
 
@@ -10,3 +11,13 @@ export default {
   name: "Error"
 }
 </script>
+
+<style lang="scss" scoped>
+a {
+  text-decoration: none;
+  color: $green;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+</style>

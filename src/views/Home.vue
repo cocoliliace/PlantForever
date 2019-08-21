@@ -64,8 +64,8 @@
           us, click <router-link :to="{ name: 'Donate' }">here</router-link>.
         </div>
         <div v-else-if="checkedButton === 1">
-          By accepting a tree, you contribute to developing urban forests and fighting the climate
-          crisis!
+          By <router-link :to="{ name: 'Tree' }">accepting a tree</router-link>, you contribute to
+          developing urban forests and fighting the climate crisis!
         </div>
         <div v-else-if="checkedButton === 2">
           As a nonprofit, PlantForever relies fully on volunteers to operate. Volunteering could
@@ -307,13 +307,11 @@ export default {
 }
 .sponsor-container {
   display: flex;
-  justify-content: space-between;
   a {
-    width: 45%;
     display: flex;
     .sponsor-img {
-      vertical-align: middle;
-      width: 100%;
+      margin: auto;
+      width: 85%;
     }
   }
 }

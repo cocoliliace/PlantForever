@@ -5,7 +5,7 @@
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
       <div>Thank you for helping the environment!</div>
-      <div>We will email you back for updates on volunteering opportunities!</div>
+      <div>We will update you on volunteering opportunities!</div>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
     <div class="text-container">
@@ -40,7 +40,7 @@
       <div class="text">What gardening materials/tools can you bring?</div>
       <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="Materials" autocomplete="off" />
       <div class="text">When are you available to volunteer? <span class="star">*</span></div>
-      <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="Availability" autocomplete="off" required />
+      <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the summer" autocomplete="off" required />
       <div class="text">Any questions or comments? (Any medical concerns?)</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <button id="submit-form" class="primary-button" type="submit">Submit</button>

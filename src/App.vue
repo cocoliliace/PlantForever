@@ -50,6 +50,7 @@
 export default {
   name: "App",
   metaInfo: {
+    title: "Home",
     titleTemplate: "%s – PlantForever | Edmonton Nonprofit"
   },
   data() {
@@ -262,7 +263,7 @@ a {
   background-position: 0 60px;
   background-repeat: repeat;
   background-attachment: fixed;
-  background-image: url("assets/6.jpg");
+  background-image: url("assets/banner.jpg");
   .title {
     width: 100vw;
     position: absolute;
@@ -302,6 +303,9 @@ a {
   font-size: 18px;
   text-decoration: none;
   border-radius: 5px;
+  &:hover {
+    text-decoration: none;
+  }
 }
 .primary-button {
   background-color: $green;

@@ -5,7 +5,7 @@
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
       <div>Thank you for helping the environment!</div>
-      <div>We will email you back for updates!</div>
+      <div>We will contact you back for updates!</div>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
     <div class="text-container">
@@ -18,6 +18,9 @@
       </div>
       <div class="text">
         Homeowners must provide potting soil
+      </div>
+      <div class="text">
+        The trees are 2 to 4 feet in size
       </div>
       <div class="text">
         It is recommended that you visit <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
@@ -45,7 +48,7 @@
       <div class="text">Are you able to provide any supplies?</div>
       <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="Materials" autocomplete="off" />
       <div class="text">When do you want your tree<span v-if="numberOfTrees > 1">s</span> to be planted? <span class="star">*</span></div>
-      <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="Availability" autocomplete="off" required />
+      <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the last 2 weeks of May" autocomplete="off" required />
       <div class="text">Any questions or comments?</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <button id="submit-form" class="primary-button" type="submit">Submit</button>

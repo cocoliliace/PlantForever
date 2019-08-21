@@ -88,22 +88,6 @@
         </div>
       </div>
     </div>
-    <div class="section">
-      <div class="title-text">REFERENCES</div>
-      <hr />
-      <div class="secondary-text">
-        1.
-      </div>
-      <div class="secondary-text">
-        2.
-      </div>
-      <div class="secondary-text">
-        3.
-      </div>
-      <div class="secondary-text">
-        4.
-      </div>
-    </div>
   </div>
 </template>
 

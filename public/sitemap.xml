@@ -23,6 +23,20 @@
   </url>
 
   <url>
+    <loc>https://www.plantforever.org/accept-a-tree/in-backyard</loc>
+    <lastmod>2019-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.plantforever.org/accept-a-tree/in-pots</loc>
+    <lastmod>2019-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://www.plantforever.org/volunteer-registration/</loc>
     <lastmod>2019-08-16</lastmod>
     <changefreq>monthly</changefreq>

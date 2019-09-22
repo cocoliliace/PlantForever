@@ -29,16 +29,26 @@ const router =  new Router({
       name: "Tree",
       component: () => import("./views/Tree.vue")
     },
+    {
+      path: "/accept-a-tree/in-backyard",
+      name: "TreePlanted",
+      component: () => import("./views/TreePlanted.vue")
+    },
+    {
+      path: "/accept-a-tree/in-pots",
+      name: "TreeInPots",
+      component: () => import("./views/TreeInPots.vue")
+    },
     // {
     //   path: "/store",
     //   name: "Store",
     //   component: () => import("./views/Store.vue")
     // },
-    {
-      path: "/store/white-logo-crewneck-t-shirt",
-      name: "Shirt",
-      component: () => import("./views/merch/Shirt.vue")
-    },
+    // {
+    //   path: "/store/white-logo-crewneck-t-shirt",
+    //   name: "Shirt",
+    //   component: () => import("./views/merch/Shirt.vue")
+    // },
     {
       path: "/volunteer-registration",
       name: "Volunteer",

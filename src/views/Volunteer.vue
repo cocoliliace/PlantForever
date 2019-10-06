@@ -115,7 +115,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.body {
+  background-image: url("../assets/background.webp");
+  background-size: contain;
+  background-attachment: fixed;
+  padding-bottom: 60px;
+}
 .text-container {
+  background: white;
+  border: 5px $blue double;
+  border-radius: 5px;
+  width: calc(80vw - 30px);
+  padding: 0 15px;
   margin: 25px 10vw 0 10vw;
 }
 .text {
@@ -123,10 +134,11 @@ export default {
   margin: 15px 5px;
 }
 form {
+  background: white;
   border: 5px $blue double;
   padding: 15px;
   border-radius: 5px;
-  margin: 25px 10vw;
+  margin: 25px 10vw 0 10vw;
   width: calc(80vw - 30px);
   display: flex;
   flex-direction: column;

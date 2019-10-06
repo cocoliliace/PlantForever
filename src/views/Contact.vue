@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 form {
   width: 80vw;
-  margin: 25px 10vw;
+  margin: 25px 10vw 60px 10vw;
   .text {
     font-size: 22px;
   }

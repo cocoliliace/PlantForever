@@ -260,7 +260,7 @@ a {
   overflow: hidden;
   height: 320px;
   background-size: cover;
-  background-position: 0 60px;
+  background-position: center 60px;
   background-repeat: repeat;
   background-attachment: fixed;
   background-image: url("assets/banner.jpg");

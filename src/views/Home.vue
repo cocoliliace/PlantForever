@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="carousel">
-      <div class="slide">
-        <img src="@/assets/carousel.jpg" class="carousel-img" alt="marmik planting" />
-        <div class="text-container">
-          <div class="primary-text">We are PlantForever</div>
-          <div class="secondary-text">Free tree planting</div>
-          <div class="button-container">
-            <router-link :to="{ name: 'Tree' }" class="primary-button">Accept A Tree</router-link>
-            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
-          </div>
+      <figure class="carousel-img">
+        <img src="@/assets/carousel.jpg" alt="marmik planting" />
+      </figure>
+      <div class="text-container">
+        <div class="primary-text">We are PlantForever</div>
+        <div class="secondary-text">Free tree planting</div>
+        <div class="button-container">
+          <router-link :to="{ name: 'Tree' }" class="primary-button">Accept A Tree</router-link>
+          <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
         </div>
       </div>
     </div>
@@ -155,35 +155,42 @@ export default {
 .carousel {
   position: relative;
   margin-bottom: 75px;
-  .slide {
-    .carousel-img {
-      width: 100vw;
-      filter: brightness(80%);
+  .carousel-img {
+    margin: 0;
+    background-image: url("../assets/carousel.jpg");
+    background-size: contain;
+    background-position: 0 63px;
+    background-attachment: fixed;
+    filter: brightness(80%);
+    img {
+      visibility: hidden;
+      width: 100%;
+      margin-top: -104px;
     }
-    .text-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-80%, -50%);
-      .primary-text {
-        color: white;
-        font-size: 60px;
-        font-weight: 700;
-        text-shadow: 5px 5px 10px black;
-      }
-      .secondary-text {
-        color: white;
-        font-size: 50px;
-        text-shadow: 5px 5px 10px black;
-      }
-      .button-container {
-        display: flex;
-        margin-top: 40px;
-        width: 420px;
-        justify-content: space-between;
-        .primary-button, .secondary-button {
-          padding: 20px 30px;
-        }
+  }
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, -50%);
+    .primary-text {
+      color: white;
+      font-size: 60px;
+      font-weight: 700;
+      text-shadow: 5px 5px 10px black;
+    }
+    .secondary-text {
+      color: white;
+      font-size: 50px;
+      text-shadow: 5px 5px 10px black;
+    }
+    .button-container {
+      display: flex;
+      margin-top: 40px;
+      width: 420px;
+      justify-content: space-between;
+      .primary-button, .secondary-button {
+        padding: 20px 30px;
       }
     }
   }
@@ -333,14 +340,12 @@ iframe {
 
 @media (max-width: 1288px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 50px;
-        }
-        .secondary-text {
-          font-size: 40px;
-        }
+    .text-container {
+      .primary-text {
+        font-size: 50px;
+      }
+      .secondary-text {
+        font-size: 40px;
       }
     }
   }
@@ -380,11 +385,9 @@ iframe {
 }
 @media (max-width: 1074px) {
   .carousel {
-    .slide {
-      .text-container {
-        width: 80vw;
-        transform: translate(-50%, -50%);
-      }
+    .text-container {
+      width: 80vw;
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -427,6 +430,19 @@ iframe {
     height: 560px;
   }
 }
+@media (max-width: 905px) {
+  .carousel {
+    position: relative;
+    margin-bottom: 75px;
+    .carousel-img {
+      img {
+        visibility: hidden;
+        width: 100%;
+        margin-top: -30px;
+      }
+    }
+  }
+}
 @media (max-width: 800px) {
   .section {
     width: 95vw;
@@ -446,18 +462,16 @@ iframe {
 }
 @media (max-width: 780px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 45px;
-        }
-        .secondary-text {
-          font-size: 35px;
-        }
-        .button-container {
-          .primary-button, .secondary-button {
-            padding: 15px 20px;
-          }
+    .text-container {
+      .primary-text {
+        font-size: 45px;
+      }
+      .secondary-text {
+        font-size: 35px;
+      }
+      .button-container {
+        .primary-button, .secondary-button {
+          padding: 15px 20px;
         }
       }
     }
@@ -465,20 +479,18 @@ iframe {
 }
 @media (max-width: 615px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 30px;
-        }
-        .secondary-text {
-          margin-top: 5px;
-          font-size: 20px;
-        }
-        .button-container {
-          margin-top: 25px;
-          .primary-button, .secondary-button {
-            padding: 15px 20px;
-          }
+    .text-container {
+      .primary-text {
+        font-size: 30px;
+      }
+      .secondary-text {
+        margin-top: 5px;
+        font-size: 20px;
+      }
+      .button-container {
+        margin-top: 25px;
+        .primary-button, .secondary-button {
+          padding: 15px 20px;
         }
       }
     }
@@ -486,17 +498,15 @@ iframe {
 }
 @media (max-width: 500px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 26px;
-        }
-        .button-container {
-          width: 90vw;
-          margin-left: -5vw;
-          .primary-button, .secondary-button {
-            padding: 15px;
-          }
+    .text-container {
+      .primary-text {
+        font-size: 26px;
+      }
+      .button-container {
+        width: 90vw;
+        margin-left: -5vw;
+        .primary-button, .secondary-button {
+          padding: 15px;
         }
       }
     }

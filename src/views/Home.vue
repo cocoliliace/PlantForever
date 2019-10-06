@@ -2,7 +2,7 @@
   <div>
     <div class="carousel">
       <figure class="carousel-img">
-        <img src="@/assets/carousel.jpg" alt="marmik planting" />
+        <img src="@/assets/carousel.webp" alt="marmik planting" />
       </figure>
       <div class="text-container">
         <div class="primary-text">We are PlantForever</div>
@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="about-us-images">
-      <img src="@/assets/6.jpg" alt="plantforever members" />
-      <img src="@/assets/5.jpg" alt="plantforever transplanting trees" />
+      <img src="@/assets/left.webp" alt="plantforever members" />
+      <img src="@/assets/right.webp" alt="plantforever transplanting trees" />
       <div id="left" class="text-container">
         <div class="primary-text">WHAT IS PLANTFOREVER</div>
         <div class="secondary-text">
@@ -40,13 +40,13 @@
     </div>
     <div id="ways-to-help" class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <img src="@/assets/icons/logo.webp" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>HOW YOU CAN</div>
           <div style="color: #00A849;">HELP US</div>
         </div>
       </div>
-      <img class="image" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
+      <img class="image" src="@/assets/ways-to-help.webp" alt="how you can help PlantForever" />
       <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
       <div class="button-container">
         <div :class="{ checked: checkedButton === 0 }" class="button" @click="checkedButton = 0">DONATE</div>
@@ -86,7 +86,7 @@
     </div>
     <div id="map" class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <img src="@/assets/icons/logo.webp" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>WHERE WE HAVE</div>
           <div style="color: #00A849;">PLANTED</div>
@@ -97,16 +97,16 @@
     </div>
     <div class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <img src="@/assets/icons/logo.webp" alt="PlantForever" class="title-logo" />
         <div class="title-text">
           <div>OUR</div>
           <div style="color: #00A849;">SUPPORTERS</div>
         </div>
       </div>
       <div class="sponsor-container">
-        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
-        <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
-        <a href="https://www.simply-health.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" /></a>
+        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/booster-juice.webp" alt="booster juice" /></a>
+        <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/infokidz.webp" alt="infokidz" /></a>
+        <a href="https://www.simply-health.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/simply-health.webp" alt="simply health" /></a>
       </div>
     </div>
   </div>
@@ -157,7 +157,7 @@ export default {
   margin-bottom: 75px;
   .carousel-img {
     margin: 0;
-    background-image: url("../assets/carousel.jpg");
+    background-image: url("../assets/carousel.webp");
     background-size: contain;
     background-position: 0 63px;
     background-attachment: fixed;
@@ -314,6 +314,7 @@ export default {
 }
 .sponsor-container {
   display: flex;
+  margin-bottom: 35px;
   a {
     display: flex;
     .sponsor-img {

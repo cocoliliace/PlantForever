@@ -13,7 +13,7 @@
       <router-link :to="{ name: 'Contact' }">Send us a message</router-link> if you would like to
       donate supplies such as trees, shovels, soil, or other equipment.
     </div>
-    <div class="text">
+    <div class="text" style="margin-bottom: 35px;">
       For monetary donations, please continue
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_s-xclick" />

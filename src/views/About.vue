@@ -5,7 +5,7 @@
     </div>
     <div class="section">
       <div class="columns">
-        <img src="@/assets/about-us.jpg" alt="PlantForever" />
+        <img src="@/assets/about-us.webp" alt="PlantForever" />
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section" style="margin-bottom: 35px;">
       <div class="title-text">WHY PLANTFOREVER PLANTS TREES</div>
       <div class="columns">
         <div class="column">
@@ -59,9 +59,6 @@
             To keep levels below a 1.5°C rise, PlantForever takes a step forward as a leader for the
             billions of people and creatures impacted by climate change.
           </div>
-          <!-- <div class="secondary-text">
-            Learn what you can do <router-link :to="{ name: 'Error' }">here</router-link>!
-          </div> -->
         </div>
         <div class="column">
           <div class="primary-text">Spread Awareness</div>
@@ -82,9 +79,6 @@
             and contribute. PlantForever recognizes that the best way to create change is to
             educate.
           </div>
-          <!-- <div class="secondary-text">
-            To view a list of urban specific benefits, click <router-link :to="{ name: 'Error' }">here</router-link>!
-          </div> -->
         </div>
       </div>
     </div>

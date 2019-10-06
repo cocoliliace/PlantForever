@@ -50,6 +50,7 @@ export default {
   margin: 25px 10vw 0 10vw;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 35px;
   .primary-button {
     font-size: 30px;
     width: 25%;

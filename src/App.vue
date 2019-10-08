@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <router-link :to="{ name: 'Home' }"><img src="@/assets/plantforever.webp" alt="PlantForever" /></router-link>
+      <router-link :to="{ name: 'Home' }"><img src="@/assets/plantforever.jpg" alt="PlantForever" /></router-link>
       <div v-if="showNav" id="nav" @click="hideNav">
         <div id="logo-overlay"></div>
-        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.webp" alt="PlantForever" /></router-link>
+        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <router-link :to="{ name: 'About' }">About Us</router-link>
         <!-- <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
@@ -262,7 +262,7 @@ a {
   background-position: center 60px;
   background-repeat: repeat;
   background-attachment: fixed;
-  background-image: url("assets/banner.webp");
+  background-image: url("assets/banner.jpg");
   .title {
     width: 100vw;
     position: absolute;

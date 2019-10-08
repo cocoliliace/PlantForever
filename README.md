@@ -1,4 +1,4 @@
-![PlantForever](https://www.plantforever.org/img/plantforever.a45e311a.jpg)
+![PlantForever](https://www.plantforever.org/img/plantforever.9feba2d8.jpg)
 # PlantForever
 
 ## About PlantForever

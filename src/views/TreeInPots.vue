@@ -132,7 +132,7 @@ export default {
 
 <style lang="scss" scoped>
 .body {
-  background-image: url("../assets/background.webp");
+  background-image: url("../assets/background.jpg");
   background-size: contain;
   background-attachment: fixed;
   padding-bottom: 60px;

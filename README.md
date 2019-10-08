@@ -9,7 +9,7 @@ If you want to become a part of PlantForever feel free to contribute
 Everyone who contributes helps us improving PlantForever and fighting the climate crisis. There are many ways to contribute, whether you are sitting in front of your computer or want to get active locally.
 
 Here are some basic things that you can do:
-- Take a look at the open [issues](https://github.com/ChingChang9/PlantForever/issues): seeing something you are familiar with and might be able to fix it? Go ahead and become a part of the community!
+- Take a look at the [open issues](https://github.com/ChingChang9/PlantForever/issues): seeing something you are familiar with and might be able to fix it? Go ahead and become a part of the community!
 - Contrubute your own ideas to improve the user-friendliness of PlantForever
 However, if you want to get active locally you can
   - [Accept a tree!](https://www.plantforever.org/accept-a-tree) That's the main thing we do. By accepting a free tree you help fighting the climate crisis with ease!

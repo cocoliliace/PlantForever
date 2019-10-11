@@ -6,8 +6,7 @@
         <div id="logo-overlay"></div>
         <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'About' }">About Us</router-link>
-        <!-- <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
+        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
@@ -15,7 +14,7 @@
           </div>
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
-        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link> -->
+        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
         <router-link :to="{ name: 'Tree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->

@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style media="screen" lang="scss">
+<style lang="scss" scoped>
 .profile-cards {
   display: flex;
   flex-direction: row;

@@ -32,13 +32,13 @@ export default {
         {
           name: "Marmik Patel",
           title: "Founding President",
-          photo: "balog",
+          photo: "nebelung",
           story: "Marmik founded PlantForever in 2017 to create change. After learning about the limited time we have until the climate crisis poses irreversible global changes, Marmik took the initiative and began planting trees. Since then, Marmik has transformed a mere idea into a fully functioning organization; he assembled a team, launched city-wide tree planting initiatives, created local partnerships, and organized platforms to spread awareness. Marmik is proud of his city’s urban forest but knows it can expand. Now 17, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally"
         },
         {
           name: "Pedro Almeida",
           title: "VP of Human Resources",
-          photo: "pedro",
+          photo: "nebelung",
           story: "Pedro, now 17 is looking forward to his final year before post-secondary school where he will focus on his schooling as well as assisting the executive team to expand PlantForever as far as possible, by advancing communication between members as well as with people outside of the organization. He assisted the team in large events as well as messages to organizations that has aided PlantForever for his time here."
         },
         {
@@ -56,19 +56,19 @@ export default {
         {
           name: "Fatima Shamas",
           title: "VP of Social Media",
-          photo: "balog",
+          photo: "nebelung",
           story: "Fatima joined PlantForever in 2018 as a volunteer, but later became part of the team in hopes of spreading awareness through social media. Her goal remains the same: to educate and inform people about climate change and help them to make changes within their lifestyle to combat it"
         },
         {
           name: "Vanshaj Upadhyay",
           title: "VP of Merchandise",
-          photo: "balog_fire",
+          photo: "nebelung",
           story: "At 16 years old, Vanshaj joined the PF team almost at the very beginning, when things were first starting to fall in place. He enjoys working at PF because he is interested in environmental matters and taking care of the planet. Vanshaj’s goal at PlantForever is to battle pollution and climate change through the plantation of trees. Vanshaj is dedicated to the PlantForever mission"
         },
         {
           name: "Eric Li",
           title: "Photographer",
-          photo: "balog",
+          photo: "nebelung",
           story: "Eric initially joined PlantForever as a volunteer, helping the team with small photoshop tasks. Having a hobby in taking pictures, he officially joined the PF team in mid 2019 as the official photographer. He now works with all team members, taking photos during planting events"
         }
       ]

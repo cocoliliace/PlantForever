@@ -5,7 +5,11 @@
     </div>
     <div class="section">
       <div class="columns">
-        <img src="@/assets/about-us.jpg" />
+        <picture>
+          <source srcset="@/assets/about-us.webp" type="image/webp" />
+          <source srcset="@/assets/about-us.jpg" type="image/jpeg" />
+          <img src="@/assets/about-us.jpg" alt="PlantForever" />
+        </picture>
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">
@@ -14,7 +18,7 @@
             usually homes and business locations.
           </div>
           <div class="secondary-text">
-            Patrons first <router-link :to="{ name: 'GetATree' }">register for a tree</router-link>.
+            Patrons first <router-link :to="{ name: 'Tree' }">register for a tree</router-link>.
             Once a date is selected, volunteers go the desired planting location to plant trees,
             consisting of choosing an area, digging, planting, and filling the space with
             patron-provided soil and water. Currently, PlantForever plants in Edmonton, but plans to
@@ -23,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section" style="margin-bottom: 35px;">
       <div class="title-text">WHY PLANTFOREVER PLANTS TREES</div>
       <div class="columns">
         <div class="column">
@@ -38,9 +42,9 @@
             These greenhouse gases trap heat from escaping into space and contribute to the warming
             of our planet. The United Nations states that “quantities of greenhouse gases in the
             atmosphere have risen to record levels not seen in three million
-            years”<sup>[<a href="https://www.un.org/en/sections/issues-depth/climate-change/index.html" target="_blank">1</a>]</sup>.
+            years”<sup>[<a href="https://www.un.org/en/sections/issues-depth/climate-change/index.html" target="_blank" rel="noopener noreferrer">1</a>]</sup>.
             Since the late 19th century, the earth’s average surface temperature has risen about
-            0.9°C!<sup>[<a href="https://climate.nasa.gov/evidence" target="_blank">2</a>]</sup>
+            0.9°C!<sup>[<a href="https://climate.nasa.gov/evidence" target="_blank" rel="noopener noreferrer">2</a>]</sup>
           </div>
           <div class="secondary-text">
             Greater global temperatures have detrimental effects on our planet; ocean acidification,
@@ -50,18 +54,15 @@
           <div class="secondary-text">
             The Paris Agreement signed in 2016 aims to keep global temperature rise this century
             below 2°C, in regards to levels in the pre-industrial
-            era.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank">3</a>]</sup>
+            era.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank" rel="noopener noreferrer">3</a>]</sup>
             However, reports conducted by the Intergovernmental Panel on Climate Change (IPCC) in
             2018 found that many irreversible effects of climate change appear after a rise of only
-            1.5°C.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank">4</a>]</sup>
+            1.5°C.<sup>[<a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement" target="_blank" rel="noopener noreferrer">4</a>]</sup>
           </div>
           <div class="secondary-text">
             To keep levels below a 1.5°C rise, PlantForever takes a step forward as a leader for the
             billions of people and creatures impacted by climate change.
           </div>
-          <!-- <div class="secondary-text">
-            Learn what you can do <router-link :to="{ name: 'Error' }">here</router-link>!
-          </div> -->
         </div>
         <div class="column">
           <div class="primary-text">Spread Awareness</div>
@@ -82,9 +83,6 @@
             and contribute. PlantForever recognizes that the best way to create change is to
             educate.
           </div>
-          <!-- <div class="secondary-text">
-            To view a list of urban specific benefits, click <router-link :to="{ name: 'Error' }">here</router-link>!
-          </div> -->
         </div>
       </div>
     </div>
@@ -93,7 +91,17 @@
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  metaInfo: {
+    title: "About Us",
+    meta: [
+      { name: "description", content: "PlantForever advocates for developing urban forests and spreading awareness about the critical climate crisis. PlantForever plants trees in urban environments." },
+      { name: "keywords", content: "PlantForever, about, what is, why, environment, initiative, organization, climate change, global warming, spread awareness" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/about-us" }
+    ]
+  }
 }
 </script>
 
@@ -103,13 +111,6 @@ export default {
   .columns {
     display: flex;
     justify-content: space-between;
-    a {
-      color: $green;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
     img {
       float: left;
       width: 500px;

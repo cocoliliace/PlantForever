@@ -1,55 +1,53 @@
 <template>
-  <div>
+  <div class="body">
     <div class="banner-container">
       <div class="title">ACCEPT A TREE</div>
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
       <div>Thank you for helping the environment!</div>
-      <div>We will email you back for updates!</div>
+      <div>We will contact you back for updates!</div>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
-    <div class="text-container">
-      <div class="text">
-        If you live in the Edmonton area and are looking for young trees to plant on your property,
-        PlantForever is here to help!
+    <div>
+      <div class="text-container">
+        <div class="text">
+          If you live in the Edmonton area and are looking for young trees to plant on your property,
+          PlantForever is here to help!
+        </div>
+        <div class="text">
+          The first tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
+        </div>
+        <div class="text">
+          We take a deposit of $5.00 per pot at the meeting, and return them when we get the pots back.
+        </div>
+        <div class="text">
+          The trees are 2 to 4 feet in size
+        </div>
       </div>
-      <div class="text">
-        Plantation of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
-      </div>
-      <div class="text">
-        Homeowners must provide potting soil
-      </div>
-      <div class="text">
-        It is recommended that you visit <a href="http://albertaonecall.com" target="_blank">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
-      </div>
-    </div>
-    <form id="volunteer-form" @submit.prevent="submit">
+      <form id="volunteer-form" @submit.prevent="submit">
       <div style="color: red;">* Required</div>
       <div class="row">
         <input v-model="name" type="text" name="name" placeholder="Name" required /><span class="star" style="transform: translateX(-1em);">*</span>
         <input v-model="email" type="text" name="email" placeholder="Email" required /><span class="star" style="transform: translateX(-1em);">*</span>
         <input v-model="phone" type="text" name="phone" placeholder="Phone" />
       </div>
-      <div class="row">
-        <input v-model="address" class="short-answer" type="text" name="address" placeholder="Planting address" style="width: 75vw;" />
-        <span class="star">*</span>
-      </div>
+      <div class="text">Around which area in Edmonton can you meet up with us? <span class="star">*</span></div>
+      <input v-model="address" class="short-answer" type="text" name="address" placeholder="Area" autocomplete="off" required />
       <div class="text">What type(s) of tree and how many would you like? <span class="star">*</span></div>
       <div class="checkbox-container" required>
-        <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Black Cherry<input v-if="preferredList[0]" v-model="amountList[0]" class="amount" /></label>
-        <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Colorado Spruce<input v-if="preferredList[1]" v-model="amountList[1]" class="amount" /></label>
-        <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Red Maple<input v-if="preferredList[2]" v-model="amountList[2]" class="amount" /></label>
-        <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<input v-if="preferredList[3]" v-model="amountList[3]" class="amount" /></label>
+        <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span></label>
+        <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Colorado Spruce<span v-if="preferredList[1]"> X <input v-model="amountList[1]" class="amount" /></span></label>
+        <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Red Maple<span v-if="preferredList[2]"> X <input v-model="amountList[2]" class="amount" /></span></label>
+        <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<span v-if="preferredList[3]"> X <input v-model="amountList[3]" class="amount" /></span></label>
         <input v-model="amountList" type="hidden" name="preferred_task" />
       </div>
-      <div class="text">Are you able to provide any supplies?</div>
-      <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="Materials" autocomplete="off" />
-      <div class="text">When do you want your tree<span v-if="numberOfTrees > 1">s</span> to be planted? <span class="star">*</span></div>
-      <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="Availability" autocomplete="off" required />
+      <div class="text">When do you want to meet up for your tree<span v-if="numberOfTrees > 1">s</span>? <span class="star">*</span></div>
+      <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the last 2 weeks of May" autocomplete="off" required />
       <div class="text">Any questions or comments?</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <button id="submit-form" class="primary-button" type="submit">Submit</button>
     </form>
+    </div>
   </div>
 </template>
 
@@ -57,7 +55,13 @@
 import axios from "axios";
 
 export default {
-  name: "GetATree",
+  name: "Tree",
+  metaInfo: {
+    title: "Accept A Tree",
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/accept-a-tree/in-pots" }
+    ]
+  },
   data() {
     return {
       email: "",
@@ -103,7 +107,7 @@ export default {
           }
         }
         this.preferredTrees = this.preferredTrees.slice(0, -1);
-        axios.get("https://script.google.com/macros/s/AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec", {
+        axios.get("https://script.google.com/macros/s/AKfycbyzTMkR2RyjoT2Zunakny-UEspHqGgJLmQSeBu9ykB460EAESK7/exec", {
           params: {
             email: this.email,
             name: this.name,
@@ -111,7 +115,6 @@ export default {
             phone: this.phone,
             preferred_trees: this.preferredTrees,
             availability: this.availability,
-            materials: this.materials,
             comments: this.comments
           }
         });
@@ -128,26 +131,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.body {
+  background-image: url("../assets/background.jpg");
+  background-size: contain;
+  background-attachment: fixed;
+  padding-bottom: 60px;
+}
 .text-container {
+  background: black;
+  border: 5px $orange double;
+  border-radius: 5px;
+  width: calc(80vw - 30px);
+  padding: 0 15px;
   margin: 25px 10vw 0 10vw;
 }
 .text {
   font-size: 18px;
   margin: 15px 5px;
-  a {
-    color: $green;
-    text-decoration: none;
-    text-shadow: 0px 0px 1px #cccccc;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 form {
-  border: 5px $blue double;
+  background: black;
+  border: 5px $orange double;
   padding: 15px;
   border-radius: 5px;
-  margin: 25px 10vw;
+  margin: 25px 10vw 0 10vw;
   width: calc(80vw - 30px);
   display: flex;
   flex-direction: column;
@@ -163,18 +170,17 @@ form {
     &.amount {
       font-size: 16px;
       padding: 0px 0px 3px 5px;
-      margin-left: 10px;
       margin-bottom: -5px;
       width: 15px;
       border: none;
       border-bottom: 2px #CCCCCC solid;
       border-radius: 2px;
       &:focus {
-        border-bottom: 2px $green solid;
+        border-bottom: 2px $orange solid;
       }
     }
     &:focus:not(.amount) {
-      border: 2px $green solid;
+      border: 2px $orange solid;
     }
   }
   .checkbox-container {
@@ -191,7 +197,7 @@ form {
       &:checked {
         + .checkmark {
           transition-duration: 0.5s;
-          background-color: $green;
+          background-color: $orange;
           &:after {
             display: block;
           }
@@ -205,7 +211,7 @@ form {
       width: 18px;
       background-color: #eeeeee;
       border-radius: 50%;
-      box-shadow: inset 0 0 1px $blue;
+      box-shadow: inset 0 0 1px $orange;
       cursor: pointer;
       &:hover {
         filter: brightness(90%);
@@ -243,13 +249,12 @@ form {
 #thank-you-message {
   position: fixed;
   text-align: center;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 30px;
   color: white;
-  background-color: $green;
-  border: 10px $blue solid;
+  background-color: $orange;
+  border: 4px $orange solid;
   border-radius: 100px;
-  padding: 50px;
+  padding: 40px;
   width: 60vw;
   left: 50vw;
   transform: translate(-50%, calc(-50% - 100px));
@@ -258,9 +263,9 @@ form {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5px);
-    background-color: #cccccc;
+    background-color: #a0a0a0;
     padding: 20px 50px;
-    border: 10px $blue solid;
+    border: 4px $orange solid;
     border-radius: 100px;
     cursor: pointer;
     &:hover {

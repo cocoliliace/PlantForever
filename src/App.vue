@@ -1,13 +1,24 @@
 <template>
   <div id="app">
+    <div v-if="popUp" id="pop-up">
+      <span id="x" @click="popUp = false">X</span>
+      <img src="@/assets/pop-up.jpg" />
+    </div>
     <header>
-      <router-link :to="{ name: 'Home' }"><img src="@/assets/plantforever.jpg" alt="PlantForever" /></router-link>
+      <router-link :to="{ name: 'Home' }">
+        <img src="@/assets/plantforever.jpg" alt="PlantForever" />
+      </router-link>
       <div v-if="showNav" id="nav" @click="hideNav">
         <div id="logo-overlay"></div>
-        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
+        <router-link id="logo-container" :to="{ name: 'Home' }">
+          <picture>
+            <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+            <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+            <img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" />
+          </picture>
+        </router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'About' }">About Us</router-link>
-        <!-- <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
+        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
@@ -15,29 +26,31 @@
           </div>
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
-        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link> -->
-        <router-link :to="{ name: 'GetATree' }">Accept A Tree</router-link>
+        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
+        <router-link :to="{ name: 'Tree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
         <router-link :to="{ name: 'Donate' }">Donate</router-link>
       </div>
       <div v-if="showNav" id="hide-nav" @click="hideNav"></div>
-      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.svg" @click="showNav = true" />
+      <img v-if="!showNav" id="nav-activator" src="@/assets/icons/nav.svg" alt="button" @click="showNav = true" />
     </header>
 
-    <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
-      <router-view />
-    </transition>
+    <main>
+      <transition name="fade" mode="out-in" @enter="enter" @afterEnter="afterEnter" @beforeLeave="beforeLeave">
+        <router-view />
+      </transition>
+    </main>
 
     <footer>
       <div class="column">
         <a href="mailto:plantforever.org@gmail.com">plantforever.org@gmail.com</a>
         <div class="social-media-container">
-          <span><a href="https://www.instagram.com/plantforeverorg" target="_blank"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
-          <span><a href="https://www.facebook.com/PlantForever"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |
-          <span><a href="https://twitter.com/PlantForeverorg" target="_blank"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span> |
-          <span><a href="https://ca.linkedin.com/company/plantforever" target="_blank"><img src="@/assets/icons/linkedin.svg" alt="linkedin" /></a></span>
+          <span><a href="https://www.instagram.com/plantforeverorg" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
+          <span><a href="https://www.facebook.com/PlantForever" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |
+          <span><a href="https://twitter.com/PlantForeverorg" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/twitter.svg" alt="twitter" /></a></span> |
+          <span><a href="https://ca.linkedin.com/company/plantforever" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/linkedin.svg" alt="linkedin" /></a></span>
         </div>
       </div>
     </footer>
@@ -47,17 +60,23 @@
 <script>
 export default {
   name: "App",
+  metaInfo: {
+    title: "Home",
+    titleTemplate: "%s – PlantForever | Edmonton Nonprofit"
+  },
   data() {
     return {
       showNav: true,
       hasDropdown: true,
-      previousHeight: 0
+      previousHeight: 0,
+      popUp: false
     };
   },
   mounted() {
     window.addEventListener("resize", this.hideNav);
     window.addEventListener("scroll", this.scrollEffect);
     this.hideNav();
+    setInterval(this.disturbUsers.bind(this), 15000);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.scrollEffect);
@@ -75,22 +94,25 @@ export default {
       this.previousHeight = getComputedStyle(element).height;
     },
     scrollEffect() {
-      if (window.scrollY >= 90 && window.innerWidth > 880) {
+      if (window.scrollY >= 90 && window.innerWidth > 905) {
         document.querySelector("#logo-overlay").classList.add("hide");
         document.querySelector("#logo").classList.remove("hide");
-      } else if (window.innerWidth > 880) {
+      } else if (window.innerWidth > 905) {
         document.querySelector("#logo-overlay").classList.remove("hide");
         document.querySelector("#logo").classList.add("hide");
       }
     },
     hideNav() {
-      this.showNav = window.innerWidth > 880;
-      this.hasDropdown = window.innerWidth > 880;
+      this.showNav = window.innerWidth > 905;
+      this.hasDropdown = window.innerWidth > 905;
     },
     childIsActive(input) {
       return input.some(path => {
         return this.$route.path.indexOf(path) === 0;
       });
+    },
+    disturbUsers() {
+      this.popUp = true;
     }
   }
 }
@@ -107,12 +129,32 @@ export default {
   opacity: 0;
 }
 ::selection {
-  background-color: $green;
+  background-color: $orange;
   color: white;
 }
 
+#pop-up {
+  #x {
+    z-index: 16;
+    position: fixed;
+    top: calc(50% - 220px);
+    left: calc(50% - 195px);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  img {
+    z-index: 15;
+    position: fixed;
+    padding: 40px 10px 15px 10px;
+    background-color: #222222;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 header {
-  background-color: white;
+  background-color: black;
   padding: 20px 10vw 5px 10vw;
   margin-bottom: 20px;
   position: sticky;
@@ -154,7 +196,7 @@ header {
       float: left;
       padding: 15px 30px;
       text-decoration: none;
-      color: black;
+      color: white;
       font-size: 20px;
       font-family: Montserrat;
       transition-duration: 0s;
@@ -162,7 +204,7 @@ header {
       .dropdown {
         display: none;
         position: absolute;
-        background-color: white;
+        background-color: black;
         min-width: 150px;
         margin: 15px 0 0 -30px;
         a {
@@ -172,7 +214,7 @@ header {
       }
       &:hover, &.router-link-exact-active {
         transition-duration: 0.3s;
-        background-color: $green;
+        background-color: $orange;
         color: white;
       }
       &:hover {
@@ -207,7 +249,6 @@ footer {
   background-color: #2B2B2B;
   height: 50px;
   padding: 20px 20vw 40px 20vw;
-  margin-top: 35px;
   .column {
     float: right;
     color: #ABABAB;
@@ -221,7 +262,7 @@ footer {
         cursor: pointer;
         border-radius: 5px;
         &:hover {
-          background-color: $green;
+          background-color: $orange;
         }
       }
     }
@@ -237,8 +278,18 @@ footer {
 }
 
 body {
+  background-color: black;
+  color: white;
   margin: 0px;
   font-family: Montserrat;
+}
+a {
+  color: $orange;
+  text-decoration: none;
+  text-shadow: 0px 0px 1px #cccccc;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .banner-container {
   position: relative;
@@ -246,10 +297,10 @@ body {
   overflow: hidden;
   height: 320px;
   background-size: cover;
-  background-position: 0 60px;
+  background-position: center 60px;
   background-repeat: repeat;
   background-attachment: fixed;
-  background-image: url("assets/6.jpg");
+  background-image: url("assets/banner.jpg");
   .title {
     width: 100vw;
     position: absolute;
@@ -273,12 +324,12 @@ body {
   }
   .primary-text {
     font-size: 24px;
-    color: #222222;
+    color: white;
     margin-bottom: 10px;
   }
   .secondary-text {
     font-size: 16px;
-    color: #666666;
+    color: white;
     font-family: Open Sans;
     margin-bottom: 20px;
   }
@@ -289,10 +340,13 @@ body {
   font-size: 18px;
   text-decoration: none;
   border-radius: 5px;
+  &:hover {
+    text-decoration: none;
+  }
 }
 .primary-button {
-  background-color: $green;
-  border: 2px $green solid;
+  background-color: $orange;
+  border: 2px $orange solid;
   transition-duration: 0.3s;
   &:hover {
     filter: brightness(80%);
@@ -300,7 +354,7 @@ body {
 }
 .secondary-button {
   border: 2px white solid;
-  background-image: linear-gradient(to left, transparent 50%, $green 50%);
+  background-image: linear-gradient(to left, transparent 50%, $orange 50%);
   background-size: 200% 100%;
   transition-duration: 0.5s;
   background-position: 100% 100%;
@@ -327,7 +381,7 @@ body {
     }
   }
 }
-@media (max-width: 880px) {
+@media (max-width: 905px) {
   header {
     text-align: center;
     padding: 0;
@@ -345,7 +399,7 @@ body {
           color: black;
         }
         &:hover {
-          background-color: $green;
+          background-color: $orange;
           color: white;
         }
       }

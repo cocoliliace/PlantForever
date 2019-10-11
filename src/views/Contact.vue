@@ -18,14 +18,24 @@
 
 <script>
 export default {
-  name: "Contact"
+  name: "Contact",
+  metaInfo: {
+    title: "Contact Us",
+    meta: [
+      { name: "description", content: "Get in contact with the official team of PlantForever to ask questions and get help in regards of anything. Expect a quick response from us within 24 hours." },
+      { name: "keywords", content: "PlantForever, organization, contact, get help, support, review, rate, bad, what is, talk to" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/contact-us" }
+    ]
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 form {
   width: 80vw;
-  margin: 25px 10vw;
+  margin: 25px 10vw 60px 10vw;
   .text {
     font-size: 22px;
   }
@@ -36,7 +46,7 @@ form {
     border-radius: 5px;
     outline-width: 0px;
     &:focus {
-      border: 2px $green solid;
+      border: 2px $orange solid;
     }
   }
   .row {

@@ -1,21 +1,33 @@
 <template>
   <div>
     <div class="carousel">
-      <div class="slide">
-        <img src="@/assets/image2.jpg" class="carousel-img" />
-        <div class="text-container">
-          <div class="primary-text">We are PlantForever</div>
-          <div class="secondary-text">Free tree planting</div>
-          <div class="button-container">
-            <router-link :to="{ name: 'GetATree' }" class="primary-button">Get A Tree</router-link>
-            <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
-          </div>
+      <figure class="carousel-img">
+        <picture>
+          <source srcset="@/assets/carousel.webp" type="image/webp" />
+          <source srcset="@/assets/carousel.jpg" type="image/jpeg" />
+          <img src="@/assets/carousel.jpg" alt="marmik planting" />
+        </picture>
+      </figure>
+      <div class="text-container">
+        <div class="primary-text">We are PlantForever</div>
+        <div class="secondary-text">Free tree planting</div>
+        <div class="button-container">
+          <router-link :to="{ name: 'Tree' }" class="primary-button">Accept A Tree</router-link>
+          <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
         </div>
       </div>
     </div>
     <div class="about-us-images">
-      <img src="@/assets/6.jpg" />
-      <img src="@/assets/5.jpg" />
+      <picture>
+        <source srcset="@/assets/left.webp" type="image/webp" />
+        <source srcset="@/assets/left.jpg" type="image/jpeg" />
+        <img src="@/assets/left.jpg" alt="plantforever members" />
+      </picture>
+      <picture>
+        <source srcset="@/assets/right.webp" type="image/webp" />
+        <source srcset="@/assets/right.jpg" type="image/jpeg" />
+        <img src="@/assets/right.jpg" alt="plantforever transplanting trees" />
+      </picture>
       <div id="left" class="text-container">
         <div class="primary-text">WHAT IS PLANTFOREVER</div>
         <div class="secondary-text">
@@ -24,7 +36,7 @@
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
-          <router-link :to="{ name: 'GetATree' }" class="secondary-button">Want A Tree?</router-link>
+          <router-link :to="{ name: 'Tree' }" class="secondary-button">Want A Tree?</router-link>
         </div>
       </div>
       <div id="right" class="text-container">
@@ -40,68 +52,107 @@
     </div>
     <div id="ways-to-help" class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
         <div class="title-text">
           <div>HOW YOU CAN</div>
           <div style="color: #00A849;">HELP US</div>
         </div>
       </div>
-      <img class="image" src="@/assets/ways-to-help.jpg" />
+      <picture>
+        <source srcset="@/assets/ways-to-help.webp" type="image/webp" />
+        <source srcset="@/assets/ways-to-help.jpg" type="image/jpeg" />
+        <img class="image" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
+      </picture>
       <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
       <div class="button-container">
-        <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">DONATE</div>
-        <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">ACCEPT A TREE</div>
-        <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">VOLUNTEER</div>
-        <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">RAISE AWARENESS</div>
+        <div :class="{ checked: checkedButton === 0 }" class="button" @click="checkedButton = 0">DONATE</div>
+        <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">ACCEPT A TREE</div>
+        <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">VOLUNTEER</div>
+        <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">RAISE AWARENESS</div>
+        <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">OTHERS</div>
       </div>
       <div class="secondary-text" style="display: table;">
-        <div v-if="checkedButton === 1">
-          One of the largest ways to contribute to PlantForever is donating money or supplies.
-          Relocating a coffee’s worth of money aids us to become more capable and efficient at
-          planting trees and spreading awareness.
+        <div v-if="checkedButton === 0">
+          A meaningful way to support PlantForever is by contributing funds or supplies. Donating a
+          coffee’s worth of money significantly assists PlantForever in planting trees and spreading
+          awareness about the climate crisis. As PlantForever is a nonprofit, 100% of all donations
+          go towards the organization (staff nor volunteers get paid). If you would like to support
+          us, click <router-link :to="{ name: 'Donate' }">here</router-link>.
+        </div>
+        <div v-else-if="checkedButton === 1">
+          By <router-link :to="{ name: 'Tree' }">accepting a tree</router-link>, you contribute to
+          developing urban forests and fighting the climate crisis!
         </div>
         <div v-else-if="checkedButton === 2">
-          By having us plant a tree on your property, and you nurture it as it grows, you are
-          promoting our goal and organization. Moreover, you are clearly helping the environment as
-          the tree absorbs thousands of pounds of carbon dioxide in its lifetime.
+          As a nonprofit, PlantForever relies fully on volunteers to operate. Volunteering could
+          include planting trees, raising awareness, providing transportation, and/or assisting with
+          other daily-tasks. If you would like to volunteer, click
+          <router-link :to="{ name: 'Volunteer' }">here</router-link>.
         </div>
         <div v-else-if="checkedButton === 3">
-          As a nonprofit, we rely heavily on volunteers contributing their effort and time to
-          operate. Volunteering could include planting and/or organizing trees, advertising,
-          providing transportation, developing content for our social media/website, and helping
-          with specific department-based needs like marketing or human resources.
+          An outstanding way to create positive change is by raising awareness. Let family, friends,
+          and colleagues know about what PlantForever is doing to combat climate change and how they
+          can help PlantForever achieve their green goals.
         </div>
         <div v-else>
-          If finance or commitment is an issue, telling others about PlantForever is a very simple
-          and fast way to help us grow. You can contribute by informing family, friends, colleagues,
-          and neighbours about the organization and what we do to donate to the community.
+          Takes matters into your own hands by creating positive changes in your lifestyle.
+          Understand how you can reduce your carbon footprint and inspire others to do the same.
         </div>
       </div>
     </div>
     <div id="map" class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
         <div class="title-text">
           <div>WHERE WE HAVE</div>
           <div style="color: #00A849;">PLANTED</div>
         </div>
-        <!-- <div class="title-text" style="padding-left: 0px; border-left: none;">WHERE WE HAVE PLANTED</div> -->
       </div>
       <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IgqVX0wBEh2xW_VrB1QINeqhGNgE0pqT" frameborder="0"></iframe>
     </div>
     <div class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
         <div class="title-text">
           <div>OUR</div>
           <div style="color: #00A849;">SUPPORTERS</div>
         </div>
       </div>
       <div class="sponsor-container">
-        <a href="https://www.boosterjuice.com" target="_blank"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
-        <a href="https://infokidz.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
-        <a href="https://www.simply-health.ca" target="_blank"><img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" /></a>
+        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/booster-juice.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/booster-juice.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" />
+          </picture>
+        </a>
+        <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/infokidz.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/infokidz.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" />
+          </picture>
+        </a>
+        <a href="https://www.simply-health.ca" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/simply-health.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/simply-health.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" />
+          </picture>
+        </a>
       </div>
     </div>
   </div>
@@ -110,9 +161,19 @@
 <script>
 export default {
   name: "Home",
+  metaInfo: {
+    title: "Home",
+    meta: [
+      { name: "description", content: "We are a nonprofit organization that develops urban forests through house-to-house tree plantation in order to combat climate crisis and spread awareness." },
+      { name: "keywords", content: "PlantForever, Alberta, climate change, Edmonton, environment, free, global warming, organization, tree" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org" }
+    ]
+  },
   data() {
     return {
-      checkedButton: 1
+      checkedButton: 0
     };
   },
   mounted() {
@@ -140,35 +201,42 @@ export default {
 .carousel {
   position: relative;
   margin-bottom: 75px;
-  .slide {
-    .carousel-img {
-      width: 100vw;
-      filter: brightness(80%);
+  .carousel-img {
+    margin: 0;
+    background-image: url("../assets/carousel.jpg");
+    background-size: contain;
+    background-position: 0 63px;
+    background-attachment: fixed;
+    filter: brightness(80%);
+    img {
+      visibility: hidden;
+      width: 100%;
+      margin-top: -104px;
     }
-    .text-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-80%, -50%);
-      .primary-text {
-        color: white;
-        font-size: 60px;
-        font-weight: 700;
-        text-shadow: 5px 5px 10px black;
-      }
-      .secondary-text {
-        color: white;
-        font-size: 50px;
-        text-shadow: 5px 5px 10px black;
-      }
-      .button-container {
-        display: flex;
-        margin-top: 40px;
-        width: 60%;
-        justify-content: space-between;
-        .primary-button, .secondary-button {
-          padding: 20px 30px;
-        }
+  }
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, -50%);
+    .primary-text {
+      color: white;
+      font-size: 60px;
+      font-weight: 700;
+      text-shadow: 5px 5px 10px black;
+    }
+    .secondary-text {
+      color: white;
+      font-size: 50px;
+      text-shadow: 5px 5px 10px black;
+    }
+    .button-container {
+      display: flex;
+      margin-top: 40px;
+      width: 420px;
+      justify-content: space-between;
+      .primary-button, .secondary-button {
+        padding: 20px 30px;
       }
     }
   }
@@ -262,7 +330,7 @@ export default {
     margin: 35px 0px;
     text-align: center;
     .button {
-      color: #222222;
+      color: white;
       width: 200px;
       padding: 14px 0;
       text-align: center;
@@ -273,18 +341,16 @@ export default {
       display: inline-block;
       margin-right: 15px;
       cursor: pointer;
-      background-image: linear-gradient(to bottom, transparent 50%, $green 50%);
+      background-image: linear-gradient(to bottom, transparent 50%, $orange 50%);
       background-size: 100% 200%;
       transition-duration: 0.5s;
       background-position: 100% 200%;
       &:hover {
         background-position: 100% 100%;
-        color: white;
       }
       &.checked {
-        border-color: $green;
-        background-color: $green;
-        color: white;
+        border-color: $orange;
+        background-color: $orange;
         cursor: default;
       }
     }
@@ -292,13 +358,12 @@ export default {
 }
 .sponsor-container {
   display: flex;
-  justify-content: space-between;
+  margin-bottom: 35px;
   a {
-    width: 45%;
     display: flex;
     .sponsor-img {
-      vertical-align: middle;
-      width: 100%;
+      margin: auto;
+      width: 85%;
     }
   }
 }
@@ -312,7 +377,7 @@ export default {
   z-index: 1;
 }
 iframe {
-  border: 6px $green ridge;
+  border: 6px $orange ridge;
   border-radius: 4px;
   width: calc(100% - 12px);
   height: 450px;
@@ -320,17 +385,12 @@ iframe {
 
 @media (max-width: 1288px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 50px;
-        }
-        .secondary-text {
-          font-size: 40px;
-        }
-        .button-container {
-          width: 80%;
-        }
+    .text-container {
+      .primary-text {
+        font-size: 50px;
+      }
+      .secondary-text {
+        font-size: 40px;
       }
     }
   }
@@ -370,24 +430,13 @@ iframe {
 }
 @media (max-width: 1074px) {
   .carousel {
-    .slide {
-      .text-container {
-        width: 80vw;
-        transform: translate(-50%, -50%);
-      }
+    .text-container {
+      width: 80vw;
+      transform: translate(-50%, -50%);
     }
   }
 }
 @media (max-width: 1040px) {
-  .carousel {
-    .slide {
-      .text-container {
-        .button-container {
-          width: 90%;
-        }
-      }
-    }
-  }
   .about-us-images {
     height: 700px;
     img {
@@ -426,6 +475,19 @@ iframe {
     height: 560px;
   }
 }
+@media (max-width: 905px) {
+  .carousel {
+    position: relative;
+    margin-bottom: 75px;
+    .carousel-img {
+      img {
+        visibility: hidden;
+        width: 100%;
+        margin-top: -30px;
+      }
+    }
+  }
+}
 @media (max-width: 800px) {
   .section {
     width: 95vw;
@@ -445,19 +507,16 @@ iframe {
 }
 @media (max-width: 780px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 45px;
-        }
-        .secondary-text {
-          font-size: 35px;
-        }
-        .button-container {
-          width: 90%;
-          .primary-button, .secondary-button {
-            padding: 15px 20px;
-          }
+    .text-container {
+      .primary-text {
+        font-size: 45px;
+      }
+      .secondary-text {
+        font-size: 35px;
+      }
+      .button-container {
+        .primary-button, .secondary-button {
+          padding: 15px 20px;
         }
       }
     }
@@ -465,21 +524,18 @@ iframe {
 }
 @media (max-width: 615px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 30px;
-        }
-        .secondary-text {
-          margin-top: 5px;
-          font-size: 20px;
-        }
-        .button-container {
-          margin-top: 25px;
-          width: 90%;
-          .primary-button, .secondary-button {
-            padding: 15px 20px;
-          }
+    .text-container {
+      .primary-text {
+        font-size: 30px;
+      }
+      .secondary-text {
+        margin-top: 5px;
+        font-size: 20px;
+      }
+      .button-container {
+        margin-top: 25px;
+        .primary-button, .secondary-button {
+          padding: 15px 20px;
         }
       }
     }
@@ -487,16 +543,15 @@ iframe {
 }
 @media (max-width: 500px) {
   .carousel {
-    .slide {
-      .text-container {
-        .primary-text {
-          font-size: 26px;
-        }
-        .button-container {
-          width: 100%;
-          .primary-button, .secondary-button {
-            padding: 15px;
-          }
+    .text-container {
+      .primary-text {
+        font-size: 26px;
+      }
+      .button-container {
+        width: 90vw;
+        margin-left: -5vw;
+        .primary-button, .secondary-button {
+          padding: 15px;
         }
       }
     }

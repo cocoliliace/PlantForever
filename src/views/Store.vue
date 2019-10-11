@@ -5,7 +5,11 @@
     </div>
     <div class="card-container">
       <router-link :to="{ name: 'Shirt' }" class="card">
-        <img src="@/assets/shirt.jpg" alt="white logo crewneck t-shirt" />
+        <picture>
+          <source srcset="@/assets/merch/shirt.webp" type="image/webp" />
+          <source srcset="@/assets/merch/shirt.jpg" type="image/jpeg" />
+          <img src="@/assets/merch/shirt.jpg" alt="white logo crewneck t-shirt" />
+        </picture>
         <div class="title">WHITE LOGO CREWNECK T-SHIRT</div>
         <div class="price"><span style="text-decoration: line-through;">$25.00</span>   $20.00</div>
       </router-link>
@@ -15,7 +19,17 @@
 
 <script>
 export default {
-  name: "Store"
+  name: "Store",
+  metaInfo: {
+    title: "Store",
+    meta: [
+      { name: "description", content: "" },
+      { name: "keywords", content: "" }
+    ],
+    link: [
+      { rel: "canonical", href: "https://www.plantforever.org/store" }
+    ]
+  }
 }
 </script>
 

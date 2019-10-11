@@ -20,7 +20,7 @@ const router =  new Router({
       component: () => import("./views/About.vue")
     },
     {
-      path: "/team",
+      path: "/meet-our-team",
       name: "Team",
       component: () => import("./views/Team.vue")
     },

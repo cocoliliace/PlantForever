@@ -1,10 +1,22 @@
 <template>
   <div id="app">
     <header>
-      <router-link :to="{ name: 'Home' }"><img src="@/assets/plantforever.jpg" alt="PlantForever" /></router-link>
+      <router-link :to="{ name: 'Home' }">
+        <picture>
+          <source srcset="@/assets/plantforever.webp" type="image/webp" />
+          <source srcset="@/assets/plantforever.jpg" type="image/jpeg" />
+          <img src="@/assets/plantforever.jpg" alt="PlantForever" />
+        </picture>
+      </router-link>
       <div v-if="showNav" id="nav" @click="hideNav">
         <div id="logo-overlay"></div>
-        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
+        <router-link id="logo-container" :to="{ name: 'Home' }">
+          <picture>
+            <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+            <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+            <img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" />
+          </picture>
+        </router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
         <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
           <div>About Us</div>

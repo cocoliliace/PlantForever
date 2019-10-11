@@ -5,7 +5,11 @@
     </div>
     <div class="section">
       <div class="columns">
-        <img src="@/assets/about-us.jpg" alt="PlantForever" />
+        <picture>
+          <source srcset="@/assets/about-us.webp" type="image/webp" />
+          <source srcset="@/assets/about-us.jpg" type="image/jpeg" />
+          <img src="@/assets/about-us.jpg" alt="PlantForever" />
+        </picture>
         <div class="paragraph">
           <div class="title-text">WHAT WE DO</div>
           <div class="secondary-text">

@@ -1,13 +1,24 @@
 <template>
   <div id="app">
     <header>
-      <router-link :to="{ name: 'Home' }"><img src="@/assets/plantforever.jpg" alt="PlantForever" /></router-link>
+      <router-link :to="{ name: 'Home' }">
+        <picture>
+          <source srcset="@/assets/plantforever.webp" type="image/webp" />
+          <source srcset="@/assets/plantforever.jpg" type="image/jpeg" />
+          <img src="@/assets/plantforever.jpg" alt="PlantForever" />
+        </picture>
+      </router-link>
       <div v-if="showNav" id="nav" @click="hideNav">
         <div id="logo-overlay"></div>
-        <router-link id="logo-container" :to="{ name: 'Home' }"><img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" /></router-link>
+        <router-link id="logo-container" :to="{ name: 'Home' }">
+          <picture>
+            <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+            <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+            <img id="logo" class="hide" src="@/assets/icons/logo.jpg" alt="PlantForever" />
+          </picture>
+        </router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'About' }">About Us</router-link>
-        <!-- <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
+        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team']) }">
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
@@ -15,7 +26,7 @@
           </div>
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
-        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link> -->
+        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
         <router-link :to="{ name: 'Tree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->

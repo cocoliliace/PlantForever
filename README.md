@@ -17,32 +17,3 @@ However, if you want to get active locally you can
 ### Donate
 Since we are a nonprofit organization we do not only depend on your contribution but also on your financial support.
 By [donating](https://www.plantforever.org/donate) supplies, saplings or even small amounts of money you can help us making free tree planting possible for future tree owners!
-
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

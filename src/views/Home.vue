@@ -2,7 +2,11 @@
   <div>
     <div class="carousel">
       <figure class="carousel-img">
-        <img src="@/assets/carousel.jpg" alt="marmik planting" />
+        <picture>
+          <source srcset="@/assets/carousel.webp" type="image/webp" />
+          <source srcset="@/assets/carousel.jpg" type="image/jpeg" />
+          <img src="@/assets/carousel.jpg" alt="marmik planting" />
+        </picture>
       </figure>
       <div class="text-container">
         <div class="primary-text">We are PlantForever</div>
@@ -14,8 +18,16 @@
       </div>
     </div>
     <div class="about-us-images">
-      <img src="@/assets/left.jpg" alt="plantforever members" />
-      <img src="@/assets/right.jpg" alt="plantforever transplanting trees" />
+      <picture>
+        <source srcset="@/assets/left.webp" type="image/webp" />
+        <source srcset="@/assets/left.jpg" type="image/jpeg" />
+        <img src="@/assets/left.jpg" alt="plantforever members" />
+      </picture>
+      <picture>
+        <source srcset="@/assets/right.webp" type="image/webp" />
+        <source srcset="@/assets/right.jpg" type="image/jpeg" />
+        <img src="@/assets/right.jpg" alt="plantforever transplanting trees" />
+      </picture>
       <div id="left" class="text-container">
         <div class="primary-text">WHAT IS PLANTFOREVER</div>
         <div class="secondary-text">
@@ -40,13 +52,21 @@
     </div>
     <div id="ways-to-help" class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
         <div class="title-text">
           <div>HOW YOU CAN</div>
           <div style="color: #00A849;">HELP US</div>
         </div>
       </div>
-      <img class="image" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
+      <picture>
+        <source srcset="@/assets/ways-to-help.webp" type="image/webp" />
+        <source srcset="@/assets/ways-to-help.jpg" type="image/jpeg" />
+        <img class="image" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
+      </picture>
       <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
       <div class="button-container">
         <div :class="{ checked: checkedButton === 0 }" class="button" @click="checkedButton = 0">DONATE</div>
@@ -86,7 +106,11 @@
     </div>
     <div id="map" class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
         <div class="title-text">
           <div>WHERE WE HAVE</div>
           <div style="color: #00A849;">PLANTED</div>
@@ -97,16 +121,38 @@
     </div>
     <div class="section">
       <div class="title">
-        <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
         <div class="title-text">
           <div>OUR</div>
           <div style="color: #00A849;">SUPPORTERS</div>
         </div>
       </div>
       <div class="sponsor-container">
-        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" /></a>
-        <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" /></a>
-        <a href="https://www.simply-health.ca" target="_blank" rel="noopener noreferrer"><img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" /></a>
+        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/booster-juice.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/booster-juice.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" />
+          </picture>
+        </a>
+        <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/infokidz.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/infokidz.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/infokidz.jpg" alt="infokidz" />
+          </picture>
+        </a>
+        <a href="https://www.simply-health.ca" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/simply-health.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/simply-health.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" />
+          </picture>
+        </a>
       </div>
     </div>
   </div>

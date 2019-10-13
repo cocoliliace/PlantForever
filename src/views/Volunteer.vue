@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="contains-form">
     <div class="banner-container">
       <div class="title">VOLUNTEER</div>
     </div>
@@ -159,15 +159,21 @@ form {
         border-bottom: 2px $green solid;
       }
     }
-    &#other-option {
+    &.amount, &#other-option {
       font-size: 16px;
       padding: 0px 0px 3px 5px;
       margin-bottom: -5px;
       border: none;
       border-bottom: 2px #CCCCCC solid;
       border-radius: 2px;
+      &:focus {
+        border-bottom: 2px $green solid;
+      }
     }
-    &:focus {
+    &.amount {
+      width: 15px;
+    }
+    &:focus:not(.amount) {
       border: 2px $green solid;
     }
   }

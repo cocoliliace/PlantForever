@@ -7,7 +7,10 @@
       <div v-for="person in teamData" class="card">
         <div class="name">{{ person.name }} — {{ person.title }}</div>
         <img :src="require(`@/assets/team/${ person.photo }.jpg`)" :alt="`${ person.name } profile picture`">
-        <div class="story">{{ person.story }}</div>
+        <div v-for="paragraph in person.story" class="story">
+          {{ paragraph }}
+          <br />
+        </div>
       </div>
     </div>
   </div>
@@ -33,43 +36,43 @@ export default {
           name: "Marmik Patel",
           title: "Founding President",
           photo: "marmik",
-          story: "Marmik founded PlantForever in 2017 to create change. After learning about the limited time we have until the climate crisis poses irreversible global changes, Marmik took the initiative and began planting trees. Since then, Marmik has transformed a mere idea into a fully functioning organization; he assembled a team, launched city-wide tree planting initiatives, created local partnerships, and organized platforms to spread awareness. Marmik is proud of his city’s urban forest but knows it can expand. Now 17, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally"
+          story: ["Marmik founded PlantForever in 2017 to create change. After learning about the limited time we have until the climate crisis poses irreversible global changes, Marmik took the initiative and began planting trees. Since then, Marmik has transformed a mere idea into a fully functioning organization; he assembled a team, launched city-wide tree planting initiatives, created local partnerships, and organized platforms to spread awareness. Marmik is proud of his city’s urban forest but knows it can expand", "Now 17, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally"]
         },
         {
           name: "Pedro Almeida",
           title: "VP of Human Resources",
           photo: "pedro",
-          story: "Pedro, now 17, is looking forward to his final year before post-secondary school where he will focus on his schooling as well as assisting the executive team to expand PlantForever as far as possible, by advancing communication between members as well as with people outside of the organization. He assisted the team in large events as well as messages to organizations that has aided PlantForever for his time here"
-        },
-        {
-          name: "Nebelung Meow",
-          title: "VP of Environmental Ethics",
-          photo: "nebelung",
-          story: "Totes adorbs"
+          story: ["Pedro, now 17, is looking forward to his final year before post-secondary school where he will focus on his schooling as well as assisting the executive team to expand PlantForever. Pedro facilitates communication between members as well as with people outside of the organization. He also assists the team in managing large events"]
         },
         {
           name: "Ching Chang",
-          title: "VP of IT",
+          title: "Web Developer",
           photo: "ching",
-          story: "As a 17-year old environmentalist, Ching joined PlantForever to combat climate change and urban deforestation. With a passion for web developing, Ching is looking forward to not only maximize the ways that people can reach out to PlantForever from everywhere in the world, but to also facilitate the process with a simplistic design"
+          story: ["As a 17-year old environmentalist, Ching joined PlantForever to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever"]
         },
         {
           name: "Fatima Shamas",
-          title: "VP of Social Media",
-          photo: "fatima",
-          story: "Fatima joined PlantForever in 2018 as a volunteer, but later became part of the team in hopes of spreading awareness through social media. Her goal remains the same: to educate and inform people about climate change and help them to make changes within their lifestyle to combat it"
+          title: "Social Media Manager",
+          photo: "logo",
+          story: ["Fatima joined PlantForever in 2018 as a volunteer, but later became a part of the team in hopes of spreading awareness through social media. By managing the PlantForever social media, her goal remains the same: to educate and inform people about climate change and help them make positive environmental changes within their lifestyle"]
+        },
+        {
+          name: "Manraj Singh",
+          title: "VP of Marketing",
+          photo: "raj",
+          story: ["Being only 17 year old and an environmentalist, having a place where a person can make a change was the reason he joined PlantForever. He loves working with the community and helping both PlantForever and climate change get recognition. His goal is to grow PlantForever to a national level. He is one of the voices which helps PlantForever move forward"]
         },
         {
           name: "Vanshaj Upadhyay",
-          title: "VP of Merchandise",
-          photo: "logo",
-          story: "At 16 years old, Vanshaj joined the PF team almost at the very beginning, when things were first starting to fall in place. He enjoys working at PF because he is interested in environmental matters and taking care of the planet. Vanshaj’s goal at PlantForever is to battle pollution and climate change through the plantation of trees. Vanshaj is dedicated to the PlantForever mission"
+          title: "Merch & Design Manager",
+          photo: "vanshaj",
+          story: ["Vanshaj first joined PlantForever as a volunteer. He is currently the manager of Merchandise and Design, and now manages the entire Merchandise department at Plantforever. With a passion for climate and trees, his goal is to educate and help people make a positive difference for the environment"]
         },
         {
           name: "Eric Li",
           title: "Photographer",
           photo: "logo",
-          story: "Eric initially joined PlantForever as a volunteer, helping the team with small photoshop tasks. Having a hobby in taking pictures, he officially joined the PF team in mid 2019 as the official photographer. He now works with all team members, taking photos during planting events"
+          story: ["Eric initially joined PlantForever as a volunteer, helping the team with minor editing tasks. With a hobby in photography, he officially joined the PF team in mid 2019 as the official photographer. Eric now works with all the team members, especially during planting events, to capture photos"]
         }
       ]
     }
@@ -98,7 +101,6 @@ export default {
 <style lang="scss" scoped>
 .profile-cards {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 25px 15px 35px 15px;

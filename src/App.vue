@@ -282,6 +282,7 @@ a {
     transform: translate(-50%, -50%);
     font-weight: 700;
     font-size: 70px;
+    text-transform: uppercase;
     color: white;
     text-shadow: 5px 5px 5px black;
   }

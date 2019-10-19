@@ -45,7 +45,7 @@
 
     <footer>
       <div class="column">
-        <a href="mailto:plantforever.org@gmail.com">plantforever.org@gmail.com</a>
+        <a href="mailto:plantforever.org@gmail.com" target="_blank" rel="noopener noreferrer">plantforever.org@gmail.com</a>
         <div class="social-media-container">
           <span><a href="https://www.instagram.com/plantforeverorg" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/instagram.svg" alt="instagram" /></a></span> |
           <span><a href="https://www.facebook.com/PlantForever" target="_blank" rel="noopener noreferrer"><img src="@/assets/icons/facebook.svg" alt="facebook" /></a></span> |

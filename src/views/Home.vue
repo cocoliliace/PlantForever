@@ -315,6 +315,7 @@ export default {
     .title-text {
       padding-left: 25px;
       border-left: 2px #cccccc solid;
+      text-transform: uppercase;
     }
   }
 }
@@ -336,6 +337,7 @@ export default {
       text-align: center;
       margin-bottom: 5px;
       font-size: 14px;
+      text-transform: uppercase;
       border: 2px #cccccc solid;
       border-radius: 5px;
       display: inline-block;

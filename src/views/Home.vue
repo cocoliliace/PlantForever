@@ -363,6 +363,7 @@ export default {
 .sponsor-container {
   display: flex;
   margin-bottom: 35px;
+  align-items: center;
   a {
     display: flex;
     .sponsor-img {

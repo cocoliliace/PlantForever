@@ -53,6 +53,7 @@ export default {
       font-family: Montserrat;
       padding: 0;
       color: $green;
+      background-color: white;
       text-shadow: 0px 0px 1px #cccccc;
       cursor: pointer;
       &:hover {

@@ -62,45 +62,49 @@
           <div style="color: #00A849;">HELP US</div>
         </div>
       </div>
-      <picture>
-        <source srcset="@/assets/ways-to-help.webp" type="image/webp" />
-        <source srcset="@/assets/ways-to-help.jpg" type="image/jpeg" />
-        <img class="image" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
-      </picture>
-      <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
-      <div class="button-container">
-        <div :class="{ checked: checkedButton === 0 }" class="button" @click="checkedButton = 0">DONATE</div>
-        <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">ACCEPT A TREE</div>
-        <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">VOLUNTEER</div>
-        <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">RAISE AWARENESS</div>
-        <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">OTHERS</div>
-      </div>
-      <div class="secondary-text" style="display: table;">
-        <div v-if="checkedButton === 0">
-          A meaningful way to support PlantForever is by contributing funds or supplies. Donating a
-          coffee’s worth of money significantly assists PlantForever in planting trees and spreading
-          awareness about the climate crisis. As PlantForever is a nonprofit, 100% of all donations
-          go towards the organization (staff nor volunteers get paid). If you would like to support
-          us, click <router-link :to="{ name: 'Donate' }">here</router-link>.
-        </div>
-        <div v-else-if="checkedButton === 1">
-          By <router-link :to="{ name: 'Tree' }">accepting a tree</router-link>, you contribute to
-          developing urban forests and fighting the climate crisis!
-        </div>
-        <div v-else-if="checkedButton === 2">
-          As a nonprofit, PlantForever relies fully on volunteers to operate. Volunteering could
-          include planting trees, raising awareness, providing transportation, and/or assisting with
-          other daily-tasks. If you would like to volunteer, click
-          <router-link :to="{ name: 'Volunteer' }">here</router-link>.
-        </div>
-        <div v-else-if="checkedButton === 3">
-          An outstanding way to create positive change is by raising awareness. Let family, friends,
-          and colleagues know about what PlantForever is doing to combat climate change and how they
-          can help PlantForever achieve their green goals.
-        </div>
-        <div v-else>
-          Takes matters into your own hands by creating positive changes in your lifestyle.
-          Understand how you can reduce your carbon footprint and inspire others to do the same.
+      <div class="container">
+        <picture>
+          <source srcset="@/assets/ways-to-help.webp" type="image/webp" />
+          <source srcset="@/assets/ways-to-help.jpg" type="image/jpeg" />
+          <img class="image left-side" src="@/assets/ways-to-help.jpg" alt="how you can help PlantForever" />
+        </picture>
+        <div class="right-side">
+          <div class="primary-text">There are various ways to support PlantForever and the environment:</div>
+          <div class="button-container">
+            <div :class="{ checked: checkedButton === 0 }" class="button" @click="checkedButton = 0">DONATE</div>
+            <div :class="{ checked: checkedButton === 1 }" class="button" @click="checkedButton = 1">ACCEPT A TREE</div>
+            <div :class="{ checked: checkedButton === 2 }" class="button" @click="checkedButton = 2">VOLUNTEER</div>
+            <div :class="{ checked: checkedButton === 3 }" class="button" @click="checkedButton = 3">RAISE AWARENESS</div>
+            <div :class="{ checked: checkedButton === 4 }" class="button" @click="checkedButton = 4">OTHERS</div>
+          </div>
+          <div class="secondary-text">
+            <div v-if="checkedButton === 0">
+              A meaningful way to support PlantForever is by contributing funds or supplies. Donating a
+              coffee’s worth of money significantly assists PlantForever in planting trees and spreading
+              awareness about the climate crisis. As PlantForever is a nonprofit, 100% of all donations
+              go towards the organization (staff nor volunteers get paid). If you would like to support
+              us, click <router-link :to="{ name: 'Donate' }">here</router-link>.
+            </div>
+            <div v-else-if="checkedButton === 1">
+              By <router-link :to="{ name: 'Tree' }">accepting a tree</router-link>, you contribute to
+              developing urban forests and fighting the climate crisis!
+            </div>
+            <div v-else-if="checkedButton === 2">
+              As a nonprofit, PlantForever relies fully on volunteers to operate. Volunteering could
+              include planting trees, raising awareness, providing transportation, and/or assisting with
+              other daily-tasks. If you would like to volunteer, click
+              <router-link :to="{ name: 'Volunteer' }">here</router-link>.
+            </div>
+            <div v-else-if="checkedButton === 3">
+              An outstanding way to create positive change is by raising awareness. Let family, friends,
+              and colleagues know about what PlantForever is doing to combat climate change and how they
+              can help PlantForever achieve their green goals.
+            </div>
+            <div v-else>
+              Takes matters into your own hands by creating positive changes in your lifestyle.
+              Understand how you can reduce your carbon footprint and inspire others to do the same.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -320,42 +324,44 @@ export default {
   }
 }
 #ways-to-help {
-  height: 460px;
-  .image {
-    width: 350px;
-    border: 10px black solid;
-    float: left;
-    margin-right: 25px;
-  }
-  .button-container {
-    margin: 35px 0px;
-    text-align: center;
-    .button {
-      color: #222222;
-      width: 200px;
-      padding: 14px 0;
+  .container {
+    display: flex;
+    .image {
+      width: 350px;
+      border: 10px black solid;
+      margin-right: 25px;
+      margin-bottom: 100px;
+    }
+    .button-container {
+      margin: 35px 0px;
       text-align: center;
-      margin-bottom: 5px;
-      font-size: 14px;
-      text-transform: uppercase;
-      border: 2px #cccccc solid;
-      border-radius: 5px;
-      display: inline-block;
-      margin-right: 15px;
-      cursor: pointer;
-      background-image: linear-gradient(to bottom, transparent 50%, $green 50%);
-      background-size: 100% 200%;
-      transition-duration: 0.5s;
-      background-position: 100% 200%;
-      &:hover {
-        background-position: 100% 100%;
-        color: white;
-      }
-      &.checked {
-        border-color: $green;
-        background-color: $green;
-        color: white;
-        cursor: default;
+      .button {
+        color: #222222;
+        width: 200px;
+        padding: 14px 0;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 14px;
+        text-transform: uppercase;
+        border: 2px #cccccc solid;
+        border-radius: 5px;
+        display: inline-block;
+        margin-right: 15px;
+        cursor: pointer;
+        background-image: linear-gradient(to bottom, transparent 50%, $green 50%);
+        background-size: 100% 200%;
+        transition-duration: 0.5s;
+        background-position: 100% 200%;
+        &:hover {
+          background-position: 100% 100%;
+          color: white;
+        }
+        &.checked {
+          border-color: $green;
+          background-color: $green;
+          color: white;
+          cursor: default;
+        }
       }
     }
   }
@@ -389,28 +395,20 @@ iframe {
 }
 
 @media (max-width: 1288px) {
-  .carousel {
-    .text-container {
-      .primary-text {
-        font-size: 50px;
-      }
-      .secondary-text {
-        font-size: 40px;
-      }
+  .carousel .text-container {
+    .primary-text {
+      font-size: 50px;
+    }
+    .secondary-text {
+      font-size: 40px;
     }
   }
-  .about-us-images {
-    .text-container {
-      &#left {
-        &.slided {
-          transform: translate(-105%, -50%);
-        }
-      }
-      &#right {
-        &.slided {
-          transform: translate(10%, -50%);
-        }
-      }
+  .about-us-images .text-container {
+    &#left &.slided {
+      transform: translate(-105%, -50%);
+    }
+    &#right &.slided {
+      transform: translate(10%, -50%);
     }
   }
 }
@@ -422,23 +420,16 @@ iframe {
       margin-bottom: 50px;
     }
   }
-  #ways-to-help {
-    height: 460px;
-  }
 }
 @media (max-width: 1150px) {
-  .about-us-images {
-    .text-container {
-      width: 450px;
-    }
+  .about-us-images .text-container {
+    width: 450px;
   }
 }
 @media (max-width: 1074px) {
-  .carousel {
-    .text-container {
-      width: 80vw;
-      transform: translate(-50%, -50%);
-    }
+  .carousel .text-container {
+    width: 80vw;
+    transform: translate(-50%, -50%);
   }
 }
 @media (max-width: 1040px) {
@@ -476,8 +467,20 @@ iframe {
       }
     }
   }
+}
+@media (max-width: 1040px) and (min-width: 801px) {
   #ways-to-help {
-    height: 560px;
+    .container {
+      .image {
+        margin-bottom: 200px;
+      }
+      .secondary-text {
+        transform: translate(-390px, -150px);
+      }
+    }
+  }
+  #map {
+    transform: translateY(-100px);
   }
 }
 @media (max-width: 905px) {
@@ -499,11 +502,13 @@ iframe {
   }
   #ways-to-help {
     height: auto;
-    .image {
-      float: none;
-      position: relative;
-      width: calc(100% - 20px);
-      margin-right: 0;
+    .container {
+      display: block;
+      .image {
+        position: relative;
+        width: calc(100% - 20px);
+        margin-right: 0;
+      }
     }
   }
   #sponsor-img {
@@ -511,62 +516,50 @@ iframe {
   }
 }
 @media (max-width: 780px) {
-  .carousel {
-    .text-container {
-      .primary-text {
-        font-size: 45px;
-      }
-      .secondary-text {
-        font-size: 35px;
-      }
-      .button-container {
-        .primary-button, .secondary-button {
-          padding: 15px 20px;
-        }
-      }
+  .carousel .text-container {
+    .primary-text {
+      font-size: 45px;
+    }
+    .secondary-text {
+      font-size: 35px;
+    }
+    .button-container .primary-button, .button-container .secondary-button {
+      padding: 15px 20px;
     }
   }
 }
 @media (max-width: 615px) {
-  .carousel {
-    .text-container {
-      .primary-text {
-        font-size: 30px;
-      }
-      .secondary-text {
-        margin-top: 5px;
-        font-size: 20px;
-      }
-      .button-container {
-        margin-top: 25px;
-        .primary-button, .secondary-button {
-          padding: 15px 20px;
-        }
+  .carousel .text-container {
+    .primary-text {
+      font-size: 30px;
+    }
+    .secondary-text {
+      margin-top: 5px;
+      font-size: 20px;
+    }
+    .button-container {
+      margin-top: 25px;
+      .primary-button, .secondary-button {
+        padding: 15px 20px;
       }
     }
   }
 }
 @media (max-width: 500px) {
-  .carousel {
-    .text-container {
-      .primary-text {
-        font-size: 26px;
-      }
-      .button-container {
-        width: 90vw;
-        margin-left: -5vw;
-        .primary-button, .secondary-button {
-          padding: 15px;
-        }
+  .carousel .text-container {
+    .primary-text {
+      font-size: 26px;
+    }
+    .button-container {
+      width: 90vw;
+      margin-left: -5vw;
+      .primary-button, .secondary-button {
+        padding: 15px;
       }
     }
   }
-  .about-us-images {
-    .text-container {
-      .button-container {
-        width: 100%;
-      }
-    }
+  .about-us-images .text-container .button-container {
+    width: 100%;
   }
   .section {
     width: 90vw;
@@ -578,6 +571,46 @@ iframe {
         padding-left: 0;
         border-left: none;
       }
+    }
+  }
+}
+@media (max-width: 414px) {
+  .sponsor-container {
+    flex-direction: column;
+    a .sponsor-img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .carousel {
+    margin-bottom: 40px;
+    .text-container {
+      .primary-text {
+        font-size: 22px;
+      }
+      .secondary-text {
+        font-size: 20px;
+      }
+      .button-container {
+        width: 90vw;
+        margin-left: -5vw;
+        margin-top: 7px;
+        .primary-button, .secondary-button {
+          padding: 8px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .about-us-images .text-container {
+    .primary-text {
+      font-size: 22px;
+    }
+    .button-container .primary-button, .button-container .secondary-button {
+      padding: 8px;
+      font-size: 14px;
     }
   }
 }

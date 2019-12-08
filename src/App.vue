@@ -58,11 +58,16 @@
 </template>
 
 <script>
+import ogImage from "./assets/plantforever.jpg";
+
 export default {
   name: "App",
   metaInfo: {
     title: "Home",
-    titleTemplate: "%s – PlantForever | Edmonton Nonprofit"
+    titleTemplate: "%s – PlantForever | Edmonton Nonprofit",
+    meta: [
+      { property: "og:image", content: `https://www.plantforever.org${ ogImage }` }
+    ]
   },
   data() {
     return {
@@ -488,21 +493,13 @@ a {
 }
 
 @media (max-width: 1205px) {
-  header {
-    #nav {
-      a:not(#logo-container) {
-        padding: 15px;
-      }
-    }
+  header #nav a:not(#logo-container) {
+    padding: 15px;
   }
 }
 @media (max-width: 980px) {
-  header {
-    #nav {
-      a:not(#logo-container) {
-        padding: 15px 10px;
-      }
-    }
+  header #nav a:not(#logo-container) {
+    padding: 15px 10px;
   }
 }
 @media (max-width: 905px) {
@@ -538,6 +535,11 @@ a {
   .banner-container {
     height: 250px;
     background-size: contain;
+  }
+}
+@media (max-width: 320px) {
+  header img {
+    width: 100vw;
   }
 }
 </style>

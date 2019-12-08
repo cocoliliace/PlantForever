@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="section" style="margin-bottom: 35px;">
+    <div class="section">
       <div class="title-text">WHY PLANTFOREVER PLANTS TREES</div>
       <div class="columns">
         <div class="column">
@@ -111,6 +111,7 @@ export default {
   .columns {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 25px;
     img {
       float: left;
       width: 500px;
@@ -124,6 +125,9 @@ export default {
     .column {
       width: 45%;
     }
+  }
+  .secondary-text {
+    font-size: 19px;
   }
 }
 
@@ -140,8 +144,10 @@ export default {
 @media (max-width: 915px) {
   .section {
     width: 90%;
+    margin-top: 45px;
     .columns {
       flex-direction: column;
+      margin-bottom: 0;
       img {
         display: none;
       }
@@ -150,9 +156,14 @@ export default {
       }
       .column {
         width: 100%;
-        margin-top: 35px;
+        margin-bottom: 35px;
       }
     }
+  }
+}
+@media (max-width: 414px) {
+  .title-text {
+    font-size: 28px;
   }
 }
 </style>

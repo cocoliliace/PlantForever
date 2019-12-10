@@ -56,6 +56,7 @@ export default {
       background-color: white;
       text-shadow: 0px 0px 1px #cccccc;
       cursor: pointer;
+      appearance: none;
       &:hover {
         text-decoration: underline;
       }

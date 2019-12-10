@@ -70,6 +70,7 @@ form {
     height: 50px;
     margin: 25px 0px 5px calc(100% - 120px);
     cursor: pointer;
+    appearance: none;
   }
 }
 

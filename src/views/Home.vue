@@ -59,7 +59,7 @@
         </picture>
         <div class="title-text">
           <div>HOW YOU CAN</div>
-          <div style="color: #00A849;">HELP US</div>
+          <div class="second-line">HELP US</div>
         </div>
       </div>
       <div class="container">
@@ -117,7 +117,7 @@
         </picture>
         <div class="title-text">
           <div>WHERE WE HAVE</div>
-          <div style="color: #00A849;">PLANTED</div>
+          <div class="second-line">PLANTED</div>
         </div>
       </div>
       <div class="map-overlay" onclick="style.pointerEvents='none'" onmouseout="style.pointerEvents='auto'"></div>
@@ -132,7 +132,29 @@
         </picture>
         <div class="title-text">
           <div>OUR</div>
-          <div style="color: #00A849;">SUPPORTERS</div>
+          <div class="second-line">PROGRESS</div>
+        </div>
+      </div>
+      <div id="progress-section">
+        <div id="planted">{{ treesPlanted }}</div>
+        <div class="primary-text">
+          On April 24, 2019, we posted an <a href="https://www.instagram.com/p/BwvVlQUnlgP/" target="_blank" rel="noopener noreferrer">instagram post</a>
+          with the promise that we will plant 1 tree for every 100 views we receive. In addition to
+          the trees we've been rigorously planting, we are greatful for the 655 lovely supporters
+          who pledged to plant 9,858 extra trees.
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">
+        <picture>
+          <source srcset="@/assets/icons/logo.webp" type="image/webp" />
+          <source srcset="@/assets/icons/logo.jpg" type="image/jpeg" />
+          <img src="@/assets/icons/logo.jpg" alt="PlantForever" class="title-logo" />
+        </picture>
+        <div class="title-text">
+          <div>OUR</div>
+          <div class="second-line">SUPPORTERS</div>
         </div>
       </div>
       <div class="sponsor-container">
@@ -177,15 +199,19 @@ export default {
   },
   data() {
     return {
-      checkedButton: 0
+      checkedButton: 0,
+      treesPlanted: 7800
     };
   },
   mounted() {
     this.aboutUsAnimation();
+    this.ourProgressAnimation();
     window.addEventListener("scroll", this.aboutUsAnimation);
+    window.addEventListener("scroll", this.ourProgressAnimation);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.aboutUsAnimation);
+    window.removeEventListener("scroll", this.ourProgressAnimation);
   },
   methods: {
     aboutUsAnimation() {
@@ -193,6 +219,17 @@ export default {
         document.querySelector("#left").classList.add("slided");
         document.querySelector("#right").classList.add("slided");
         window.removeEventListener("scroll", this.aboutUsAnimation);
+      }
+    },
+    ourProgressAnimation() {
+      if (window.scrollY > 1750) {
+        let intervalID = setInterval(function() {
+          this.treesPlanted += 17;
+          if (this.treesPlanted >= 9858) {
+            this.treesPlanted = 9858;
+            clearInterval(intervalID);
+          }
+        }.bind(this), 10);
       }
     }
   }
@@ -320,6 +357,9 @@ export default {
       padding-left: 25px;
       border-left: 2px #cccccc solid;
       text-transform: uppercase;
+      .second-line {
+        color: $green;
+      }
     }
   }
 }
@@ -379,6 +419,25 @@ export default {
   }
 }
 
+#progress-section {
+  display: flex;
+  #planted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    min-width: 180px;
+    height: 180px;
+    min-height: 180px;
+    margin-right: 40px;
+    font-size: 44px;
+    font-weight: 700;
+    border: 10px solid $blue;
+    border-radius: 50%;
+    background-color: white;
+    color: $green;
+  }
+}
 .map-overlay {
   position: relative;
   width: 100%;
@@ -528,6 +587,14 @@ iframe {
     }
   }
 }
+@media (max-width: 744px) {
+  #progress-section {
+    display: block;
+    #planted {
+      margin: 0 auto 25px;
+    }
+  }
+}
 @media (max-width: 615px) {
   .carousel .text-container {
     .primary-text {
@@ -575,6 +642,9 @@ iframe {
   }
 }
 @media (max-width: 414px) {
+  #progress-section .primary-text {
+    font-size: 21px;
+  }
   .sponsor-container {
     flex-direction: column;
     a .sponsor-img {
@@ -612,6 +682,9 @@ iframe {
       padding: 8px;
       font-size: 14px;
     }
+  }
+  #progress-section .primary-text {
+    font-size: 18px;
   }
 }
 </style>

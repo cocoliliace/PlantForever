@@ -3,7 +3,7 @@
     <div id="covid-update">
       <div v-if="displayCovidUpdate" class="update">
         Due to the COVID-19 crisis, tree plantations and volunteer opportunities have been paused.
-        We are still accepting sign ups, but the event dates are to be determined. If you any
+        We are still accepting registrations, but the event dates are to be determined. If you any
         concerns, please feel free to <router-link :to="{ name: 'Contact' }">contact us</router-link>.
       </div>
       <div class="cancel-button" @click="displayCovidUpdate = false">X</div>

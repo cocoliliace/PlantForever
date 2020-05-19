@@ -1,13 +1,5 @@
 <template>
   <div id="app">
-    <div id="covid-update">
-      <div v-if="displayCovidUpdate" class="update">
-        Due to the COVID-19 crisis, tree plantations and volunteer opportunities have been paused.
-        We are still accepting registrations, but the event dates are to be determined. If you any
-        concerns, please feel free to <router-link :to="{ name: 'Contact' }">contact us</router-link>.
-      </div>
-      <div class="cancel-button" @click="displayCovidUpdate = false">X</div>
-    </div>
     <header>
       <router-link :to="{ name: 'Home' }">
         <picture>
@@ -81,8 +73,7 @@ export default {
     return {
       showNav: true,
       hasDropdown: true,
-      previousHeight: 0,
-      displayCovidUpdate: true
+      previousHeight: 0
     };
   },
   mounted() {
@@ -142,24 +133,6 @@ export default {
   color: white;
 }
 
-#covid-update {
-  background-color: $blue;
-  color: white;
-  font-size: 18px;
-  position: relative;
-  .update {
-    width: 80vw;
-    padding: 10px 0;
-    margin-left: 10vw;
-  }
-  .cancel-button {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-  }
-}
 header {
   background-color: white;
   padding: 20px 10vw 5px 10vw;

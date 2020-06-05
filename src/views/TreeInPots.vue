@@ -15,10 +15,10 @@
           PlantForever is here to help!
         </div>
         <div class="text">
-          The first tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
+          Each tree requires a minimum donation of $10 to allow us to keep planting.
         </div>
         <div class="text">
-          We take a deposit of $5.00 per pot at the meeting, and return them when we get the pots back.
+          We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pots back.
         </div>
         <div class="text">
           The trees are 2 to 4 feet in size

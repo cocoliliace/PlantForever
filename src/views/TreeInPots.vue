@@ -21,7 +21,7 @@
           We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pots back.
         </div>
         <div class="text">
-          The trees are 2 to 4 feet in size
+          The trees are 1 to 3 feet in size
         </div>
       </div>
       <form id="volunteer-form" @submit.prevent="submit">

@@ -12,7 +12,7 @@
         Plantation of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
       </div>
       <div class="text">
-        The trees are 2 to 4 feet in size
+        The trees are 1 to 3 feet in size
       </div>
     </div>
     <div class="button-container">

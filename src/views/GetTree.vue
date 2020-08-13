@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "Tree",
+  name: "GetTree",
   metaInfo: {
     title: "Accept A Tree",
     meta: [

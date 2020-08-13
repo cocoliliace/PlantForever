@@ -18,7 +18,7 @@
             usually homes and business locations.
           </div>
           <div class="secondary-text">
-            Patrons first <router-link :to="{ name: 'Tree' }">register for a tree</router-link>.
+            Patrons first <router-link :to="{ name: 'GetTree' }">register for a tree</router-link>.
             Once a date is selected, volunteers go the desired planting location to plant trees,
             consisting of choosing an area, digging, planting, and filling the space with
             patron-provided soil and water. Currently, PlantForever plants in Edmonton, but plans to

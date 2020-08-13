@@ -12,7 +12,7 @@
         <div class="primary-text">We are PlantForever</div>
         <div class="secondary-text">Free tree planting</div>
         <div class="button-container">
-          <router-link :to="{ name: 'Tree' }" class="primary-button">Accept A Tree</router-link>
+          <router-link :to="{ name: 'GetTree' }" class="primary-button">Accept A Tree</router-link>
           <router-link :to="{ name: 'Donate' }" class="secondary-button">Donate Funds</router-link>
         </div>
       </div>
@@ -36,7 +36,7 @@
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
-          <router-link :to="{ name: 'Tree' }" class="secondary-button">Want A Tree?</router-link>
+          <router-link :to="{ name: 'GetTree' }" class="secondary-button">Want A Tree?</router-link>
         </div>
       </div>
       <div id="right" class="text-container">
@@ -86,7 +86,7 @@
               us, click <router-link :to="{ name: 'Donate' }">here</router-link>.
             </div>
             <div v-else-if="checkedButton === 1">
-              By <router-link :to="{ name: 'Tree' }">accepting a tree</router-link>, you contribute to
+              By <router-link :to="{ name: 'GetTree' }">accepting a tree</router-link>, you contribute to
               developing urban forests and fighting the climate crisis!
             </div>
             <div v-else-if="checkedButton === 2">
@@ -158,13 +158,6 @@
         </div>
       </div>
       <div class="sponsor-container">
-        <a href="https://www.boosterjuice.com" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="@/assets/supporters/booster-juice.webp" type="image/webp" />
-            <source srcset="@/assets/supporters/booster-juice.jpg" type="image/jpeg" />
-            <img class="sponsor-img" src="@/assets/supporters/booster-juice.jpg" alt="booster juice" />
-          </picture>
-        </a>
         <a href="https://infokidz.ca" target="_blank" rel="noopener noreferrer">
           <picture>
             <source srcset="@/assets/supporters/infokidz.webp" type="image/webp" />

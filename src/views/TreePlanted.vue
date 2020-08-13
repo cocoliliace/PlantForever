@@ -62,7 +62,7 @@
 import axios from "axios";
 
 export default {
-  name: "Tree",
+  name: "TreePlanted",
   metaInfo: {
     title: "Accept A Tree",
     link: [

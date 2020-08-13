@@ -27,7 +27,7 @@
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
         <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
-        <router-link :to="{ name: 'Tree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
+        <router-link :to="{ name: 'GetTree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>

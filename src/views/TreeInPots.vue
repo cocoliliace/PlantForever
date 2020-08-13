@@ -55,9 +55,13 @@
 import axios from "axios";
 
 export default {
-  name: "Tree",
+  name: "TreeInPots",
   metaInfo: {
     title: "Accept A Tree",
+    meta: [
+      { name: "description", content: "Get a free tree of your choice planted in your property and nurture it as it grows. Help the environment as the tree absorbs thousands of pounds of CO2." },
+      { name: "keywords", content: "PlantForever, free, tree, plant, organization, backyard, black cherry, colorado spruce, red maple, schubert chokecherry" }
+    ],
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/accept-a-tree/in-pots" }
     ]

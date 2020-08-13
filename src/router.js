@@ -26,8 +26,13 @@ const router =  new Router({
     },
     {
       path: "/accept-a-tree",
-      name: "Tree",
-      component: () => import("./views/Tree.vue")
+      name: "GetTree",
+      component: () => import("./views/GetTree.vue")
+    },
+    {
+      path: "/tree-information",
+      name: "Trees",
+      component: () => import("./views/Trees.vue")
     },
     {
       path: "/accept-a-tree/in-backyard",

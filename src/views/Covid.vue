@@ -4,7 +4,7 @@
       <div class="title">COVID POLICIES</div>
     </div>
     <div class="text-container">
-      <div class="text">
+      <div v-if="volunteer" class="text">
         <div class="title">Volunteer-to-Volunteer Contact Guidelines</div>
         <hr />
         <ul>
@@ -53,6 +53,12 @@ export default {
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/about-us" }
     ]
+  },
+  props: {
+    volunteer: {
+      default: true,
+      type: Boolean
+    }
   }
 }
 </script>

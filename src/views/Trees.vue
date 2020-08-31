@@ -1,6 +1,8 @@
 <template>
   <div>
-
+    <div class="banner-container">
+      <div class="title">TREE INFORMATION</div>
+    </div>
   </div>
 </template>
 

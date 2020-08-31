@@ -18,6 +18,9 @@
         Most activities do not require skill or materials to bring. For tree plantation,
         transportation will be provided to the planting locations.
       </div>
+      <div class="text">
+        Please read our <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidlines</router-link> before volunteering.
+      </div>
     </div>
     <form id="volunteer-form" @submit.prevent="submit">
       <div style="color: red;">* Required</div>
@@ -43,6 +46,9 @@
       <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the summer" autocomplete="off" required />
       <div class="text">Any questions or comments? (Any medical concerns?)</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
+      <div class="checkbox-container">
+        <label><input class="checkbox" type="checkbox" required /><span class="checkmark"></span>I've read the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidlines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
+      </div>
       <button id="submit-form" class="primary-button" type="submit">Submit</button>
     </form>
   </div>

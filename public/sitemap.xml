@@ -45,7 +45,14 @@
 
   <url>
     <loc>https://www.plantforever.org/volunteer-registration/</loc>
-    <lastmod>2019-10-10</lastmod>
+    <lastmod>2020-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.plantforever.org/covid-policies/</loc>
+    <lastmod>2020-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

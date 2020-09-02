@@ -16,6 +16,7 @@
           <li>Transportation</li>
           <li class="indent">Use separate vehicles when possible</li>
           <li class="indent">Use only one vehicle for multiple volunteer when all volunteers are comfortable</li>
+          <li class="indent">Wear masks during the whole time if there are multiple people in the vehicle</li>
           <li>Wear gloves when handling equipment</li>
           <li>Do not share gloves; ask volunteers to bring own gloves if possible</li>
         </ul>

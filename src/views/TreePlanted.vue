@@ -46,7 +46,7 @@
           <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span></label>
           <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Colorado Spruce<span v-if="preferredList[1]"> X <input v-model="amountList[1]" class="amount" /></span></label>
           <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Red Maple<span v-if="preferredList[2]"> X <input v-model="amountList[2]" class="amount" /></span></label>
-          <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<span v-if="preferredList[3]"> X <input v-model="amountList[3]" class="amount" /></span></label>
+          <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<span v-if="preferredList[3]"> X <input v-model="amountList[3]" class="amount" /></span> (No more remaining for 2020 planting season)</label>
           <input v-model="amountList" type="hidden" name="preferred_task" />
         </div>
         <div class="text">Are you able to provide any supplies?</div>

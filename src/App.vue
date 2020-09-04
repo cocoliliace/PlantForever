@@ -110,7 +110,7 @@ export default {
       this.hasDropdown = window.innerWidth > 905;
     },
     childIsActive(input) {
-      return input.some(path => {
+      return input.some((path) => {
         return this.$route.path.indexOf(path) === 0;
       });
     }

@@ -172,6 +172,13 @@
             <img class="sponsor-img" src="@/assets/supporters/simply-health.jpg" alt="simply health" />
           </picture>
         </a>
+        <a href="https://www.youngclimateleaders.org" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source srcset="@/assets/supporters/young-climate-leaders.webp" type="image/webp" />
+            <source srcset="@/assets/supporters/young-climate-leaders.jpg" type="image/jpeg" />
+            <img class="sponsor-img" src="@/assets/supporters/young-climate-leaders.jpg" alt="young climate leaders" />
+          </picture>
+        </a>
       </div>
     </div>
   </div>

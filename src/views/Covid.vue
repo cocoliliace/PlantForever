@@ -4,39 +4,53 @@
       <div class="title">COVID POLICIES</div>
     </div>
     <div class="text-container">
+      <div style="margin-top: 8px;">PlantForever's Covid-19 Policy is in accordance with <a href="https://www.alberta.ca/enhanced-public-health-measures.aspx" target="_blank" rel="noopener noreferrer">Alberta Health Service public measure and guidelines</a>.</div>
+      <div style="text-align: right;">Updated May 2<sup>nd</sup></div>
       <div v-if="volunteer" class="text">
         <div class="title">Volunteer-to-Volunteer Contact Guidelines</div>
         <hr />
         <ul>
+          <li>If a volunteer has any <a href="https://www.alberta.ca/covid-19-testing-in-alberta.aspx" target="_blank" rel="noopener noreferrer">Covid-19 symptoms</a>, is in the process of self-isolation, or has been in contact with someone with Covid-19 recently, they <u>must not</u> attend any events</li>
           <li>Ensure no physical contact, including handshakes</li>
-          <li>Remain 2m apart when possible</li>
-          <li class="indent">During planting or any event, attempt to keep separation (e.g. one person planting one tree)</li>
-          <li>Wear mask during interactions</li>
+          <li>Remain 2m apart at all times
+            <ul>
+              <li>During planting or any event, keep separation (e.g. one person planting one tree)</li>
+            </ul>
+          </li>
+          <li>Wear a mask at all times (during the entirety of the event(s))</li>
           <li>Use hand sanitizer as required</li>
-          <li>Transportation</li>
-          <li class="indent">Use separate vehicles when possible</li>
-          <li class="indent">Use only one vehicle for multiple volunteer when all volunteers are comfortable</li>
-          <li class="indent">Wear mask during the whole time if there are multiple people in the vehicle</li>
+          <li>Transportation
+            <ul>
+              <li>Use separate vehicles among volunteers</li>
+              <li>If carpooling is necessary, limit to two people per vehicle, sanitize surfaces, and sit as far apart as possible</li>
+            </ul>
+          </li>
           <li>Wear gloves when handling equipment</li>
-          <li>Do not share gloves; ask volunteers to bring own gloves if possible</li>
+          <li>Bring own equipment if possible (e.g., shovel)</li>
+          <li>Do not share gloves; volunteers must bring their own gloves</li>
         </ul>
       </div>
       <div class="text">
         <div class="title">Volunteer-to-Homeowner/Other Patron Guidelines</div>
         <hr />
         <ul>
-          <li>Ensure that during direct planting the homeowner(s) are comfortable with volunteers going on their property (yard)</li>
+          <li>If a homeowner/patron has any <a href="https://www.alberta.ca/covid-19-testing-in-alberta.aspx" target="_blank" rel="noopener noreferrer">Covid-19 symptoms</a>, is in the process of self-isolation, or has been in contact with someone with Covid-19 recently, they must inform PlantForever and cancel any interaction with volunteers</li>
+          <li>Ensure that during direct planting, the homeowner(s) are comfortable with volunteers going on their property (yard)</li>
           <li>Ensure no physical contact, including handshakes</li>
-          <li>Remain 2m apart when possible with all individuals</li>
-          <li class="indent">Remain at least 2m apart during all conversation</li>
-          <li>Wear mask during any and all conversations and interactions</li>
-          <li class="indent">Masks compulsory for the entirety of interaction or planting event</li>
+          <li>Remain 2m apart at all times
+            <ul>
+              <li>Remain at least 2m apart during all conversations</li>
+            </ul>
+          </li>
+          <li>Wear mask during any and all conversations and interactions with volunteers
+            <ul>
+              <li>Masks are compulsory for the entirety of interaction or planting event</li>
+            </ul>
+          </li>
           <li>Use hand sanitizer as required</li>
-          <li>When transferring trees, meet up in a public place (i.e. parking lot) rather than a home</li>
-          <li>During planting, ensure that volunteers, homeowners, and any other people avoid direct contact</li>
-          <li>Gloves are compulsory for the entirety of interaction or planting event</li>
-          <li>Wear gloves when handling equipment</li>
+          <li>When transferring trees, meet up in a public place (e.g., parking lot)</li>
         </ul>
+        <div>*PlantForever will be limiting the total number of attendees to 10 and under</div>
       </div>
     </div>
   </div>
@@ -72,16 +86,13 @@ export default {
   width: calc(80vw - 30px);
   padding: 0 15px;
   margin: 25px 10vw 0 10vw;
+  font-size: 19px;
 }
 .text {
-  font-size: 19px;
   margin: 15px 5px;
   .title {
     text-align: center;
     font-weight: 700;
-  }
-  .indent {
-    margin-left: 25px;
   }
 }
 </style>

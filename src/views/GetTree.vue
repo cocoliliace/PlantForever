@@ -37,7 +37,7 @@ export default {
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/accept-a-tree" }
     ]
-  },
+  }
 }
 </script>
 

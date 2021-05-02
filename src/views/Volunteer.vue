@@ -47,7 +47,7 @@
       <div class="text">Any questions or comments? (Any medical concerns?)</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <div class="checkbox-container">
-        <label><input class="checkbox" type="checkbox" required /><span class="checkmark"></span>I've read the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidlines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
+        <label><input class="checkbox" type="checkbox" required /><span class="checkmark"></span>I have read and will follow the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidelines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
       </div>
       <button id="submit-form" class="primary-button" type="submit">Submit</button>
     </form>
@@ -107,7 +107,7 @@ export default {
             comments: this.comments
           }
         });
-        this.email = this.name = this.phone = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
+        this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
         this.preferredList = [false, false, false, false];
         this.thankYouMessage = true;
       } else {

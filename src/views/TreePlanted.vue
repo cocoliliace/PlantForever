@@ -55,6 +55,9 @@
         <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the last 2 weeks of May" autocomplete="off" required />
         <div class="text">Any questions or comments?</div>
         <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
+        <div class="checkbox-container">
+          <label><input class="checkbox" type="checkbox" required /><span class="checkmark"></span>I have read and will follow the <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Homeowner/Patron Guidelines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
+        </div>
         <button id="submit-form" class="primary-button" type="submit">Submit</button>
       </form>
     </div>

@@ -28,7 +28,7 @@
           <li>Wear gloves when handling equipment</li>
           <li>Bring own equipment if possible (e.g., shovel)</li>
           <li>Do not share gloves; volunteers must bring their own gloves</li>
-          <li>Also read our <a style="cursor: pointer;" @click="volunteer = false">Homeowner/Patron Guidelines & Responsibilitie</a> (optional)</li>
+          <li>Also read our <a style="cursor: pointer;" @click="volunteer = false">Homeowner/Patron Guidelines & Responsibilities</a> (optional)</li>
         </ul>
         <div>*PlantForever will be limiting the total number of attendees to 10 and under</div>
       </div>

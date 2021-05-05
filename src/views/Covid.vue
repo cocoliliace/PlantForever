@@ -5,7 +5,7 @@
     </div>
     <div class="text-container">
       <div style="margin-top: 8px;">PlantForever's Covid-19 Policy is in accordance with <a href="https://www.alberta.ca/enhanced-public-health-measures.aspx" target="_blank" rel="noopener noreferrer">Alberta Health Service public measure and guidelines</a>.</div>
-      <div style="text-align: right;">Updated May 2<sup>nd</sup></div>
+      <div style="text-align: right;">Updated May 4<sup>th</sup></div>
       <div v-if="volunteer" class="text">
         <div class="title">Volunteer Guidelines & Responsibilities</div>
         <hr />

@@ -35,14 +35,18 @@
         <input v-model="address" class="short-answer" type="text" name="address" placeholder="Area" autocomplete="off" required />
         <div class="text">What type(s) of tree and how many would you like? <span class="star">*</span></div>
         <div class="checkbox-container" required>
-          <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span></label>
+          <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" disabled /><span class="checkmark" style="cursor: not-allowed;"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span> (unavailable for 2021 season)</label>
           <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Colorado Spruce<span v-if="preferredList[1]"> X <input v-model="amountList[1]" class="amount" /></span></label>
-          <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Red Maple<span v-if="preferredList[2]"> X <input v-model="amountList[2]" class="amount" /></span></label>
-          <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<span v-if="preferredList[3]"> X <input v-model="amountList[3]" class="amount" /></span> (No more remaining for 2020 planting season)</label>
+          <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" disabled /><span class="checkmark" style="cursor: not-allowed;"></span>Red Maple<span v-if="preferredList[2]"> X <input v-model="amountList[2]" class="amount" /></span> (unavailable for 2021 season)</label>
+          <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<span v-if="preferredList[3]"> X <input v-model="amountList[3]" class="amount" /></span></label>
           <input v-model="amountList" type="hidden" name="preferred_task" />
         </div>
+        <div class="text">Around which area in Edmonton can you meet up with us? <span class="star">*</span></div>
+        <input v-model="meetingAddress" class="short-answer" type="text" name="meetingAddress" placeholder="Area" autocomplete="off" required />
         <div class="text">When do you want to meet up for your tree<span v-if="numberOfTrees > 1">s</span>? <span class="star">*</span></div>
         <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the last 2 weeks of May" autocomplete="off" required />
+        <div class="text">At what address will you plant your tree? <span class="star">*</span></div>
+        <input v-model="plantingAddress" class="short-answer" type="text" name="plantingAddress" placeholder="Planting address" autocomplete="off" required />
         <div class="text">Any questions or comments?</div>
         <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
         <div class="checkbox-container">
@@ -73,13 +77,14 @@ export default {
     return {
       email: "",
       name: "",
-      address: "",
       phone: "",
       treeList: ["Black Cherry", "Colorado Spruce", "Red Maple", "Schubert Chokecherry"],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",
+      meetingAddress: "",
       availability: "",
+      plantingAddress: "",
       materials: "",
       comments: "",
       thankYouMessage: false
@@ -118,14 +123,15 @@ export default {
           params: {
             email: this.email,
             name: this.name,
-            address: this.address,
             phone: this.phone,
             preferred_trees: this.preferredTrees,
+            meeting_address: this.meetingAddress,
             availability: this.availability,
+            planting_address: this.plantingAddress,
             comments: this.comments
           }
         });
-        this.email = this.name = this.address = this.phone = this.preferredTrees = this.availability = this.materials = this.comments = "";
+        this.email = this.name = this.phone = this.preferredTrees = this.meetingAddress = this.plantingAddress = this.availability = this.materials = this.comments = "";
         this.preferredList = [false, false, false, false];
         this.amountList = [0, 0, 0, 0];
         this.thankYouMessage = true;

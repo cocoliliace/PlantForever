@@ -51,28 +51,10 @@ export default {
           story: ["As a 17-year old environmentalist, Ching joined PlantForever to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever"]
         },
         {
-          name: "Fatima Shamas",
-          title: "Social Media Manager",
-          photo: "logo",
-          story: ["Fatima joined PlantForever in 2018 as a volunteer, but later became a part of the team in hopes of spreading awareness through social media. By managing the PlantForever social media, her goal remains the same: to educate and inform people about climate change and help them make positive environmental changes within their lifestyle"]
-        },
-        {
           name: "Manraj Singh",
           title: "VP of Marketing",
           photo: "raj",
           story: ["Being only 17 year old and an environmentalist, having a place where a person can make a change was the reason he joined PlantForever. He loves working with the community and helping both PlantForever and climate change get recognition. His goal is to grow PlantForever to a national level. He is one of the voices which helps PlantForever move forward"]
-        },
-        {
-          name: "Vanshaj Upadhyay",
-          title: "Merch & Design Manager",
-          photo: "vanshaj",
-          story: ["Vanshaj first joined PlantForever as a volunteer. He is currently the manager of Merchandise and Design, and now manages the entire Merchandise department at Plantforever. With a passion for climate and trees, his goal is to educate and help people make a positive difference for the environment"]
-        },
-        {
-          name: "Eric Li",
-          title: "Photographer",
-          photo: "logo",
-          story: ["Eric initially joined PlantForever as a volunteer, helping the team with minor editing tasks. With a hobby in photography, he officially joined the PF team in mid 2019 as the official photographer. Eric now works with all the team members, especially during planting events, to capture photos"]
         }
       ]
     }

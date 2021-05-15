@@ -15,7 +15,7 @@
         volunteers are the main pillars keeping this organization alive.
       </div>
       <div class="text">
-        Most activities do not require skill or materials to bring. For tree plantation,
+        Most activities do not require skill or materials to bring. For tree planting,
         transportation will be provided to the planting locations.
       </div>
       <div class="text">
@@ -34,7 +34,7 @@
       </div>
       <div class="text">Do you have a preferred task in mind?</div>
       <div class="checkbox-container">
-        <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree plantation</label>
+        <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree planting</label>
         <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Advertising (ex. handing out brochures)</label>
         <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Providing Transportation (ex. delivering trees)</label>
         <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Other: <input v-if="preferredList[3]" id="other-option" v-model="otherOption" placeholder="Please specify" /></label>

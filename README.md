@@ -2,7 +2,7 @@
 # PlantForever
 
 ## About PlantForever
-We are a nonprofit organization that develops urban forests through house-to-house tree plantation in order to combat climate crisis and spread awareness. As a nonprofit organization we are dependent on your contribution and your help to achieve the community goals.
+We are a nonprofit organization that develops urban forests through house-to-house tree planting in order to combat climate crisis and spread awareness. As a nonprofit organization we are dependent on your contribution and your help to achieve the community goals.
 If you want to become a part of PlantForever feel free to contribute
 
 ## Contribute

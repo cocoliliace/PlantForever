@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <div v-if="showPopup" class="popup">
+      <div class="popup-box">
+        <h3>Tree registration now open!</h3>
+        <div class="buttons">
+          <router-link :to="{ name: 'GetTree' }" class="primary-button" @click.native="showPopup = false">Register now!</router-link>
+          <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Dismiss</div>
+        </div>
+      </div>
+      <div class="overlay" @click="showPopup = false"></div>
+    </div>
+
     <header>
       <router-link :to="{ name: 'Home' }">
         <picture>
@@ -73,7 +84,8 @@ export default {
     return {
       showNav: true,
       hasDropdown: true,
-      previousHeight: 0
+      previousHeight: 0,
+      showPopup: true
     };
   },
   mounted() {
@@ -133,6 +145,53 @@ export default {
   color: white;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  .popup-box {
+    text-align: center;
+    font-size: 28px;
+    position: fixed;
+    background-color: #ddd7dd;
+    width: 540px;
+    padding: 0 30px 30px 30px;
+    border: 3px solid $blue;
+    border-radius: 8px;
+    top: 35%;
+    left: calc(50% - (600px + 6px)/ 2);
+    .buttons {
+      width: 450px;
+      display: flex;
+      margin: auto;
+      justify-content: space-around;
+      * {
+        padding: 5px 8px;
+        cursor: pointer;
+      }
+      #dismiss-button {
+        color: $blue;
+        border-color: $blue;
+        background-image: linear-gradient(to bottom, transparent 50%, white 50%);
+        background-size: 100% 200%;
+        background-position: 100% 200%;
+        &:hover {
+          background-position: 100% 100%;
+        }
+      }
+    }
+  }
+  .overlay {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+  }
+}
 header {
   background-color: white;
   padding: 20px 10vw 5px 10vw;
@@ -535,6 +594,20 @@ a {
   .banner-container {
     height: 250px;
     background-size: contain;
+  }
+}
+@media (max-width: 615px) {
+  .popup .popup-box {
+    font-size: 22px;
+    width: 300px;
+    left: calc(50% - (300px + 6px)/ 2);
+    .buttons {
+      width: 200px;
+      flex-direction: column;
+      #dismiss-button {
+        margin-top: 25px;
+      }
+    }
   }
 }
 @media (max-width: 320px) {

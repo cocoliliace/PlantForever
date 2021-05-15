@@ -21,7 +21,10 @@
           We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pots back.
         </div>
         <div class="text">
-          The trees are 1 to 3 feet in size
+          The trees are 0.5 to 3 feet in size
+        </div>
+        <div class="text">
+          Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link> for homeowners (visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
         </div>
       </div>
       <form id="volunteer-form" @submit.prevent="submit">
@@ -31,8 +34,6 @@
           <input v-model="email" type="text" name="email" placeholder="Email" required /><span class="star" style="transform: translateX(-1em);">*</span>
           <input v-model="phone" type="text" name="phone" placeholder="Phone" />
         </div>
-        <div class="text">Around which area in Edmonton can you meet up with us? <span class="star">*</span></div>
-        <input v-model="address" class="short-answer" type="text" name="address" placeholder="Area" autocomplete="off" required />
         <div class="text">What type(s) of tree and how many would you like? <span class="star">*</span></div>
         <div class="checkbox-container" required>
           <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" disabled /><span class="checkmark" style="cursor: not-allowed;"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span> (unavailable for 2021 season)</label>

@@ -15,19 +15,19 @@
           PlantForever is here to help!
         </div>
         <div class="text">
-          Plantation of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
+          Planting of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
         </div>
         <div class="text">
           Homeowners must provide potting soil.
         </div>
         <div class="text">
-          We are aware and careful of the coronavirus and will follow the <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link> to ensure the safety of our patrons.
+          Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link> for homeowners (visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
         </div>
         <div class="text">
-          The trees are 1 to 3 feet in size.
+          The trees are 0.5 to 3 feet in size.
         </div>
         <div class="text">
-          It is recommended that you visit <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the plantation is possible.
+          It is recommended that you visit <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a> to avoid utilities under you home and determine the areas where the planting is possible.
         </div>
       </div>
       <form id="volunteer-form" @submit.prevent="submit">

@@ -32,7 +32,7 @@
         <div class="primary-text">WHAT IS PLANTFOREVER</div>
         <div class="secondary-text">
           PlantForever is a nonprofit organization that develops urban forests through
-          house-to-house tree plantation in order to fight climate change.
+          house-to-house tree planting in order to fight climate change.
         </div>
         <div class="button-container">
           <router-link :to="{ name: 'About' }" class="primary-button">Learn More</router-link>
@@ -190,7 +190,7 @@ export default {
   metaInfo: {
     title: "Home",
     meta: [
-      { name: "description", content: "We are a nonprofit organization that develops urban forests through house-to-house tree plantation in order to combat climate crisis and spread awareness." },
+      { name: "description", content: "We are a nonprofit organization that develops urban forests through house-to-house tree planting in order to combat climate crisis and spread awareness." },
       { name: "keywords", content: "PlantForever, Alberta, climate change, Edmonton, environment, free, global warming, organization, tree" }
     ],
     link: [

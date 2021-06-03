@@ -5,7 +5,7 @@
     </div>
     <div class="text-container">
       <div style="margin-top: 8px;">PlantForever's Covid-19 Policy is in accordance with <a href="https://www.alberta.ca/enhanced-public-health-measures.aspx" target="_blank" rel="noopener noreferrer">Alberta Health Service public measure and guidelines</a>.</div>
-      <div style="text-align: right;">Updated May 4<sup>th</sup></div>
+      <div style="text-align: right;">Updated June 2<sup>nd</sup></div>
       <div v-if="volunteer" class="text">
         <div class="title">Volunteer Guidelines & Responsibilities</div>
         <hr />
@@ -30,7 +30,7 @@
           <li>Do not share gloves; volunteers must bring their own gloves</li>
           <li>Also read our <a style="cursor: pointer;" @click="volunteer = false">Homeowner/Patron Guidelines & Responsibilities</a> (optional)</li>
         </ul>
-        <div>*PlantForever will be limiting the total number of attendees to 5 and under</div>
+        <div>*PlantForever will be limiting the total number of attendees to 10 and under</div>
       </div>
       <div v-if="!volunteer" class="text">
         <div class="title">Homeowner/Patron Guidelines & Responsibilities</div>
@@ -53,7 +53,7 @@
           <li>When transferring trees, meet up in a public place (e.g., parking lot)</li>
           <li>Also read our <a style="cursor: pointer;" @click="volunteer = true">Volunteer Guidelines & Responsibilities</a> (optional)</li>
         </ul>
-        <div>*PlantForever will be limiting the total number of attendees to 5 and under</div>
+        <div>*PlantForever will be limiting the total number of attendees to 10 and under</div>
       </div>
     </div>
   </div>

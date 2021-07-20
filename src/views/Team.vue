@@ -36,13 +36,19 @@ export default {
           name: "Marmik Patel",
           title: "Founding President",
           photo: "marmik",
-          story: ["Marmik founded PlantForever in 2017 to create change. After learning about the limited time we have until the climate crisis poses irreversible global changes, Marmik took the initiative and began planting trees. Since then, Marmik has transformed a mere idea into a fully functioning organization; he assembled a team, launched city-wide tree planting initiatives, created local partnerships, and organized platforms to spread awareness. Marmik is proud of his city’s urban forest but knows it can expand", "Now 19, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally"]
+          story: ["Marmik founded PlantForever in 2017 to create change. After learning about the limited time we have until the climate crisis poses irreversible global changes, Marmik took the initiative and began planting trees. Since then, Marmik has transformed a mere idea into a fully functioning organization; he assembled a team, launched city-wide tree planting initiatives, created local partnerships, and organized platforms to spread awareness. Marmik is proud of his city’s urban forest but knows it can expand.", "Now 19, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally."]
+        },
+        {
+          name: "Nathaniel Perumal",
+          title: "VP of Operations",
+          photo: "nate",
+          story: ["Nathaniel started off as a volunteer for PlantForever back in 2018 helping to plant trees across Edmonton. Now at 18 years of age, this young environmentalist  continues  to make strides in his pursuit to help preserve the environment. By managing the events he once helped with, Nathaniel is an integral part of the team. He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
         },
         {
           name: "Ching Chang",
           title: "Web Developer",
           photo: "ching",
-          story: ["As a 19-year old environmentalist, Ching joined PlantForever to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever"]
+          story: ["As a 19-year old environmentalist, Ching joined PlantForever to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever."]
         }
       ]
     }

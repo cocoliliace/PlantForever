@@ -33,6 +33,7 @@
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
+            <router-link :to="{ name: 'InTheNews' }">In the news</router-link>
             <router-link :to="{ name: 'Team' }">Meet Our Team</router-link>
           </div>
         </a>

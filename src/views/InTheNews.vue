@@ -29,8 +29,8 @@ export default {
   metaInfo: {
     title: "In the News",
     meta: [
-      { name: "description", content: "" },
-      { name: "keywords", content: "" }
+      { name: "description", content: "In the past few years, PlantForever has had the pleasant opportunity to speak to some wonderful news organizations about their tree planting initiatives." },
+      { name: "keywords", content: "cbc, news, journal, article, interview, testimonial, edmonton, organization, plantforever, initiatives" }
     ],
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/in-the-news" }

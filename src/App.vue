@@ -33,13 +33,13 @@
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
-            <router-link :to="{ name: 'Team' }">Meet Our Team</router-link>
             <router-link :to="{ name: 'InTheNews' }">In the news</router-link>
+            <router-link :to="{ name: 'Team' }">Meet Our Team</router-link>
           </div>
         </a>
         <router-link v-if="!hasDropdown" :to="{ name: 'About' }">What We Do</router-link>
-        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
         <router-link v-if="!hasDropdown" :to="{ name: 'InTheNews' }">In the news</router-link>
+        <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
         <router-link :to="{ name: 'GetTree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->

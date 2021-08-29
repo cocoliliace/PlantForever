@@ -136,7 +136,7 @@ export default {
     width: 90%;
     .columns {
       img {
-        width: 45%;
+        width: 350px;
       }
     }
   }

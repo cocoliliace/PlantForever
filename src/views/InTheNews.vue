@@ -10,8 +10,8 @@
       <hr />
       <div class="cards-container">
         <div class="card">
-            <div class="title">CBC Interview 2020</div>
-            <div class="description">Our president Marmik was interviewed on behalf of PlantForever on Edmonton CBC news in 2020</div>
+            <a class="title" href="https://www.cbc.ca/listen/live-radio/1-52-radio-active" target="_blank">CBC Interview 2020</a>
+            <div class="description">Our president Marmik was interviewed on behalf of PlantForever on Edmonton CBC radio in 2020</div>
             <img src="@/assets/in-the-news/cbc.jpg" />
             <audio controls>
                 <source src="@/assets/in-the-news/audio/cbc_interview.mp3" type="audio/mpeg">

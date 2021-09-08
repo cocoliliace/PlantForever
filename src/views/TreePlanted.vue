@@ -43,7 +43,7 @@
         </div>
         <div class="text">What type(s) of tree and how many would you like? <span class="star">*</span></div>
         <div class="checkbox-container" required>
-          <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" disabled /><span class="checkmark" style="cursor: not-allowed;"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span> (unavailable for 2021 season)</label>
+          <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Black Cherry<span v-if="preferredList[0]"> X <input v-model="amountList[0]" class="amount" /></span> (7 left)</label>
           <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Colorado Spruce<span v-if="preferredList[1]"> X <input v-model="amountList[1]" class="amount" /></span></label>
           <label><input v-model="preferredList[2]" class="checkbox" type="checkbox" disabled /><span class="checkmark" style="cursor: not-allowed;"></span>Red Maple<span v-if="preferredList[2]"> X <input v-model="amountList[2]" class="amount" /></span> (unavailable for 2021 season)</label>
           <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Schubert Chokecherry<span v-if="preferredList[3]"> X <input v-model="amountList[3]" class="amount" /></span></label>

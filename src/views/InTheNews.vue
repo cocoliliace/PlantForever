@@ -11,12 +11,18 @@
       <div class="cards-container">
         <div class="card">
             <a class="title" href="https://www.cbc.ca/listen/live-radio/1-52-radio-active" target="_blank">CBC Interview 2020</a>
-            <div class="description">Our president Marmik was interviewed on behalf of PlantForever on Edmonton CBC radio in 2020</div>
-            <img src="@/assets/in-the-news/cbc.jpg" />
+            <div class="description">Our president Marmik was interviewed on behalf of PlantForever on Edmonton CBC radio in 2020<br /></div>
+            <a href="https://www.cbc.ca/listen/live-radio/1-52-radio-active" target="_blank"><img src="@/assets/in-the-news/cbc.jpg" /></a>
             <audio controls>
                 <source src="@/assets/in-the-news/audio/cbc_interview.mp3" type="audio/mpeg">
                 Your browser does not support the audio element
             </audio>
+        </div>
+        <div class="card">
+            <a class="title" href="https://thegatewayonline.ca/2021/09/plantforever-develops-urban-forests-one-tree-at-a-time-the-gateway/" target="_blank">TheGateway News Article 2021</a>
+            <div class="description">The University of Alberta's newspaper spotlighted PlantForever after interviewing team members Marmik and Nathaniel</div>
+            <a href="https://thegatewayonline.ca/2021/09/plantforever-develops-urban-forests-one-tree-at-a-time-the-gateway/" target="_blank"><img src="@/assets/in-the-news/gateway.jpg" /></a>
+            <div class="spacer"></div>
         </div>
       </div>
     </div>
@@ -74,12 +80,18 @@ export default {
                 cursor: pointer;
             }
             .description {
+                min-height: 57px;
                 margin-bottom: 10px;
             }
             img {
                 width: 100%;
+                height: 210px;
+                object-fit: cover;
                 margin-bottom: 10px;
                 border-radius: 2px;
+            }
+            .spacer {
+                height: 35px;
             }
         }
      }

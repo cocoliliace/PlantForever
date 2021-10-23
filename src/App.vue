@@ -87,7 +87,7 @@ export default {
       showNav: true,
       hasDropdown: true,
       previousHeight: 0,
-      showPopup: true
+      showPopup: false
     };
   },
   mounted() {

@@ -1,5 +1,14 @@
 <template>
   <div class="contains-form">
+    <div v-if="showPopup" class="popup">
+      <div class="popup-box">
+        <h3>The 2021 planting season is over. Come back next spring!</h3>
+        <div class="buttons">
+          <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
+        </div>
+      </div>
+      <div class="overlay" @click="showPopup = false"></div>
+    </div>
     <div class="banner-container">
       <div class="title">ACCEPT A TREE</div>
     </div>
@@ -88,7 +97,8 @@ export default {
       plantingAddress: "",
       materials: "",
       comments: "",
-      thankYouMessage: false
+      thankYouMessage: false,
+      showPopup: true
     };
   },
   computed: {

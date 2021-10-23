@@ -2,7 +2,7 @@
   <div class="contains-form">
     <div v-if="showPopup" class="popup">
       <div class="popup-box">
-        <h3>The 2021 planting season is over. Come back next spring!</h3>
+        <h3>The 2021 planting season is over. Please come back next spring!</h3>
         <div class="buttons">
           <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
         </div>

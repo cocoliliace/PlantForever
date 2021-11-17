@@ -45,6 +45,12 @@ export default {
           story: ["Nathaniel started off as a volunteer for PlantForever back in 2018 helping to plant trees across Edmonton. Now at 18 years of age, this young environmentalist  continues  to make strides in his pursuit to help preserve the environment. By managing the events he once helped with, Nathaniel is an integral part of the team. He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
         },
         {
+          name: "Parshva Shah",
+          title: "Marketing Manager",
+          photo: "parshva",
+          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped from the tree transplantation process to marketing. He became interested in developing marketing strategies that could help take the services and message of PlantForever reach greater people. He likes problem-solving and finding innovative solutions and is also an environmentalist so he found the Head of Marketing was the perfect position for him. He researches and develops different marketing plans that PlantForever can use to reach more homeowners and connect them to solution to the climate crisis that PlantForever provides."]
+        },
+        {
           name: "Ching Chang",
           title: "Web Developer",
           photo: "ching",

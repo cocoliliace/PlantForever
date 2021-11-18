@@ -36,7 +36,7 @@ export default {
           name: "Marmik Patel",
           title: "Founding President",
           photo: "marmik",
-          story: ["Marmik founded PlantForever in 2017 to create change. After learning about the limited time we have until the climate crisis poses irreversible global changes, Marmik took the initiative and began planting trees. Since then, Marmik has transformed a mere idea into a fully functioning organization; he assembled a team, launched city-wide tree planting initiatives, created local partnerships, and organized platforms to spread awareness. Marmik is proud of his city’s urban forest but knows it can expand.", "Now 19, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally."]
+          story: ["Marmik founded PlantForever in 2017 to develop urban forests through tree planting—an effort to mitigate the climate crisis. He manages the organization, overlooking the executive team and providing a vision for PlantForever.", "Now 19, Marmik aims to develop PlantForever internationally, spreading awareness and encouraging vast tree-canopy expansion in urban areas. He intends to inspire a movement empowering individuals to take action globally."]
         },
         {
           name: "Nathaniel Perumal",

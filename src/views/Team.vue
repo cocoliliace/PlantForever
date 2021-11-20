@@ -54,7 +54,7 @@ export default {
           name: "Ching Chang",
           title: "Web Developer",
           photo: "ching",
-          story: ["As a 19-year old environmentalist, Ching joined PlantForever to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever."]
+          story: ["Ching joined PlantForever in 2019 to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever."]
         }
       ]
     }

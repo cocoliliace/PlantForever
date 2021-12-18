@@ -21,6 +21,9 @@
       <div class="text">
         Please read our <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidlines</router-link> before volunteering.
       </div>
+      <div class="text">
+				Want to do more than just planing trees? Consider <router-link :to="{ name: 'JoinTeam' }">joining our team</router-link>!
+      </div>
     </div>
     <form id="volunteer-form" @submit.prevent="submit">
       <div style="color: red;">* Required</div>

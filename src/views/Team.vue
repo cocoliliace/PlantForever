@@ -3,6 +3,9 @@
     <div class="banner-container">
       <div class="title">MEET OUR TEAM</div>
     </div>
+    <div class="text">
+      We are currently looking for more executive members. Take a look at <router-link :to="{ name: 'JoinTeam' }">the open positions</router-link>!
+    </div>
     <div class="profile-cards">
       <div v-for="person in teamData" class="card">
         <div class="name">{{ person.name }} — {{ person.title }}</div>
@@ -81,11 +84,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.text {
+	display: table;
+	font-family: sans-serif;
+	font-size: 18px;
+	margin: 15px auto 0;
+	border-bottom: 2px $blue dotted;
+}
 .profile-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 25px 15px 35px 15px;
+  margin: 10px 15px 35px 15px;
   .card {
     box-shadow: 0 1px 5px 0 rgba($green, 0.5);
     margin: 15px;

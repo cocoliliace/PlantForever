@@ -30,6 +30,11 @@ const router =  new Router({
       component: () => import("./views/Team.vue")
     },
     {
+      path: "/join-our-team",
+      name: "JoinTeam",
+      component: () => import("./views/JoinTeam.vue")
+    },
+    {
       path: "/covid-policies",
       name: "Covid",
       component: () => import("./views/Covid.vue"),

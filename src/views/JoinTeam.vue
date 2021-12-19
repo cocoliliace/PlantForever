@@ -4,7 +4,7 @@
       <div class="title">JOIN OUR TEAM</div>
     </div>
     <div class="text-container">
-      <div style="margin-top: 8px;">Want to join PlantForever’s executive team? Here are the positions that we’re looking for. If you’re interested or want to learn more, send us a message through <router-link :to="{ name: 'Contact' }">our contact form</router-link>.</div>
+      <div style="margin-top: 8px;">Want to join PlantForever's executive team? Here are the positions that we're looking for. If you’re interested or want to learn more, send us a message through <router-link :to="{ name: 'Contact' }">our contact form</router-link>.</div>
       <br />
       <div>Disclaimer: All positions at PlantForever are currently volunteer-based</div>
       <br />
@@ -36,8 +36,8 @@ export default {
   metaInfo: {
     title: "Join Our Team",
     meta: [
-      { name: "description", content: "" },
-      { name: "keywords", content: "" }
+      { name: "description", content: "Want to join PlantForever's executive team? Here are the positions that we are looking for. Apply or learn more through our contact form." },
+      { name: "keywords", content: "Plantforever, Edmonton, Alberta, climate change, environment, career, free, global warming, organization, tree" }
     ],
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/join-our-team" }

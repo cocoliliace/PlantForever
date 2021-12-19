@@ -5,16 +5,10 @@
     </div>
     <div class="text-container">
       <div style="margin-top: 8px;">Want to join PlantForever’s executive team? Here are the positions that we’re looking for. If you’re interested or want to learn more, send us a message through <router-link :to="{ name: 'Contact' }">our contact form</router-link>.</div>
+      <br />
       <div>Disclaimer: All positions at PlantForever are currently volunteer-based</div>
+      <br />
       <div class="text">
-        <div class="title">Executive Position: Vice President of Finance</div>
-        <hr />
-        <ul>
-          <li>Organizes and develops funding opportunities for PlantForever</li>
-          <li>Administers accounting</li>
-          <li>Researches provincial/federal financial regulation relevant to the organization</li>
-        </ul>
-
         <div class="title">Executive Position: Vice President of Operation (outside of Edmonton)</div>
         <hr />
         <ul>
@@ -22,10 +16,12 @@
           <li>PlantForever has a VP Operations position for each city/urban area where one can expand tree planting. For example, <router-link :to="{ name: 'Team' }">Nathaniel</router-link> is our current VP Operations for Edmonton. This position is for those that reside outside of Edmonton and want to undertake a leadership position to expand PlantForever in their city</li>
         </ul>
 
+				<br />
+
         <div class="title">Manager Position: Social Media</div>
         <hr />
         <ul>
-          <li>Overlooks PlantForever’s social media accounts</li>
+          <li>Oversees PlantForever’s social media accounts</li>
           <li>Develops content for the organization</li>
           <li>Works with Operations and Marketing to engage homeowners in tree planting through social media</li>
         </ul>

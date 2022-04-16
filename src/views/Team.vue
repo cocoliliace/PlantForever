@@ -37,27 +37,41 @@ export default {
       teamData: [
         {
           name: "Marmik Patel",
-          title: "Founding President",
+          title: "President",
           photo: "marmik",
-          story: ["Marmik founded PlantForever in 2017 to develop urban forests through tree planting—an effort to mitigate the climate crisis. He manages the organization, overseeing the executive team and providing a vision for PlantForever."]
+          story: ["Marmik founded PlantForever in 2017 to develop urban forests through tree planting—an effort to mitigate the climate crisis. " +
+            "He manages the organization, overseeing the executive team and providing a vision for PlantForever."]
         },
         {
           name: "Nathaniel Perumal",
-          title: "VP of Operations",
+          title: "VP of Operations (Edmonton)",
           photo: "nate",
-          story: ["Nathaniel started off as a volunteer for PlantForever back in 2018 helping to plant trees across Edmonton. Now at 18 years of age, this young environmentalist  continues  to make strides in his pursuit to help preserve the environment. By managing the events he once helped with, Nathaniel is an integral part of the team. He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
+          story: ["Nathaniel started off as a volunteer for PlantForever back in 2018 helping to plant trees across Edmonton. " +
+            "Now at 18 years of age, this young environmentalist  continues  to make strides in his pursuit to help preserve the environment. " +
+            "By managing the events he once helped with, Nathaniel is an integral part of the team. " +
+            "He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
         },
         {
           name: "Parshva Shah",
           title: "Marketing Manager",
           photo: "parshva",
-          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped from the tree transplantation process to marketing. He became interested in developing marketing strategies that could help take the services and message of PlantForever reach greater people. He likes problem-solving and finding innovative solutions and is also an environmentalist so he found the Head of Marketing was the perfect position for him. He researches and develops different marketing plans that PlantForever can use to reach more homeowners and connect them to solution to the climate crisis that PlantForever provides."]
+          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped from the tree transplantation process to marketing. " +
+            "He became interested in developing marketing strategies that could help take the services and message of PlantForever reach greater people. " +
+            "He likes problem-solving and finding innovative solutions and is also an environmentalist so he found the Head of Marketing was the perfect position for him. " +
+            "He researches and develops different marketing plans that PlantForever can use to reach more homeowners and connect them to solution to the climate crisis that PlantForever provides."]
+        },
+        {
+          name: "Kevin Ang",
+          title: "VP of Finance",
+          photo: "parshva",
+          story: []
         },
         {
           name: "Ching Chang",
           title: "Web Developer",
           photo: "ching",
-          story: ["Ching joined PlantForever in 2019 to mitigate the climate crisis. With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever."]
+          story: ["Ching joined PlantForever in 2019 to mitigate the climate crisis. " +
+            "With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever."]
         }
       ]
     }
@@ -108,8 +122,9 @@ export default {
     transform: translateY(100px);
     .name {
       margin: 12px;
-      font-size: 25px;
+      font-size: 22px;
       font-weight: 600;
+      text-align: center;
     }
     img {
       border: 10px solid $green;

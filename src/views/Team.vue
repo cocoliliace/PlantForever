@@ -55,10 +55,10 @@ export default {
           name: "Parshva Shah",
           title: "Marketing Manager",
           photo: "parshva",
-          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped from the tree transplantation process to marketing. " +
-            "He became interested in developing marketing strategies that could help take the services and message of PlantForever reach greater people. " +
-            "He likes problem-solving and finding innovative solutions and is also an environmentalist so he found the Head of Marketing was the perfect position for him. " +
-            "He researches and develops different marketing plans that PlantForever can use to reach more homeowners and connect them to solution to the climate crisis that PlantForever provides."]
+          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped with tree transplantation. " +
+            "He became interested in developing marketing strategies to help PlantForever's services reach more people. " +
+            "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
+            "He develops different marketing strategies to connect homeowners with PlantForver products and services."]
         },
         {
           name: "Kevin Ang",

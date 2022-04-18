@@ -60,12 +60,12 @@ export default {
             "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
             "He develops different marketing strategies to connect homeowners with PlantForver products and services."]
         },
-        {
-          name: "Kevin Ang",
-          title: "VP of Finance",
-          photo: "parshva",
-          story: []
-        },
+        //{
+        //  name: "Kevin Ang",
+        //  title: "VP of Finance",
+        //  photo: "kevin",
+        //  story: []
+        //},
         {
           name: "Ching Chang",
           title: "Web Developer",

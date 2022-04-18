@@ -140,7 +140,7 @@
         <div class="primary-text">
           On April 24, 2019, we posted an <a href="https://www.instagram.com/p/BwvVlQUnlgP/" target="_blank" rel="noopener noreferrer">instagram post</a>
           with the promise that we will plant 1 tree for every 100 views we receive. In addition to
-          the trees we've been rigorously planting, we are greatful for the 655 lovely supporters
+          the trees we've been rigorously planting, we are grateful for the 655 lovely supporters
           who pledged to plant 9,858 extra trees.
         </div>
       </div>

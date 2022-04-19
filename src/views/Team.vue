@@ -58,7 +58,7 @@ export default {
           story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped with tree transplantation. " +
             "He became interested in developing marketing strategies to help PlantForever's services reach more people. " +
             "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
-            "He develops different marketing strategies to connect homeowners with PlantForver products and services."]
+            "He develops different marketing strategies to connect homeowners with PlantForever products and services."]
         },
         //{
         //  name: "Kevin Ang",

@@ -76,6 +76,7 @@
           Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link>
           for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunteer guidelines</router-link>).
         </p>
+        <p>Learn more about <router-link :to="{ name: 'Trees' }">the trees we have</router-link>.</p>
         <p v-if="method === 'plant'">
           It is recommended that you visit
           <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a>

@@ -65,10 +65,10 @@ export default {
           title: "VP of Finance",
           photo: "kevin",
           story: ["Kevin is an international student from Indonesia. " +
-            "He is 18 years old and he's going to UofA Business school majoring in finance. " +
-            "He has had a passion in finance since he was in middle school, " +
-            "He has chosen to join PlantForever because he want to contribute and make an impact to the world, " +
-            "mainly in the climate change issue as we’ve seen a lot of disasters caused by climate change lately."]
+            "He is 18 years old and he's going to UofA Business school, majoring in finance. " +
+            "He has had a passion in finance since he was in middle school. " +
+            "He has chosen to join PlantForever because he wants to make an impact in the world, " +
+            "especially with the climate crisis as lots of recent disasters have been caused by it."]
         },
         {
           name: "Ching Chang",

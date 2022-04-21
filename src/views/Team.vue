@@ -60,12 +60,16 @@ export default {
             "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
             "He develops different marketing strategies to connect homeowners with PlantForever products and services."]
         },
-        //{
-        //  name: "Kevin Ang",
-        //  title: "VP of Finance",
-        //  photo: "kevin",
-        //  story: []
-        //},
+        {
+          name: "Kevin Ang",
+          title: "VP of Finance",
+          photo: "kevin",
+          story: ["Kevin is an international student from Indonesia. " +
+            "He is 18 years old and he's going to UofA Business school majoring in finance. " +
+            "He has had a passion in finance since he was in middle school, " +
+            "He has chosen to join PlantForever because he want to contribute and make an impact to the world, " +
+            "mainly in the climate change issue as we’ve seen a lot of disasters caused by climate change lately."]
+        },
         {
           name: "Ching Chang",
           title: "Web Developer",

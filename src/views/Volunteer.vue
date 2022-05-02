@@ -124,12 +124,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contains-form {
-  background-image: url("../assets/background.jpg");
-  background-size: contain;
-  background-attachment: fixed;
-  padding-bottom: 60px;
-}
 .text-container {
   background: white;
   border: 5px $blue double;

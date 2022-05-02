@@ -2,7 +2,7 @@
   <div id="app">
     <div v-if="showPopup" class="popup">
       <div class="popup-box">
-        <h3>Tree registration now open!</h3>
+        <h3>Tree registration is now open!</h3>
         <div class="buttons">
           <router-link :to="{ name: 'GetTree' }" class="primary-button" @click.native="showPopup = false">Register now!</router-link>
           <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Dismiss</div>
@@ -89,16 +89,18 @@ export default {
       showNav: true,
       hasDropdown: true,
       previousHeight: 0,
-      showPopup: false
+      showPopup: true,
     };
   },
   mounted() {
     window.addEventListener("resize", this.hideNav);
     window.addEventListener("scroll", this.scrollEffect);
+    document.querySelector("body").addEventListener("keyup", this.hidePopup);
     this.hideNav();
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.scrollEffect);
+    document.querySelector("body").removeEventListener("keyup", this.hidePopup);
   },
   methods: {
     enter(element) {
@@ -129,7 +131,13 @@ export default {
       return input.some((path) => {
         return this.$route.path.indexOf(path) === 0;
       });
-    }
+    },
+    hidePopup(event) {
+      if (event.key === "Escape") {
+        this.showPopup = false;
+        document.querySelector("body").removeEventListener("keyup", this.hidePopup);
+      }
+    },
   }
 }
 </script>
@@ -403,6 +411,12 @@ a {
   &:hover {
     background-position: 200% 100%;
   }
+}
+.contains-form {
+  background-image: url("./assets/background.jpg");
+  background-size: contain;
+  background-attachment: fixed;
+  padding-bottom: 60px;
 }
 
 @media (max-width: 1205px) {

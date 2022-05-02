@@ -44,6 +44,7 @@ const router =  new Router({
       path: "/accept-a-tree",
       name: "GetTree",
       component: () => import("./views/GetTree.vue")
+
     },
     {
       path: "/tree-information",
@@ -52,13 +53,11 @@ const router =  new Router({
     },
     {
       path: "/accept-a-tree/in-backyard",
-      name: "TreePlanted",
-      component: () => import("./views/TreePlanted.vue")
+      redirect: { name: "GetTree" },
     },
     {
       path: "/accept-a-tree/in-pots",
-      name: "TreeInPots",
-      component: () => import("./views/TreeInPots.vue")
+      redirect: { name: "GetTree" },
     },
     // {
     //   path: "/store",

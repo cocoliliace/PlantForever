@@ -37,9 +37,16 @@
       </p>
 
       <div v-if="method">
-        <p>Each tree requires a minimum donation of $10 to allow us to keep planting.</p>
-        <p v-if="method === 'plant'">After the 5th tree, each tree requires a $15 mininum donation.</p>
-        <p>We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.</p>
+        <p v-if="method === 'plant'">
+          The first tree is free.
+          Each extra tree requires a minimum donation of $10 to keep us running.
+          After the 5th tree, each tree requires a $15 minimum donation.
+          We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
+        </p>
+        <p v-if="method === 'pot'">
+          We ask for a minimum donation of $10 per tree to keep us running.
+          We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
+        <p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
         <p v-if="method === 'pot'">We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.</p>
         <p>The trees are 0.5 to 3 feet in size.</p>
@@ -94,7 +101,7 @@
       <label>When do you want
         <template v-if="method === 'pot'">to meet up for</template>
         your tree<template v-if="numberOfTrees > 1">s</template>?
-        (please give us a time at least a week from now so we can plan around)
+        (please give us a time at least a week from now for us to plan)
         <span class="star">*</span>
         <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the last 2 weeks of May" autocomplete="off" required />
       </label>
@@ -375,7 +382,7 @@ export default {
     border: none;
     width: 120px;
     height: 50px;
-    margin: 25px 0px 5px calc(100% - 120px);
+    margin: 25px 0px 5px calc(50% - 60px);
     cursor: pointer;
   }
 }

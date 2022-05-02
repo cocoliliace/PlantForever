@@ -19,6 +19,10 @@
     </div>
 
     <section>
+      <p>
+        If you live in the Edmonton area and are looking for young trees to plant on your property,
+        PlantForever is here to help!
+      </p>
       <p class="checkbox-container">Select an option:
         <label>
           <input v-model="method" class="checkbox" type="radio" value="plant" />
@@ -33,17 +37,15 @@
       </p>
 
       <div v-if="method">
-        <p>
-          If you live in the Edmonton area and are looking for young trees to plant on your property,
-          PlantForever is here to help!
-        </p>
         <p>Each tree requires a minimum donation of $10 to allow us to keep planting.</p>
+        <p v-if="method === 'plant'">After the 5th tree, each tree requires a $15 mininum donation.</p>
+        <p>We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.</p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
-        <p v-if="method === 'pot'">We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pots back.</p>
+        <p v-if="method === 'pot'">We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.</p>
         <p>The trees are 0.5 to 3 feet in size.</p>
         <p>
           Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link>
-          for homeowners (visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
+          for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
         </p>
         <p v-if="method === 'plant'">
           It is recommended that you visit

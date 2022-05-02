@@ -135,6 +135,7 @@ export default {
       email: "",
       name: "",
       phone: "",
+      address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
@@ -178,19 +179,36 @@ export default {
         }
       }
       this.preferredTrees = this.preferredTrees.slice(0, -1);
-      axios.get("https://script.google.com/macros/s/AKfycbyzTMkR2RyjoT2Zunakny-UEspHqGgJLmQSeBu9ykB460EAESK7/exec", {
-        params: {
+
+      let link;
+      let params;
+      if (this.method === "plant") {
+        link = "https://script.google.com/macros/s/AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+        params = {
+          email: this.email,
+          name: this.name,
+          phone: this.phone,
+          address: this.address,
+          preferred_trees: this.preferredTrees,
+          availability: this.availability,
+          materials: this.materials,
+          comments: this.comments
+        };
+      } else {
+        link = "https://script.google.com/macros/s/AKfycbyzTMkR2RyjoT2Zunakny-UEspHqGgJLmQSeBu9ykB460EAESK7/exec";
+        params = {
           email: this.email,
           name: this.name,
           phone: this.phone,
           preferred_trees: this.preferredTrees,
           meeting_address: this.meetingAddress,
           availability: this.availability,
-          planting_address: this.plantingAddress,
           comments: this.comments,
-        }
-      }).then(() => {
-        this.email = this.name = this.phone = this.preferredTrees = this.meetingAddress = this.plantingAddress = this.availability = this.materials = this.comments = "";
+        };
+      }
+
+      axios.get(link, { params }).then(() => {
+        this.email = this.name = this.phone = this.address = this.preferredTrees = this.meetingAddress = this.availability = this.materials = this.comments = "";
         this.preferredList = [false, false, false, false];
         this.amountList = [0, 0, 0, 0];
         this.thankYouMessage = true;

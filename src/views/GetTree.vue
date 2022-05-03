@@ -45,10 +45,10 @@
         </p>
         <p v-if="method === 'pot'">
           We ask for a minimum donation of $10 per tree to keep us running.
+          We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         <p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
-        <p v-if="method === 'pot'">We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.</p>
         <p>The trees are 0.5 to 3 feet in size.</p>
         <p>
           Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link>
@@ -229,8 +229,8 @@ export default {
 
 <style lang="scss" scoped>
 .form-container {
-  background-image: url("../assets/background.jpg");
-  background-size: contain;
+  background-image: url("../assets/background.png");
+  background-size: cover;
   background-attachment: fixed;
   padding-bottom: 60px;
   section {
@@ -241,7 +241,7 @@ export default {
     padding: 0 15px;
     margin: 25px 10vw 0 10vw;
     p {
-      font-size: 18px;
+      font-size: 16px;
       margin: 15px 5px;
     }
   }
@@ -256,11 +256,11 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     label {
-      font-size: 18px;
+      font-size: 16px;
     }
     input {
       padding: 10px;
-      font-size: 24px;
+      font-size: 16px;
       border: 2px #CCCCCC solid;
       outline-width: 0px;
       transition-duration: 0.3s;
@@ -307,8 +307,8 @@ export default {
       .checkmark, .radio {
         position: absolute;
         margin-left: -40px;
-        height: 18px;
-        width: 18px;
+        height: 16px;
+        width: 16px;
         background-color: #eeeeee;
         border-radius: 5px;
         cursor: pointer;

@@ -1,101 +1,442 @@
 <template>
-  <div>
+  <div class="form-container">
+    <div v-if="showPopup" class="popup">
+      <div class="popup-box">
+        <h3>The 2021 planting season is over. Please come back next spring!</h3>
+        <div class="buttons">
+          <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
+        </div>
+      </div>
+      <div class="overlay" @click="showPopup = false"></div>
+    </div>
     <div class="banner-container">
       <div class="title">ACCEPT A TREE</div>
     </div>
-    <div class="text-container">
-      <div class="text">
+    <div v-if="thankYouMessage" id="thank-you-message">
+      <p>We've received your submission and will contact you back shortly</p>
+      <p>Thank you for helping the environment!</p>
+      <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
+    </div>
+
+    <section>
+      <p>
         If you live in the Edmonton area and are looking for young trees to plant on your property,
         PlantForever is here to help!
+      </p>
+      <p class="checkbox-container">Select an option:
+        <label>
+          <input v-model="method" class="checkbox" type="radio" value="plant" />
+          <span class="checkmark radio"></span>
+          We plant at your house
+        </label>
+        <label>
+          <input v-model="method" class="checkbox" type="radio" value="pot" />
+          <span class="checkmark radio"></span>
+          We give you trees to plant yourself
+        </label>
+      </p>
+
+      <div v-if="method">
+        <p v-if="method === 'plant'">
+          The first tree is free.
+          Each extra tree requires a minimum donation of $10 to keep us running.
+          After the 5th tree, each tree requires a $15 minimum donation.
+          We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
+        </p>
+        <p v-if="method === 'pot'">
+          We ask for a minimum donation of $10 per tree to keep us running.
+          We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.
+          We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
+        <p>
+        <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
+        <p>The trees are 0.5 to 3 feet in size.</p>
+        <p>
+          Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link>
+          for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
+        </p>
+        <p v-if="method === 'plant'">
+          It is recommended that you visit
+          <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a>
+          to avoid utilities under you home and determine the areas where the planting is possible.
+        </p>
       </div>
-      <div class="text">
-        Tree planting of up to one tree is free, while each extra tree requires a minimum donation of $10 to allow us to keep planting.
-      </div>
-      <div class="text">
-          Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link> for homeowners (visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
-      </div>
-      <div class="text">
-        The trees are 0.5 to 3 feet in size.
-      </div>
-    </div>
-    <div class="button-container">
-      <router-link class="primary-button" :to="{ name: 'TreePlanted' }">We Plant at Your Home</router-link>
-      <router-link class="primary-button" :to="{ name: 'TreeInPots' }">We Give You Trees to Plant Yourself</router-link>
-    </div>
+    </section>
+
+    <form v-if="method" @submit.prevent="submit">
+      <div style="color: red;">* Required</div>
+      <fieldset>
+        <input v-model="name" type="text" name="name" placeholder="Name" required />
+        <span class="star" style="transform: translateX(-1em);">*</span>
+
+        <input v-model="email" type="text" name="email" placeholder="Email" required />
+        <span class="star" style="transform: translateX(-1em);">*</span>
+
+        <input v-model="phone" type="text" name="phone" placeholder="Phone" />
+      </fieldset>
+
+      <fieldset v-if="method === 'plant'">
+        <input v-model="address" class="short-answer" type="text" name="address" placeholder="Address" required style="width: 96%;" />
+        <span class="star">*</span>
+      </fieldset>
+
+      <label>What type(s) of tree and how many would you like? <span class="star">*</span></label>
+      <fieldset class="checkbox-container" required>
+        <label v-for="(tree, i) in treeList" :key="tree">
+          <input v-model="preferredList[i]" class="checkbox" type="checkbox" />
+          <span class="checkmark"></span>
+          {{ tree }}
+          <span v-if="preferredList[i]"> X <input v-model="amountList[i]" class="amount" /></span>
+        </label>
+        <input v-model="amountList" type="hidden" name="preferred_task" />
+      </fieldset>
+
+        <label v-if="method === 'plant'">Are you able to provide any supplies?
+          <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="e.g. shovel, gloves..." autocomplete="off" />
+        </label>
+
+      <label v-if="method === 'pot'">Around which area in Edmonton can you meet up with us? <span class="star">*</span>
+        <input v-model="meetingAddress" class="short-answer" type="text" name="meetingAddress" placeholder="Area" autocomplete="off" required />
+      </label>
+
+      <label>When do you want
+        <template v-if="method === 'pot'">to meet up for</template>
+        your tree<template v-if="numberOfTrees > 1">s</template>?
+        (please give us a time at least a week from now for us to plan)
+        <span class="star">*</span>
+        <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the last 2 weeks of May" autocomplete="off" required />
+      </label>
+
+      <label>Any questions or comments?
+        <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
+      </label>
+
+      <fieldset class="checkbox-container">
+        <label>
+          <input class="checkbox" type="checkbox" required /><span class="checkmark radio"></span>I have read and will follow the
+          <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Homeowner/Patron Guidelines</router-link>.
+          <span class="star" style="transform: translateX(-1em);">*</span>
+        </label>
+      </fieldset>
+
+      <button id="submit-form" class="primary-button" type="submit">Submit</button>
+    </form>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "GetTree",
+  name: "TreeInPots",
   metaInfo: {
     title: "Accept A Tree",
     meta: [
       { name: "description", content: "Get a free tree of your choice planted in your property and nurture it as it grows. Help the environment as the tree absorbs thousands of pounds of CO2." },
-      { name: "keywords", content: "PlantForever, free, tree, plant, organization, backyard, black cherry, colorado spruce, red maple, schubert chokecherry" }
+      { name: "keywords", content: "PlantForever, free, tree, plant, organization, backyard, colorado spruce, amur maple, schubert chokecherry, bur oak" }
     ],
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/accept-a-tree" }
     ]
+  },
+  data() {
+    return {
+      method: null,
+      email: "",
+      name: "",
+      phone: "",
+      address: "",
+      treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
+      preferredList: [false, false, false, false],
+      amountList: [0, 0, 0, 0],
+      preferredTrees: "",
+      meetingAddress: "",
+      availability: "",
+      plantingAddress: "",
+      materials: "",
+      comments: "",
+      thankYouMessage: false,
+      showPopup: false,
+    };
+  },
+  computed: {
+    numberOfTrees() {
+      let count = 0;
+      for (let index in this.amountList) {
+        count += parseInt(this.amountList[index]);
+      }
+      return count;
+    }
+  },
+  watch: {
+    preferredList() {
+      for (let index in this.preferredList) {
+        if (this.preferredList[index] && !this.amountList[index]) {
+          this.$set(this.amountList, index, 1);
+        } else if (!this.preferredList[index] && this.amountList[index]) {
+          this.$set(this.amountList, index, 0);
+        }
+      }
+    }
+  },
+  methods: {
+    submit() {
+      if (!this.numberOfTrees) return alert("Please select at least one tree");
+
+      for (let treeIndex = 0; treeIndex < this.treeList.length; treeIndex++) {
+        if (this.preferredList[treeIndex]) {
+          this.preferredTrees += `${ this.treeList[treeIndex] }(${ this.amountList[treeIndex] })/`;
+        }
+      }
+      this.preferredTrees = this.preferredTrees.slice(0, -1);
+
+      let link;
+      let params;
+      if (this.method === "plant") {
+        link = "https://script.google.com/macros/s/AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+        params = {
+          email: this.email,
+          name: this.name,
+          phone: this.phone,
+          address: this.address,
+          preferred_trees: this.preferredTrees,
+          availability: this.availability,
+          materials: this.materials,
+          comments: this.comments
+        };
+      } else {
+        link = "https://script.google.com/macros/s/AKfycbyzTMkR2RyjoT2Zunakny-UEspHqGgJLmQSeBu9ykB460EAESK7/exec";
+        params = {
+          email: this.email,
+          name: this.name,
+          phone: this.phone,
+          preferred_trees: this.preferredTrees,
+          meeting_address: this.meetingAddress,
+          availability: this.availability,
+          comments: this.comments,
+        };
+      }
+
+      axios.get(link, { params }).then(() => {
+        this.email = this.name = this.phone = this.address = this.preferredTrees = this.meetingAddress = this.availability = this.materials = this.comments = "";
+        this.preferredList = [false, false, false, false];
+        this.amountList = [0, 0, 0, 0];
+        this.thankYouMessage = true;
+      });
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.text-container {
-  margin: 25px 10vw 0 10vw;
-  .text {
-    font-size: 18px;
-    margin: 15px 5px;
+.form-container {
+  background-image: url("../assets/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 60px;
+  section {
+    background: white;
+    border: 5px $blue double;
+    border-radius: 5px;
+    width: calc(80vw - 30px);
+    padding: 0 15px;
+    margin: 25px 10vw 0 10vw;
+    p {
+      font-size: 16px;
+      margin: 15px 5px;
+    }
+  }
+  form {
+    background: white;
+    border: 5px $blue double;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 25px 10vw 0 10vw;
+    width: calc(80vw - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    label {
+      font-size: 16px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px #CCCCCC solid;
+      outline-width: 0px;
+      transition-duration: 0.3s;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      &.amount {
+        font-size: 16px;
+        padding: 0px 0px 3px 5px;
+        margin-bottom: -5px;
+        width: 15px;
+        border: none;
+        border-bottom: 2px #CCCCCC solid;
+        border-radius: 2px;
+        &:focus {
+          border-bottom: 2px $green solid;
+        }
+      }
+      &:focus:not(.amount) {
+        border: 2px $green solid;
+      }
+    }
+    .checkbox-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5px;
+      label {
+        padding-left: 47px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .checkbox {
+        position: absolute;
+        visibility: hidden;
+        &:checked {
+          + .checkmark {
+            transition-duration: 0.5s;
+            background-color: $green;
+            &:after {
+              display: block;
+            }
+          }
+        }
+      }
+      .checkmark, .radio {
+        position: absolute;
+        margin-left: -40px;
+        height: 16px;
+        width: 16px;
+        background-color: #eeeeee;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          filter: brightness(90%);
+        }
+        &:after {
+          top: 5px;
+          left: 5px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: white;
+          content: "";
+          position: absolute;
+          display: none;
+        }
+      }
+      .radio {
+        border-radius: 50%;
+        box-shadow: inset 0 0 1px $blue;
+      }
+    }
+    fieldset {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 15px 0 0;
+      border: none;
+      padding: 0;
+      input {
+        width: 28%;
+      }
+    }
+    .short-answer {
+      width: calc(80vw - 24px - 30px);
+    }
+    .star {
+      color: red;
+      font-size: 18px;
+    }
+  }
+  #thank-you-message {
+    position: fixed;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    background-color: white;
+    border: 4px $blue solid;
+    border-radius: 10px;
+    padding:  10px;
+    width: 50vw;
+    left: 50vw;
+    transform: translate(-50%, calc(-50% - 100px));
+    z-index: 3;
+    #dismiss-button {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -25%);
+      background-color: #bbb;
+      padding: 10px 30px;
+      border: 4px $blue solid;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
+  .primary-button {
+    border: none;
+    width: 120px;
+    height: 50px;
+    margin: 25px 0px 5px calc(50% - 60px);
+    cursor: pointer;
   }
 }
-.button-container {
-  margin: 25px 10vw 0 10vw;
+.checkbox-container {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 35px;
-  .primary-button {
-    font-size: 30px;
-    width: 25%;
-    text-align: center;
-    vertical-align: middle;
-    padding: 15px;
+  flex-direction: row;
+  label {
+    padding-left: 35px;
+  }
+  .checkbox {
+    position: absolute;
+    visibility: hidden;
+    &:checked {
+      + .checkmark {
+        transition-duration: 0.5s;
+        background-color: $green;
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+  .checkmark, .radio {
+    position: absolute;
+    margin-left: -25px;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(90%);
+    }
+    &:after {
+      top: 5px;
+      left: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+  .radio {
+    border-radius: 50%;
+    box-shadow: inset 0 0 1px $blue;
   }
 }
 
-@media (max-width: 1370px) {
-  .button-container .primary-button {
-    font-size: 30px;
-    width: 30%;
-    padding: 15px;
-  }
-}
-@media (max-width: 1142px) {
-  .button-container .primary-button {
-    font-size: 26px;
-    width: 30%;
-    padding: 15px;
-  }
-}
-@media (max-width: 1142px) {
-  .button-container .primary-button {
-    font-size: 26px;
-    width: 35%;
-    padding: 15px;
-  }
-}
-@media (max-width: 848px) {
-  .button-container .primary-button {
-    font-size: 22px;
-    width: 35%;
-    padding: 15px;
-  }
-}
-@media (max-width: 718px) {
-  .button-container .primary-button {
-    font-size: 18px;
-    width: 35%;
-    padding: 10px;
+@media (max-width: 1000px) {
+  .checkbox-container {
+    flex-direction: column;
   }
 }
 </style>

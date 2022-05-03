@@ -68,7 +68,7 @@ form {
     border: none;
     width: 120px;
     height: 50px;
-    margin: 25px 0px 5px calc(100% - 120px);
+    margin: 25px 0px 5px calc(50% - 60px);
     cursor: pointer;
     appearance: none;
   }

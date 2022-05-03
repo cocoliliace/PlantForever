@@ -50,7 +50,7 @@
       <div class="text">Any questions or comments? (Any medical concerns?)</div>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <div class="checkbox-container">
-        <label><input class="checkbox" type="checkbox" required /><span class="checkmark"></span>I have read and will follow the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidelines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
+        <label><input class="checkbox" type="checkbox" required /><span class="checkmark radio"></span>I have read and will follow the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidelines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
       </div>
       <button id="submit-form" class="primary-button" type="submit">Submit</button>
     </form>
@@ -124,12 +124,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.body {
-  background-image: url("../assets/background.jpg");
-  background-size: contain;
-  background-attachment: fixed;
-  padding-bottom: 60px;
-}
 .text-container {
   background: white;
   border: 5px $blue double;
@@ -139,7 +133,7 @@ export default {
   margin: 25px 10vw 0 10vw;
 }
 .text {
-  font-size: 18px;
+  font-size: 16px;
   margin: 15px 5px;
 }
 form {
@@ -154,7 +148,7 @@ form {
   justify-content: space-between;
   input {
     padding: 10px;
-    font-size: 24px;
+    font-size: 16px;
     border: 2px #CCCCCC solid;
     outline-width: 0px;
     transition-duration: 0.3s;
@@ -207,13 +201,13 @@ form {
         }
       }
     }
-    .checkmark {
+    .checkmark, .radio {
       position: absolute;
       margin-left: -40px;
-      height: 18px;
-      width: 18px;
+      height: 16px;
+      width: 16px;
       background-color: #eeeeee;
-      border-radius: 50%;
+      border-radius: 5px;
       box-shadow: inset 0 0 1px $blue;
       cursor: pointer;
       &:hover {
@@ -230,6 +224,10 @@ form {
         position: absolute;
         display: none;
       }
+    }
+    .radio {
+      border-radius: 50%;
+      box-shadow: inset 0 0 1px $blue;
     }
   }
   .row {
@@ -280,7 +278,7 @@ form {
   border: none;
   width: 120px;
   height: 50px;
-  margin: 25px 0px 5px calc(100% - 120px);
+  margin: 25px 0px 5px calc(50% - 60px);
   cursor: pointer;
 }
 </style>

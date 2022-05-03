@@ -412,7 +412,7 @@ a {
   }
 }
 .contains-form {
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/background.png");
   background-size: contain;
   background-attachment: fixed;
   padding-bottom: 60px;

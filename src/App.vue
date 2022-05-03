@@ -380,7 +380,6 @@ a {
   .secondary-text {
     font-size: 16px;
     color: #666666;
-    font-family: Open Sans;
     margin-bottom: 20px;
   }
 }

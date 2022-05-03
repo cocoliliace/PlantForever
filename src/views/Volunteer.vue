@@ -133,7 +133,7 @@ export default {
   margin: 25px 10vw 0 10vw;
 }
 .text {
-  font-size: 18px;
+  font-size: 16px;
   margin: 15px 5px;
 }
 form {
@@ -148,7 +148,7 @@ form {
   justify-content: space-between;
   input {
     padding: 10px;
-    font-size: 24px;
+    font-size: 16px;
     border: 2px #CCCCCC solid;
     outline-width: 0px;
     transition-duration: 0.3s;
@@ -204,8 +204,8 @@ form {
     .checkmark, .radio {
       position: absolute;
       margin-left: -40px;
-      height: 18px;
-      width: 18px;
+      height: 16px;
+      width: 16px;
       background-color: #eeeeee;
       border-radius: 5px;
       box-shadow: inset 0 0 1px $blue;

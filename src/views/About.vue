@@ -127,7 +127,7 @@ export default {
     }
   }
   .secondary-text {
-    font-size: 19px;
+    font-size: 17px;
   }
 }
 

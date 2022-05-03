@@ -327,7 +327,6 @@ export default {
     }
     .secondary-text {
       margin-top: 1em;
-      font-family: Open Sans;
       color: white;
       font-size: 16px;
       text-shadow: 5px 5px 10px black;

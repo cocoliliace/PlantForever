@@ -413,9 +413,36 @@ a {
 }
 .contains-form {
   background-image: url("./assets/background.png");
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   padding-bottom: 60px;
+}
+#thank-you-message {
+  position: fixed;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  background-color: white;
+  border: 4px $blue solid;
+  border-radius: 10px;
+  padding:  10px;
+  width: 50vw;
+  left: 50vw;
+  transform: translate(-50%, calc(-50% - 100px));
+  z-index: 3;
+  #dismiss-button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    background-color: #bbb;
+    padding: 10px 30px;
+    border: 4px $blue solid;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
 }
 
 @media (max-width: 1205px) {

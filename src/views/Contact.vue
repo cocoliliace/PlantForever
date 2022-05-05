@@ -1,15 +1,14 @@
 <template>
-  <div>
+  <div class="contains-form">
     <div class="banner-container">
       <div class="title">CONTACT US</div>
     </div>
     <form id="gform" method="post" action="https://script.google.com/macros/s/AKfycbz5mc2RObBEVrrM7NBTNz08Xf80UAJNFoR0JYkSa4Tiw_m5-_U/exec">
-      <div class="text">Please feel free to contact us.</div>
-      <div class="row">
+      <fieldset>
         <input type="text" name="name" placeholder="Name" required />
         <input type="text" name="email" placeholder="Email" required />
         <input type="text" name="subject" placeholder="Subject" autocomplete="off" />
-      </div>
+      </fieldset>
       <textarea type="text" name="message" placeholder="Message" autocomplete="off" required />
       <input class="primary-button" type="submit" value="Send" />
     </form>
@@ -35,7 +34,11 @@ export default {
 <style lang="scss" scoped>
 form {
   width: 80vw;
-  margin: 25px 10vw 60px 10vw;
+  margin: 25px 10vw;
+  background: white;
+  border: 5px $blue double;
+  padding: 15px;
+  border-radius: 5px;
   .text {
     font-size: 22px;
   }
@@ -45,14 +48,17 @@ form {
     transition-duration: 0.3s;
     border-radius: 5px;
     outline-width: 0px;
+    outline: none;
     &:focus {
       border: 2px $green solid;
     }
   }
-  .row {
+  fieldset {
     display: flex;
     justify-content: space-between;
-    margin: 25px 0px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
     input {
       width: 28%;
       padding: 10px;

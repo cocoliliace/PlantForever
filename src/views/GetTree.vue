@@ -204,7 +204,7 @@ export default {
           comments: this.comments
         };
       } else {
-        link = "https://script.google.com/macros/s/AKfycbyzTMkR2RyjoT2Zunakny-UEspHqGgJLmQSeBu9ykB460EAESK7/exec";
+        link = "https://script.google.com/macros/s/AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,
           name: this.name,
@@ -263,6 +263,7 @@ export default {
       font-size: 16px;
       border: 2px #CCCCCC solid;
       outline-width: 0px;
+      outline: none;
       transition-duration: 0.3s;
       border-radius: 5px;
       margin-bottom: 15px;
@@ -307,8 +308,8 @@ export default {
       .checkmark, .radio {
         position: absolute;
         margin-left: -40px;
-        height: 16px;
-        width: 16px;
+        height: 18px;
+        width: 18px;
         background-color: #eeeeee;
         border-radius: 5px;
         cursor: pointer;
@@ -349,33 +350,6 @@ export default {
     .star {
       color: red;
       font-size: 18px;
-    }
-  }
-  #thank-you-message {
-    position: fixed;
-    text-align: center;
-    font-size: 30px;
-    color: black;
-    background-color: white;
-    border: 4px $blue solid;
-    border-radius: 10px;
-    padding:  10px;
-    width: 50vw;
-    left: 50vw;
-    transform: translate(-50%, calc(-50% - 100px));
-    z-index: 3;
-    #dismiss-button {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, -25%);
-      background-color: #bbb;
-      padding: 10px 30px;
-      border: 4px $blue solid;
-      border-radius: 10px;
-      cursor: pointer;
-      &:hover {
-        filter: brightness(90%);
-      }
     }
   }
   .primary-button {

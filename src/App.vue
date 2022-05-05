@@ -413,7 +413,7 @@ a {
 }
 .contains-form {
   background-image: url("./assets/background.png");
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   padding-bottom: 60px;
 }

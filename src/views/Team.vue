@@ -74,7 +74,7 @@ export default {
           name: "Ching Chang",
           title: "Web Developer",
           photo: "ching",
-          story: ["Ching joined PlantForever in 2019 to mitigate the climate crisis. " +
+          story: ["Ching joined PlantForever in 2019 to help develop urban forests. " +
             "With a passion for web developing, Ching modernized the ways that people can interact with, learn from, and contribute to PlantForever."]
         }
       ]

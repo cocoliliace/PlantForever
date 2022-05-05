@@ -263,6 +263,7 @@ export default {
       font-size: 16px;
       border: 2px #CCCCCC solid;
       outline-width: 0px;
+      outline: none;
       transition-duration: 0.3s;
       border-radius: 5px;
       margin-bottom: 15px;
@@ -307,8 +308,8 @@ export default {
       .checkmark, .radio {
         position: absolute;
         margin-left: -40px;
-        height: 16px;
-        width: 16px;
+        height: 18px;
+        width: 18px;
         background-color: #eeeeee;
         border-radius: 5px;
         cursor: pointer;

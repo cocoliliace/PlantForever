@@ -3,11 +3,13 @@
     <div class="banner-container">
       <div class="title">VOLUNTEER</div>
     </div>
+
     <div v-if="thankYouMessage" id="thank-you-message">
-      <div>Thank you for helping the environment!</div>
-      <div>We will update you on volunteering opportunities!</div>
+      <p>We've received your submission and will contact you back shortly</p>
+      <p>Thank you for helping the environment!</p>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
+
     <div class="text-container">
       <div class="text">
         Anyone is able to volunteer their time for PlantForever. You could volunteer by planting
@@ -109,10 +111,11 @@ export default {
             materials: this.materials,
             comments: this.comments
           }
+        }).then(() => {
+          this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
+          this.preferredList = [false, false, false, false];
+          this.thankYouMessage = true;
         });
-        this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
-        this.preferredList = [false, false, false, false];
-        this.thankYouMessage = true;
       } else {
         alert("Please enter a valid age");
         document.querySelector("#volunteer-form").scrollIntoView({behavior: "smooth"});
@@ -246,33 +249,6 @@ form {
   .star {
     color: red;
     font-size: 18px;
-  }
-}
-#thank-you-message {
-  position: fixed;
-  text-align: center;
-  font-size: 30px;
-  color: white;
-  background-color: $green;
-  border: 4px $blue solid;
-  border-radius: 100px;
-  padding: 40px;
-  width: 60vw;
-  left: 50vw;
-  transform: translate(-50%, calc(-50% - 100px));
-  z-index: 3;
-  #dismiss-button {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 5px);
-    background-color: #a0a0a0;
-    padding: 20px 50px;
-    border: 4px $blue solid;
-    border-radius: 100px;
-    cursor: pointer;
-    &:hover {
-      filter: brightness(90%);
-    }
   }
 }
 .primary-button {

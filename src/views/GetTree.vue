@@ -79,6 +79,12 @@
         <span class="star">*</span>
       </fieldset>
 
+      <label v-if="method === 'pot'">At what address will you plant your tree?</label>
+      <fieldset v-if="method === 'pot'">
+        <input v-model="plantingAddress" class="short-answer" type="text" name="plantingAddress" placeholder="Planting address" autocomplete="off" style="width: 96%;" required />
+        <span class="star">*</span>
+      </fieldset>
+
       <label>What type(s) of tree and how many would you like? <span class="star">*</span></label>
       <fieldset class="checkbox-container" required>
         <label v-for="(tree, i) in treeList" :key="tree">
@@ -212,6 +218,7 @@ export default {
           preferred_trees: this.preferredTrees,
           meeting_address: this.meetingAddress,
           availability: this.availability,
+          planting_address: this.plantingAddress,
           comments: this.comments,
         };
       }

@@ -87,11 +87,12 @@
 
       <label>What type(s) of tree and how many would you like? <span class="star">*</span></label>
       <fieldset class="checkbox-container" required>
-        <label v-for="(tree, i) in treeList" :key="tree">
-          <input v-model="preferredList[i]" class="checkbox" type="checkbox" />
-          <span class="checkmark"></span>
+        <label v-for="(tree, i) in treeList" :key="tree" :style="{ cursor: disabledCss[i] }">
+          <input v-model="preferredList[i]" class="checkbox" type="checkbox" :disabled="disabled[i]" :style="{ cursor: disabledCss[i] }" />
+          <span class="checkmark" :style="{ cursor: disabledCss[i] }"></span>
           {{ tree }}
           <span v-if="preferredList[i]"> X <input v-model="amountList[i]" class="amount" /></span>
+          <template v-if="disabled[i]">(Out of stock)</template>
         </label>
         <input v-model="amountList" type="hidden" name="preferred_task" />
       </fieldset>
@@ -152,6 +153,7 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
+      disabled: [false, false, true, false],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",
@@ -171,6 +173,9 @@ export default {
         count += parseInt(this.amountList[index]);
       }
       return count;
+    },
+    disabledCss() {
+      return this.disabled.map(d => d ? "not-allowed" : "pointer");
     }
   },
   watch: {

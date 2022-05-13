@@ -16,7 +16,17 @@
           <li>PlantForever has a VP Operations position for each city/urban area where one can expand tree planting. For example, <router-link :to="{ name: 'Team' }">Nathaniel</router-link> is our current VP Operations for Edmonton. This position is for those that reside outside of Edmonton and want to undertake a leadership position to expand PlantForever in their city</li>
         </ul>
 
-				<br />
+        <br />
+
+        <div class="title">Manager Position: Operations Manager Edmonton</div>
+        <hr />
+        <ul>
+          <li>Leads tree-planting events during the planting season (late spring, summer, early fall)</li>
+          <li>Collaborates with and works under the Vice President of Operations Edmonton</li>
+          <li>Does on-the-ground work and manages volunteers</li>
+        </ul>
+
+        <br />
 
         <div class="title">Manager Position: Social Media</div>
         <hr />

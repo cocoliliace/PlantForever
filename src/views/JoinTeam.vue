@@ -9,7 +9,7 @@
       <div>Disclaimer: All positions at PlantForever are currently volunteer-based</div>
       <br />
       <div class="text">
-        <div class="title">Executive Position: Vice President of Operation (outside of Edmonton)</div>
+        <div class="title">Executive Position: Vice President of Operation (Outside of Edmonton; <a href="https://bit.ly/37lvXzH" target="_blank" rel="noopener noreferrer">Visual poster</a>)</div>
         <hr />
         <ul>
           <li>Manages tree planting for a given city</li>
@@ -18,7 +18,7 @@
 
         <br />
 
-        <div class="title">Manager Position: Operations Manager Edmonton</div>
+        <div class="title">Manager Position: Operations Manager Edmonton (<a href="https://bit.ly/3G4AOlr" target="_blank" rel="noopener noreferrer">Visual poster</a>)</div>
         <hr />
         <ul>
           <li>Leads tree-planting events during the planting season (late spring, summer, early fall)</li>

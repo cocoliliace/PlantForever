@@ -365,7 +365,7 @@ a {
 }
 .section {
   margin: auto;
-  margin-top: 25px;
+  margin-bottom: 25px;
   width: 1200px;
   .title-text {
     font-size: 36px;

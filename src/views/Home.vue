@@ -145,7 +145,8 @@
         </div>
       </div>
     </div>
-    <div class="section">
+
+    <!--<div class="section">
       <div class="title">
         <picture>
           <source srcset="@/assets/icons/logo.webp" type="image/webp" />
@@ -180,7 +181,7 @@
           </picture>
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -407,7 +408,6 @@ export default {
 }
 .sponsor-container {
   display: flex;
-  margin-bottom: 35px;
   align-items: center;
   a {
     display: flex;

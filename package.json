@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "sass": "^1.53.0",
     "vue": "^2.6.12",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.4.9"
@@ -21,7 +22,6 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
-    "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
     "vue-template-compiler": "^2.6.12"
   },

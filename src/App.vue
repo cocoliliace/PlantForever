@@ -29,7 +29,7 @@
           </picture>
         </router-link>
         <router-link :to="{ name: 'Home' }">Home</router-link>
-        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team', '/in-the-news']) }">
+        <a v-if="hasDropdown" :class="{ 'router-link-exact-active': childIsActive(['/about-us', '/meet-our-team', '/join-our-team', '/in-the-news']) }">
           <div>About Us</div>
           <div class="dropdown">
             <router-link :to="{ name: 'About' }">What We Do</router-link>
@@ -42,7 +42,7 @@
         <router-link v-if="!hasDropdown" :to="{ name: 'Team' }">Meet Our Team</router-link>
         <router-link v-if="!hasDropdown" :to="{ name: 'JoinTeam' }">Join Our Team</router-link>
         <router-link v-if="!hasDropdown" :to="{ name: 'InTheNews' }">In the news</router-link>
-        <router-link :to="{ name: 'GetTree' }" :class="{ 'router-link-exact-active': childIsActive(['/accept-a-tree/in-backyard', '/accept-a-tree/in-pots']) }">Accept A Tree</router-link>
+        <router-link :to="{ name: 'GetTree' }">Accept A Tree</router-link>
         <router-link :to="{ name: 'Volunteer' }">Volunteer</router-link>
         <!-- <router-link :to="{ name: 'Store' }">Store</router-link> -->
         <router-link :to="{ name: 'Contact' }">Contact</router-link>
@@ -89,7 +89,7 @@ export default {
       showNav: true,
       hasDropdown: true,
       previousHeight: 0,
-      showPopup: true,
+      showPopup: false,
     };
   },
   mounted() {

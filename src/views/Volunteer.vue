@@ -1,5 +1,19 @@
 <template>
   <div class="contains-form">
+    <div v-if="showPopup" class="popup">
+      <div class="popup-box">
+        <h3>
+          Due to the large amount of registrations this year,
+          we are no longer accepting volunteers this season.
+          Thank you for your interest!
+        </h3>
+        <div class="buttons">
+          <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
+        </div>
+      </div>
+      <div class="overlay" @click="showPopup = false"></div>
+    </div>
+
     <div class="banner-container">
       <div class="title">VOLUNTEER</div>
     </div>
@@ -37,7 +51,7 @@
       <div>
         Age: <input id="age" v-model="age" name="age" autocomplete="off" required /><span class="star">*</span>
       </div>
-      <div class="text">Do you have a preferred task in mind?</div>
+      <label class="text">Do you have a preferred task in mind?</label>
       <div class="checkbox-container">
         <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree planting</label>
         <label><input v-model="preferredList[1]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Advertising (ex. handing out brochures)</label>
@@ -45,16 +59,16 @@
         <label><input v-model="preferredList[3]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Other: <input v-if="preferredList[3]" id="other-option" v-model="otherOption" placeholder="Please specify" /></label>
         <input v-model="preferredList" type="hidden" name="preferred_task" />
       </div>
-      <div class="text">What gardening materials/tools can you bring?</div>
+      <label class="text">What gardening materials/tools can you bring?</label>
       <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="Materials" autocomplete="off" />
-      <div class="text">When are you available to volunteer? <span class="star">*</span></div>
+      <label class="text">When are you available to volunteer? <span class="star">*</span></label>
       <input v-model="availability" class="short-answer" type="text" name="availability" placeholder="e.g. In the summer" autocomplete="off" required />
-      <div class="text">Any questions or comments? (Any medical concerns?)</div>
+      <label class="text">Any questions or comments? (Any medical concerns?)</label>
       <input v-model="comments" class="short-answer" type="text" name="comments" placeholder="Comments" autocomplete="off" />
       <div class="checkbox-container">
         <label><input class="checkbox" type="checkbox" required /><span class="checkmark radio"></span>I have read and will follow the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidelines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
       </div>
-      <button id="submit-form" class="primary-button" type="submit">Submit</button>
+      <button id="submit-form" class="primary-button" type="submit" disabled>Submit</button>
     </form>
   </div>
 </template>
@@ -87,8 +101,27 @@ export default {
       availability: "",
       materials: "",
       comments: "",
-      thankYouMessage: false
+      thankYouMessage: false,
+      showPopup: true,
+      closed: true,
     };
+  },
+  mounted() {
+    document.querySelector("body").addEventListener("keyup", this.hidePopup);
+    if (this.closed) {
+      document.querySelectorAll("input").forEach(el => {
+        el.disabled = true;
+        el.style.cursor = "not-allowed";
+      });
+      document.querySelectorAll("span.checkmark").forEach(el => {
+        el.disabled = true;
+        el.style.cursor = "not-allowed";
+      });
+      document.querySelector("#submit-form").style.cursor = "not-allowed";
+    }
+  },
+  beforeDestroy() {
+    document.querySelector("body").removeEventListener("keyup", this.hidePopup);
   },
   methods: {
     submit() {
@@ -121,7 +154,13 @@ export default {
         document.querySelector("#volunteer-form").scrollIntoView({behavior: "smooth"});
         document.querySelector("#age").focus();
       }
-    }
+    },
+    hidePopup(event) {
+      if (event.key === "Escape") {
+        this.showPopup = false;
+        document.querySelector("body").removeEventListener("keyup", this.hidePopup);
+      }
+    },
   }
 }
 </script>

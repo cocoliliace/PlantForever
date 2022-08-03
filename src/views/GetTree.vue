@@ -153,7 +153,7 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabled: [true, false, true, true],
+      disabled: [true, true, false, true],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",

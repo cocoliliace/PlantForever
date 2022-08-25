@@ -52,13 +52,11 @@ export default {
             "He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
         },
         {
-          name: "Parshva Shah",
-          title: "Marketing Manager",
-          photo: "parshva",
-          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped with tree transplantation. " +
-            "He became interested in developing marketing strategies to help PlantForever's services reach more people. " +
-            "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
-            "He develops different marketing strategies to connect homeowners with PlantForever products and services."]
+          name: "Bogdan Voroniak",
+          title: "VP of Communications",
+          photo: "bogdan",
+          story: ["Bogdan Voroniak joined the team in 2022 to further integrate his interest in environment with marketing and social media. " +
+            "He manages all team-wide and external communications in addition to overseeing both social media and marketing progress of PlantForever."]
         },
         {
           name: "Kevin Ang",
@@ -69,6 +67,15 @@ export default {
             "He has had a passion in finance since he was in middle school. " +
             "He has chosen to join PlantForever because he wants to make an impact in the world, " +
             "especially with the climate crisis as lots of recent disasters have been caused by it."]
+        },
+        {
+          name: "Parshva Shah",
+          title: "Marketing Manager",
+          photo: "parshva",
+          story: ["Parshva Shah started volunteering for PlantForever during the summer of 2021 where he helped with tree transplantation. " +
+            "He became interested in developing marketing strategies to help PlantForever's services reach more people. " +
+            "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
+            "He develops different marketing strategies to connect homeowners with PlantForever products and services."]
         },
         {
           name: "Ching Chang",

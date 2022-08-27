@@ -55,8 +55,8 @@ export default {
           name: "Bogdan Voroniak",
           title: "VP of Communications",
           photo: "bogdan",
-          story: ["Bogdan Voroniak joined the team in 2022 to further integrate his interest in environment with marketing and social media. " +
-            "He manages all team-wide and external communications in addition to overseeing both social media and marketing progress of PlantForever."]
+          story: ["Bogdan Voroniak joined the team in 2022 to further integrate his interest in environmentalism with marketing and social media. " +
+            "He manages all team-wide and external communications, and oversees the progress of PlantForever's social media and marketing."]
         },
         {
           name: "Kevin Ang",

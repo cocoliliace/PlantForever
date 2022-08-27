@@ -18,16 +18,6 @@
 
         <br />
 
-        <div class="title">Manager Position: Operations Manager Edmonton (<a href="https://bit.ly/3G4AOlr" target="_blank" rel="noopener noreferrer">Visual poster</a>)</div>
-        <hr />
-        <ul>
-          <li>Leads tree-planting events during the planting season (late spring, summer, early fall)</li>
-          <li>Collaborates with and works under the Vice President of Operations Edmonton</li>
-          <li>Does on-the-ground work and manages volunteers</li>
-        </ul>
-
-        <br />
-
         <div class="title">Manager Position: Social Media</div>
         <hr />
         <ul>

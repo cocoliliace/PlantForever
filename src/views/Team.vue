@@ -52,6 +52,15 @@ export default {
             "He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
         },
         {
+          name: "Emeka Ozodurukwe",
+          title: "VP of Operations (Saskatoon)",
+          photo: "emeka",
+          story: ["Emeka started volunteering for PlantForever in July 2022. " +
+            "He has several years of management experience spanning different sectors. " +
+            "Also, he is currently an MBA student at the Edwards School of Business, University of Saskatchewan. " +
+            "Emeka is passionate about saving the planet and is excited to contribute to that effort through PlantForever."]
+        },
+        {
           name: "Bogdan Voroniak",
           title: "VP of Communications",
           photo: "bogdan",

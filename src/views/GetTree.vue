@@ -40,12 +40,14 @@
         <p v-if="method === 'plant'">
           The first tree is free.
           Each extra tree requires a minimum donation of $10 to keep us running.
-          After the 5th tree, each tree requires a $15 minimum donation.
+          After the 5th tree, each tree requires a $15 minimum donation;
+          $16 if the total order is more than 30 trees.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         </p>
         <p v-if="method === 'pot'">
-          We ask for a minimum donation of $10 per tree to keep us running.
-          We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.
+          We ask for a minimum donation of $10 per tree to keep us running;
+          or $9 if the total order is more than 30 trees.
+          We take a deposit of an additional $5 per pot at the meeting, and return them when we get the pot back.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         <p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
@@ -63,6 +65,11 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
+      <label>
+        <input v-model="preorder" type="checkbox">
+        This is a pre-order for 2023
+      </label>
+
       <div style="color: red;">* Required</div>
       <fieldset>
         <input v-model="name" type="text" name="name" placeholder="Name" required />
@@ -164,6 +171,7 @@ export default {
       comments: "",
       thankYouMessage: false,
       showPopup: false,
+      preorder: false,
     };
   },
   computed: {
@@ -200,10 +208,12 @@ export default {
       }
       this.preferredTrees = this.preferredTrees.slice(0, -1);
 
-      let link;
+      let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
-        link = "https://script.google.com/macros/s/AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+        link += this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
+          : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+        console.log(link);
         params = {
           email: this.email,
           name: this.name,
@@ -215,7 +225,8 @@ export default {
           comments: this.comments
         };
       } else {
-        link = "https://script.google.com/macros/s/AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
+        link += this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
+          : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,
           name: this.name,

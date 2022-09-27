@@ -2,7 +2,11 @@
   <div class="form-container">
     <div v-if="showPopup" class="popup">
       <div class="popup-box">
-        <h3>The 2021 planting season is over. Please come back next spring!</h3>
+        <h3>
+          We have a new pre-order system to order trees for the upcoming 2023 planting season.
+          Please select the pre-order checkbox if you wish to submit a pre-order.
+          For a 2022 tree-planting registration, please leave it blank.
+        </h3>
         <div class="buttons">
           <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
         </div>
@@ -40,19 +44,21 @@
         <p v-if="method === 'plant'">
           The first tree is free.
           Each extra tree requires a minimum donation of $10 to keep us running.
-          After the 5th tree, each tree requires a $15 minimum donation.
+          After the 5th tree, each tree requires a $15 minimum donation
+          ($16 if the total order is more than 30 trees).
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         </p>
         <p v-if="method === 'pot'">
-          We ask for a minimum donation of $10 per tree to keep us running.
-          We take a deposit of an additional $5.00 per pot at the meeting, and return them when we get the pot back.
+          We ask for a minimum donation of $10 per tree to keep us running
+          ($9 if the total order is more than 30 trees).
+          We take a deposit of an additional $5 per pot at the meeting, and return them when we get the pot back.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         <p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
         <p>The trees are 0.5 to 3 feet in size.</p>
         <p>
           Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link>
-          for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
+          for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunteer guidelines</router-link>).
         </p>
         <p v-if="method === 'plant'">
           It is recommended that you visit
@@ -63,6 +69,15 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
+      <fieldset class="checkbox-container" style="padding: 10px 0;">
+        <label style="text-align: center; font-size: 18px;">
+          <input v-model="preorder" type="checkbox" class="checkbox">
+          <span class="checkmark" style="border: 1px solid grey"></span>
+          This is a pre-order for 2023.
+          <router-link :to="{ name: 'PreOrder' }">Learn more</router-link>
+        </label>
+      </fieldset>
+
       <div style="color: red;">* Required</div>
       <fieldset>
         <input v-model="name" type="text" name="name" placeholder="Name" required />
@@ -88,11 +103,11 @@
       <label>What type(s) of tree and how many would you like? <span class="star">*</span></label>
       <fieldset class="checkbox-container" required>
         <label v-for="(tree, i) in treeList" :key="tree" :style="{ cursor: disabledCss[i] }">
-          <input v-model="preferredList[i]" class="checkbox" type="checkbox" :disabled="disabled[i]" :style="{ cursor: disabledCss[i] }" />
+          <input v-model="preferredList[i]" class="checkbox" type="checkbox" :disabled="disabled[i] && !preorder" :style="{ cursor: disabledCss[i] }" />
           <span class="checkmark" :style="{ cursor: disabledCss[i] }"></span>
           {{ tree }}
           <span v-if="preferredList[i]"> X <input v-model="amountList[i]" class="amount" /></span>
-          <template v-if="disabled[i]">(Out of stock)</template>
+          <template v-if="disabled[i] && !preorder">(Out of stock)</template>
         </label>
         <input v-model="amountList" type="hidden" name="preferred_task" />
       </fieldset>
@@ -153,7 +168,7 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabled: [false, false, false, false],
+      disabled: [true, true, false, false],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",
@@ -163,7 +178,8 @@ export default {
       materials: "",
       comments: "",
       thankYouMessage: false,
-      showPopup: false,
+      showPopup: true,
+      preorder: false,
     };
   },
   computed: {
@@ -175,7 +191,7 @@ export default {
       return count;
     },
     disabledCss() {
-      return this.disabled.map(d => d ? "not-allowed" : "pointer");
+      return this.disabled.map(d => d && !this.preorder ? "not-allowed" : "pointer");
     }
   },
   watch: {
@@ -187,7 +203,13 @@ export default {
           this.$set(this.amountList, index, 0);
         }
       }
-    }
+    },
+    preorder() {
+      if (!this.preorder) {
+        this.$set(this.preferredList, 0, false);
+        this.$set(this.preferredList, 1, false);
+      }
+    },
   },
   methods: {
     submit() {
@@ -200,10 +222,12 @@ export default {
       }
       this.preferredTrees = this.preferredTrees.slice(0, -1);
 
-      let link;
+      let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
-        link = "https://script.google.com/macros/s/AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+        link += this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
+          : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+        console.log(link);
         params = {
           email: this.email,
           name: this.name,
@@ -215,7 +239,8 @@ export default {
           comments: this.comments
         };
       } else {
-        link = "https://script.google.com/macros/s/AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
+        link += this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
+          : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,
           name: this.name,

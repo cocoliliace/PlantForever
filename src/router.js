@@ -41,6 +41,11 @@ const router =  new Router({
       props: true
     },
     {
+      path: "/pre-order",
+      name: "PreOrder",
+      component: () => import("./views/PreOrder.vue"),
+    },
+    {
       path: "/accept-a-tree",
       name: "GetTree",
       component: () => import("./views/GetTree.vue")

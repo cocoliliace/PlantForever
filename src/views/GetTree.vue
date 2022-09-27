@@ -24,10 +24,24 @@
 
     <section>
       <p>
-        If you live in the Edmonton area and are looking for young trees to plant on your property,
+        If you live in the Edmonton or Saskatoon area and are looking for young trees to plant on your property,
         PlantForever is here to help!
       </p>
-      <p class="checkbox-container">Select an option:
+
+      <p class="checkbox-container">Select your location:
+        <label>
+          <input v-model="location" class="checkbox" type="radio" value="edmonton" />
+          <span class="checkmark radio"></span>
+          Edmonton
+        </label>
+        <label>
+          <input v-model="location" class="checkbox" type="radio" value="saskatoon" />
+          <span class="checkmark radio"></span>
+          Saskatoon
+        </label>
+      </p>
+
+      <p v-if="location" class="checkbox-container">Select an option:
         <label>
           <input v-model="method" class="checkbox" type="radio" value="plant" />
           <span class="checkmark radio"></span>
@@ -163,6 +177,7 @@ export default {
   data() {
     return {
       method: null,
+      location: null,
       email: "",
       name: "",
       phone: "",
@@ -225,7 +240,8 @@ export default {
       let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
-        link += this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
+        link += this.location === "saskatoon" ? "AKfycbxTVqVUSDBqf9IbzCbtiKo9vr3eQcY4au_uoUdDM4Qrm4duZmY5e-Hk65N3R7hsrQkj/exec"
+          : this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
           : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
         console.log(link);
         params = {
@@ -239,7 +255,8 @@ export default {
           comments: this.comments
         };
       } else {
-        link += this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
+        link += this.location === "saskatoon" ? "AKfycbztbb_tHIcj-8AEa2cTmmb8SBR_SvnuRzXij3gSjgENTZuXZOrfkcwBYCztTWszQRaH/exec"
+          : this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
           : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,

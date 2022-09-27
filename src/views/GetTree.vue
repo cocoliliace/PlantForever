@@ -225,7 +225,7 @@ export default {
       let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
-        link += this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
+        link += this.preorder ? "AKfycbx4OgqYKG4HuZsfuT1MlFwvY9K_TA3Jb3x77mx6tIt3PCRhVZWGM7sM_Se-4YgbqRyT/exec"
           : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
         console.log(link);
         params = {
@@ -239,7 +239,7 @@ export default {
           comments: this.comments
         };
       } else {
-        link += this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
+        link += this.preorder ? "AKfycbxMjWPXKYgXzlvi7Rutx5cw15ptgQUVumry8euBVIObNl-x-tHYIVRIfz2_WpUW8NgR/exec"
           : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,

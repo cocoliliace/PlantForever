@@ -24,7 +24,7 @@
 
     <section>
       <p>
-        If you live in the Edmonton area and are looking for young trees to plant on your property,
+        If you live in the Edmonton or Saskatoon area and are looking for young trees to plant on your property,
         PlantForever is here to help!
       </p>
       <p class="checkbox-container">Select an option:
@@ -69,8 +69,8 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <fieldset class="checkbox-container" style="text-align: center; padding: 10px 0;">
-        <label style="font-size: 18px;">
+      <fieldset class="checkbox-container" style="padding: 10px 0;">
+        <label style="text-align: center; font-size: 18px;">
           <input v-model="preorder" type="checkbox" class="checkbox">
           <span class="checkmark" style="border: 1px solid grey"></span>
           This is a pre-order for 2023.

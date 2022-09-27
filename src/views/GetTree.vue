@@ -261,7 +261,7 @@ export default {
         };
       } else {
         link += this.location === "Saskatoon" ? "AKfycbztbb_tHIcj-8AEa2cTmmb8SBR_SvnuRzXij3gSjgENTZuXZOrfkcwBYCztTWszQRaH/exec"
-          : this.preorder ? "AAKfycbxMjWPXKYgXzlvi7Rutx5cw15ptgQUVumry8euBVIObNl-x-tHYIVRIfz2_WpUW8NgR/exec"
+          : this.preorder ? "AKfycbxMjWPXKYgXzlvi7Rutx5cw15ptgQUVumry8euBVIObNl-x-tHYIVRIfz2_WpUW8NgR/exec"
           : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,

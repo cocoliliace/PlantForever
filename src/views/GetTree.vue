@@ -24,7 +24,7 @@
 
     <section>
       <p>
-        If you live in the Edmonton or Saskatoon area and are looking for young trees to plant on your property,
+        If you live in the Edmonton area and are looking for young trees to plant on your property,
         PlantForever is here to help!
       </p>
       <p class="checkbox-container">Select an option:

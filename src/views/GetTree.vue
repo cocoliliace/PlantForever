@@ -30,12 +30,12 @@
 
       <p class="checkbox-container">Select your location:
         <label>
-          <input v-model="location" class="checkbox" type="radio" value="edmonton" />
+          <input v-model="location" class="checkbox" type="radio" value="Edmonton" />
           <span class="checkmark radio"></span>
           Edmonton
         </label>
         <label>
-          <input v-model="location" class="checkbox" type="radio" value="saskatoon" />
+          <input v-model="location" class="checkbox" type="radio" value="Saskatoon" />
           <span class="checkmark radio"></span>
           Saskatoon
         </label>
@@ -83,7 +83,7 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <fieldset class="checkbox-container" style="padding: 10px 0;">
+      <fieldset v-if="location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
         <label style="text-align: center; font-size: 18px;">
           <input v-model="preorder" type="checkbox" class="checkbox">
           <span class="checkmark" style="border: 1px solid grey"></span>
@@ -130,7 +130,7 @@
           <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="e.g. shovel, gloves..." autocomplete="off" />
         </label>
 
-      <label v-if="method === 'pot'">Around which area in Edmonton can you meet up with us? <span class="star">*</span>
+        <label v-if="method === 'pot'">Around which area in {{ location }} can you meet up with us? <span class="star">*</span>
         <input v-model="meetingAddress" class="short-answer" type="text" name="meetingAddress" placeholder="Area" autocomplete="off" required />
       </label>
 
@@ -225,6 +225,11 @@ export default {
         this.$set(this.preferredList, 1, false);
       }
     },
+    location() {
+      if (this.location === "Saskatoon") {
+        this.preorder = false;
+      }
+    },
   },
   methods: {
     submit() {
@@ -240,7 +245,7 @@ export default {
       let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
-        link += this.location === "saskatoon" ? "AKfycbxTVqVUSDBqf9IbzCbtiKo9vr3eQcY4au_uoUdDM4Qrm4duZmY5e-Hk65N3R7hsrQkj/exec"
+        link += this.location === "Saskatoon" ? "AKfycbxTVqVUSDBqf9IbzCbtiKo9vr3eQcY4au_uoUdDM4Qrm4duZmY5e-Hk65N3R7hsrQkj/exec"
           : this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
           : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
         console.log(link);
@@ -255,7 +260,7 @@ export default {
           comments: this.comments
         };
       } else {
-        link += this.location === "saskatoon" ? "AKfycbztbb_tHIcj-8AEa2cTmmb8SBR_SvnuRzXij3gSjgENTZuXZOrfkcwBYCztTWszQRaH/exec"
+        link += this.location === "Saskatoon" ? "AKfycbztbb_tHIcj-8AEa2cTmmb8SBR_SvnuRzXij3gSjgENTZuXZOrfkcwBYCztTWszQRaH/exec"
           : this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
           : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {

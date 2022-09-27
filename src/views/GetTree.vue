@@ -247,7 +247,6 @@ export default {
       if (this.method === "plant") {
         link += this.location === "Saskatoon" ? "AKfycbxTVqVUSDBqf9IbzCbtiKo9vr3eQcY4au_uoUdDM4Qrm4duZmY5e-Hk65N3R7hsrQkj/exec"
           : this.preorder ? "AKfycbx4OgqYKG4HuZsfuT1MlFwvY9K_TA3Jb3x77mx6tIt3PCRhVZWGM7sM_Se-4YgbqRyT/exec"
-        link += this.preorder ? "AKfycbx4OgqYKG4HuZsfuT1MlFwvY9K_TA3Jb3x77mx6tIt3PCRhVZWGM7sM_Se-4YgbqRyT/exec"
           : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
         console.log(link);
         params = {

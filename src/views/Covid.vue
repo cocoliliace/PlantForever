@@ -43,7 +43,7 @@ export default {
       { name: "keywords", content: "covid, corona, update, organization, policy, guidelines, plantforever, tree, volunteer, edmonton" }
     ],
     link: [
-      { rel: "canonical", href: "https://www.plantforever.org/about-us" }
+      { rel: "canonical", href: "https://www.plantforever.org/covid-policies" }
     ]
   },
   props: {

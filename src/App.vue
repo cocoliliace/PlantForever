@@ -166,7 +166,7 @@ export default {
   z-index: 10;
   .popup-box {
     text-align: center;
-    font-size: 28px;
+    font-size: 22px;
     position: fixed;
     background-color: #ddd7dd;
     width: 540px;

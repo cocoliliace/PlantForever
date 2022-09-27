@@ -24,10 +24,24 @@
 
     <section>
       <p>
-        If you live in the Edmonton area and are looking for young trees to plant on your property,
+        If you live in the Edmonton or Saskatoon area and are looking for young trees to plant on your property,
         PlantForever is here to help!
       </p>
-      <p class="checkbox-container">Select an option:
+
+      <p class="checkbox-container">Select your location:
+        <label>
+          <input v-model="location" class="checkbox" type="radio" value="Edmonton" />
+          <span class="checkmark radio"></span>
+          Edmonton
+        </label>
+        <label>
+          <input v-model="location" class="checkbox" type="radio" value="Saskatoon" />
+          <span class="checkmark radio"></span>
+          Saskatoon
+        </label>
+      </p>
+
+      <p v-if="location" class="checkbox-container">Select an option:
         <label>
           <input v-model="method" class="checkbox" type="radio" value="plant" />
           <span class="checkmark radio"></span>
@@ -69,7 +83,7 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <fieldset class="checkbox-container" style="padding: 10px 0;">
+      <fieldset v-if="location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
         <label style="text-align: center; font-size: 18px;">
           <input v-model="preorder" type="checkbox" class="checkbox">
           <span class="checkmark" style="border: 1px solid grey"></span>
@@ -116,7 +130,7 @@
           <input v-model="materials" class="short-answer" type="text" name="materials" placeholder="e.g. shovel, gloves..." autocomplete="off" />
         </label>
 
-      <label v-if="method === 'pot'">Around which area in Edmonton can you meet up with us? <span class="star">*</span>
+        <label v-if="method === 'pot'">Around which area in {{ location }} can you meet up with us? <span class="star">*</span>
         <input v-model="meetingAddress" class="short-answer" type="text" name="meetingAddress" placeholder="Area" autocomplete="off" required />
       </label>
 
@@ -163,6 +177,7 @@ export default {
   data() {
     return {
       method: null,
+      location: null,
       email: "",
       name: "",
       phone: "",
@@ -210,6 +225,11 @@ export default {
         this.$set(this.preferredList, 1, false);
       }
     },
+    location() {
+      if (this.location === "Saskatoon") {
+        this.preorder = false;
+      }
+    },
   },
   methods: {
     submit() {
@@ -225,6 +245,8 @@ export default {
       let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
+        link += this.location === "Saskatoon" ? "AKfycbxTVqVUSDBqf9IbzCbtiKo9vr3eQcY4au_uoUdDM4Qrm4duZmY5e-Hk65N3R7hsrQkj/exec"
+          : this.preorder ? "AKfycbx4OgqYKG4HuZsfuT1MlFwvY9K_TA3Jb3x77mx6tIt3PCRhVZWGM7sM_Se-4YgbqRyT/exec"
         link += this.preorder ? "AKfycbx4OgqYKG4HuZsfuT1MlFwvY9K_TA3Jb3x77mx6tIt3PCRhVZWGM7sM_Se-4YgbqRyT/exec"
           : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
         console.log(link);
@@ -239,7 +261,8 @@ export default {
           comments: this.comments
         };
       } else {
-        link += this.preorder ? "AKfycbxMjWPXKYgXzlvi7Rutx5cw15ptgQUVumry8euBVIObNl-x-tHYIVRIfz2_WpUW8NgR/exec"
+        link += this.location === "Saskatoon" ? "AKfycbztbb_tHIcj-8AEa2cTmmb8SBR_SvnuRzXij3gSjgENTZuXZOrfkcwBYCztTWszQRaH/exec"
+          : this.preorder ? "AAKfycbxMjWPXKYgXzlvi7Rutx5cw15ptgQUVumry8euBVIObNl-x-tHYIVRIfz2_WpUW8NgR/exec"
           : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
         params = {
           email: this.email,

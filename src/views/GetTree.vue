@@ -2,7 +2,11 @@
   <div class="form-container">
     <div v-if="showPopup" class="popup">
       <div class="popup-box">
-        <h3>The 2021 planting season is over. Please come back next spring!</h3>
+        <h3>
+          We have a new pre-order system to order trees for the upcoming 2023 planting season.
+          Please select the pre-order checkbox if you wish to submit a pre-order.
+          For a 2022 tree-planting registration, please leave it blank.
+        </h3>
         <div class="buttons">
           <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
         </div>
@@ -40,13 +44,13 @@
         <p v-if="method === 'plant'">
           The first tree is free.
           Each extra tree requires a minimum donation of $10 to keep us running.
-          After the 5th tree, each tree requires a $15 minimum donation;
-          $16 if the total order is more than 30 trees.
+          After the 5th tree, each tree requires a $15 minimum donation
+          ($16 if the total order is more than 30 trees).
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         </p>
         <p v-if="method === 'pot'">
-          We ask for a minimum donation of $10 per tree to keep us running;
-          or $9 if the total order is more than 30 trees.
+          We ask for a minimum donation of $10 per tree to keep us running
+          ($9 if the total order is more than 30 trees).
           We take a deposit of an additional $5 per pot at the meeting, and return them when we get the pot back.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         <p>
@@ -54,7 +58,7 @@
         <p>The trees are 0.5 to 3 feet in size.</p>
         <p>
           Please read our <router-link :to="{ name: 'Covid', params: { volunteer: false } }">Covid Policy</router-link>
-          for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunter guidelines</router-link>).
+          for homeowners (and feel free to visit our <router-link :to="{ name: 'Covid' }">volunteer guidelines</router-link>).
         </p>
         <p v-if="method === 'plant'">
           It is recommended that you visit
@@ -65,10 +69,10 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <fieldset class="checkbox-container">
+      <fieldset class="checkbox-container" style="text-align: center; padding: 10px 0;">
         <label style="font-size: 18px;">
           <input v-model="preorder" type="checkbox" class="checkbox">
-          <span class="checkmark" style="border: 1px solid grey; width: 20px; height: 20px"></span>
+          <span class="checkmark" style="border: 1px solid grey"></span>
           This is a pre-order for 2023.
           <router-link :to="{ name: 'PreOrder' }">Learn more</router-link>
         </label>
@@ -164,7 +168,7 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabled: [false, false, false, false],
+      disabled: [true, true, false, false],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",
@@ -174,7 +178,7 @@ export default {
       materials: "",
       comments: "",
       thankYouMessage: false,
-      showPopup: false,
+      showPopup: true,
       preorder: false,
     };
   },
@@ -187,7 +191,7 @@ export default {
       return count;
     },
     disabledCss() {
-      return this.disabled.map(d => d ? "not-allowed" : "pointer");
+      return this.disabled.map(d => d && !this.preorder ? "not-allowed" : "pointer");
     }
   },
   watch: {

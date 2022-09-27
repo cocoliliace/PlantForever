@@ -65,10 +65,14 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <label>
-        <input v-model="preorder" type="checkbox">
-        This is a pre-order for 2023
-      </label>
+      <fieldset class="checkbox-container">
+        <label style="font-size: 18px;">
+          <input v-model="preorder" type="checkbox" class="checkbox">
+          <span class="checkmark" style="border: 1px solid grey; width: 20px; height: 20px"></span>
+          This is a pre-order for 2023.
+          <router-link :to="{ name: 'PreOrder' }">Learn more</router-link>
+        </label>
+      </fieldset>
 
       <div style="color: red;">* Required</div>
       <fieldset>

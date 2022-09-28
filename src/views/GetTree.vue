@@ -116,7 +116,7 @@
 
       <label>What type(s) of tree and how many would you like? <span class="star">*</span></label>
       <fieldset class="checkbox-container" required>
-        <label v-for="(tree, i) in treeList" :key="tree" :style="{ cursor: disabledCss[i] }">
+        <label v-for="(tree, i) in treeList" v-if="!disabled[i] || location === 'Edmonton'" :key="tree" :style="{ cursor: disabledCss[i] }">
           <input v-model="preferredList[i]" class="checkbox" type="checkbox" :disabled="disabled[i] && !preorder" :style="{ cursor: disabledCss[i] }" />
           <span class="checkmark" :style="{ cursor: disabledCss[i] }"></span>
           {{ tree }}
@@ -183,7 +183,8 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabled: [true, true, false, false],
+      disabledEdmonton: [true, true, false, false],
+      disabledSaskatoon: [true, true, false, true],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",
@@ -204,6 +205,12 @@ export default {
         count += parseInt(this.amountList[index]);
       }
       return count;
+    },
+    disabled() {
+      if (this.location === "Saskatoon") {
+        return this.disabledSaskatoon;
+      }
+      return this.disabledEdmonton;
     },
     disabledCss() {
       return this.disabled.map(d => d && !this.preorder ? "not-allowed" : "pointer");
@@ -228,6 +235,9 @@ export default {
     location() {
       if (this.location === "Saskatoon") {
         this.preorder = false;
+        this.$set(this.preferredList, 0, false);
+        this.$set(this.preferredList, 1, false);
+        this.$set(this.preferredList, 3, false);
       }
     },
   },

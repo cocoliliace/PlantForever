@@ -3,9 +3,9 @@
     <div v-if="showPopup" class="popup">
       <div class="popup-box">
         <h3>
-          We have a new pre-order system to order trees for the upcoming 2023 planting season.
-          Please select the pre-order checkbox if you wish to submit a pre-order.
-          For a 2022 tree-planting registration, please leave it blank.
+          The 2022 planting season is over, but
+          we have a new pre-order system to order trees for the upcoming 2023 planting season.
+          All registrations submitted in Edmonton now will be considered as pre-orders.
         </h3>
         <div class="buttons">
           <div id="dismiss-button" class="button secondary-button" @click="showPopup = false">Okay!</div>
@@ -69,6 +69,7 @@
           We take a deposit of an additional $5 per pot at the meeting, and return them when we get the pot back.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         <p>
+        <p>For pre-orders, we ask that you order a minimum of 10 trees to help us plan ahead.</p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
         <p>The trees are 0.5 to 3 feet in size.</p>
         <p>
@@ -86,8 +87,8 @@
     <form v-if="method" @submit.prevent="submit">
       <fieldset v-if="location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
         <label style="text-align: center; font-size: 18px;">
-          <input v-model="preorder" type="checkbox" class="checkbox">
-          <span class="checkmark" style="border: 1px solid grey"></span>
+          <input v-model="preorder" type="checkbox" class="checkbox" disabled>
+          <span class="checkmark" style="border: 1px solid grey" disabled></span>
           This is a pre-order for 2023.
           <router-link :to="{ name: 'PreOrder' }">Learn more</router-link>
         </label>
@@ -184,7 +185,7 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabledEdmonton: [true, true, false, false],
+      disabledEdmonton: [true, true, true, true],
       disabledSaskatoon: [true, true, false, true],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
@@ -196,7 +197,7 @@ export default {
       comments: "",
       thankYouMessage: false,
       showPopup: true,
-      preorder: false,
+      preorder: true,
     };
   },
   computed: {
@@ -240,12 +241,17 @@ export default {
         this.$set(this.preferredList, 0, false);
         this.$set(this.preferredList, 1, false);
         this.$set(this.preferredList, 3, false);
+      } else {
+        this.preorder = true;
       }
     },
   },
   methods: {
     submit() {
       if (!this.numberOfTrees) return alert("Please select at least one tree");
+      if (this.numberOfTrees < 10 && this.preorder)
+        return alert("For pre-orders, we ask that you order a minimum of 10 trees to help us plan ahead. " +
+          "Thank you for understanding.");
 
       for (let treeIndex = 0; treeIndex < this.treeList.length; treeIndex++) {
         if (this.preferredList[treeIndex]) {
@@ -384,6 +390,9 @@ export default {
         background-color: #eeeeee;
         border-radius: 5px;
         cursor: pointer;
+        &[disabled] {
+          cursor: not-allowed;
+        }
         &:hover {
           filter: brightness(90%);
         }

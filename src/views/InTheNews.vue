@@ -10,6 +10,20 @@
       <hr />
       <div class="cards-container">
         <div class="card">
+            <a class="title" href="https://globalnews.ca/news/9166036/edmonton-youth-climate-change-trees/" target="_blank">Global News Interview 2022</a>
+            <div class="description">Global News Edmonton interviewed our team members and a patron during a planting event</div>
+            <a href="https://globalnews.ca/news/9166036/edmonton-youth-climate-change-trees/" target="_blank"><img src="@/assets/in-the-news/global-news.png" /></a>
+            <!--div class="spacer"></div-->
+        </div>
+
+        <div class="card">
+            <a class="title" href="https://thegatewayonline.ca/2021/09/plantforever-develops-urban-forests-one-tree-at-a-time-the-gateway/" target="_blank">The Gateway News Article 2021</a>
+            <div class="description">The University of Alberta's newspaper spotlighted PlantForever after interviewing team members Marmik and Nathaniel</div>
+            <a href="https://thegatewayonline.ca/2021/09/plantforever-develops-urban-forests-one-tree-at-a-time-the-gateway/" target="_blank"><img src="@/assets/in-the-news/gateway.jpg" /></a>
+            <!--div class="spacer"></div-->
+        </div>
+
+        <div class="card">
             <a class="title" href="https://www.cbc.ca/listen/live-radio/1-52-radio-active" target="_blank">CBC Interview 2020</a>
             <div class="description">Our president Marmik was interviewed on behalf of PlantForever on Edmonton CBC radio in 2020<br /></div>
             <a href="https://www.cbc.ca/listen/live-radio/1-52-radio-active" target="_blank"><img src="@/assets/in-the-news/cbc.jpg" /></a>
@@ -17,12 +31,6 @@
                 <source src="@/assets/in-the-news/audio/cbc_interview.mp3" type="audio/mpeg">
                 Your browser does not support the audio element
             </audio>
-        </div>
-        <div class="card">
-            <a class="title" href="https://thegatewayonline.ca/2021/09/plantforever-develops-urban-forests-one-tree-at-a-time-the-gateway/" target="_blank">TheGateway News Article 2021</a>
-            <div class="description">The University of Alberta's newspaper spotlighted PlantForever after interviewing team members Marmik and Nathaniel</div>
-            <a href="https://thegatewayonline.ca/2021/09/plantforever-develops-urban-forests-one-tree-at-a-time-the-gateway/" target="_blank"><img src="@/assets/in-the-news/gateway.jpg" /></a>
-            <div class="spacer"></div>
         </div>
       </div>
     </div>

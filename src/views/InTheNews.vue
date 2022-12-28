@@ -11,7 +11,7 @@
       <div class="cards-container">
         <div class="card">
             <a class="title" href="https://globalnews.ca/news/9166036/edmonton-youth-climate-change-trees/" target="_blank">Global News Interview 2022</a>
-            <div class="description">Global News Edmonton interviewed our team members and a patron during a planting event</div>
+            <div class="description">Global News Edmonton interviewed our team members Nate and Ahad, volunteer Khushee, and a homeowner during a planting event</div>
             <a href="https://globalnews.ca/news/9166036/edmonton-youth-climate-change-trees/" target="_blank"><img src="@/assets/in-the-news/global-news.png" /></a>
             <!--div class="spacer"></div-->
         </div>

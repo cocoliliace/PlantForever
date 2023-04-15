@@ -102,8 +102,8 @@ export default {
       materials: "",
       comments: "",
       thankYouMessage: false,
-      showPopup: true,
-      closed: true,
+      showPopup: false,
+      closed: false,
     };
   },
   mounted() {

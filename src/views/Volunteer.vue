@@ -51,6 +51,17 @@
       <div>
         Age: <input id="age" v-model="age" name="age" autocomplete="off" required /><span class="star">*</span>
       </div>
+
+      <label>
+        City:
+        <select name="city" required>
+          <option value="" selected disabled>Select</option>
+          <option value="Edmonton">Edmonton</option>
+          <option value="Saskatoon">Saskatoon</option>
+        </select>
+        <span class="star">*</span>
+      </label>
+
       <label class="text">Do you have a preferred task in mind?</label>
       <div class="checkbox-container">
         <label><input v-model="preferredList[0]" class="checkbox" type="checkbox" /><span class="checkmark"></span>Tree planting</label>
@@ -94,6 +105,7 @@ export default {
       name: "",
       phone: "",
       age: "",
+      city: "",
       taskList: ["Planting", "Advertising", "Transporting", "Other"],
       otherOption: "",
       preferredList: [false, false, false, false],
@@ -139,13 +151,14 @@ export default {
             name: this.name,
             phone: this.phone,
             age: this.age,
+            city: this.city,
             preferred_task: this.preferredTask,
             availability: this.availability,
             materials: this.materials,
             comments: this.comments
           }
         }).then(() => {
-          this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = "";
+          this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = this.city = "";
           this.preferredList = [false, false, false, false];
           this.thankYouMessage = true;
         });

@@ -54,7 +54,7 @@
 
       <label>
         City:
-        <select name="city" v-model="city" required>
+        <select v-model="city" name="city" required>
           <option value="" selected disabled>Select</option>
           <option value="Edmonton">Edmonton</option>
           <option value="Saskatoon">Saskatoon</option>

@@ -79,7 +79,7 @@
       <div class="checkbox-container">
         <label><input class="checkbox" type="checkbox" required /><span class="checkmark radio"></span>I have read and will follow the <router-link :to="{ name: 'Covid' }">Covid Volunteer Guidelines</router-link>. <span class="star" style="transform: translateX(-1em);">*</span></label>
       </div>
-      <button id="submit-form" class="primary-button" type="submit" disabled>Submit</button>
+      <button id="submit-form" class="primary-button" type="submit" :disabled="close">Submit</button>
     </form>
   </div>
 </template>

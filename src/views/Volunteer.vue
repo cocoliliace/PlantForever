@@ -145,7 +145,7 @@ export default {
           }
         }
         this.preferredTask = this.preferredTask.slice(0, -1);
-        axios.get("https://script.google.com/macros/s/AKfycbztewbGWefJfM0yaQBOKHOhYgmuZgZ1DR8XhkyUHSkavoPCdm8/exec", {
+        axios.get("https://script.google.com/macros/s/AKfycbz7JuFzZmx2ftVNWFPKoFNnJZAnglTFp-VYV6X8ZlCIvVvOT3XIIfEdIX-Q_OJjdJzY/exec", {
           params: {
             email: this.email,
             name: this.name,

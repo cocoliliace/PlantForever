@@ -22,7 +22,7 @@
       </form>
       and e-transfer:
       <button v-if="!isEmailRevealed" @click="isEmailRevealed = true">click to reveal email</button>
-      <span>plantforever.ca@gmail.com</span>.
+      <span v-else>plantforever.ca@gmail.com</span>.
     </div>
   </div>
 </template>

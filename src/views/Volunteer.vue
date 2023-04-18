@@ -213,7 +213,7 @@ form {
     transition-duration: 0.3s;
     border-radius: 5px;
     margin-bottom: 15px;
-    &#age {
+    &#age, &[name='city'] {
       border: none;
       border-bottom: 2px #CCCCCC solid;
       width: 31px;

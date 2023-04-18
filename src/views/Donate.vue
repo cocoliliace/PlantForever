@@ -14,12 +14,15 @@
       donate supplies such as trees, shovels, soil, or other equipment.
     </div>
     <div class="text" style="margin-bottom: 35px;">
-      For monetary donations, please continue
+      For monetary donations, we accept
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_s-xclick" />
         <input type="hidden" name="hosted_button_id" value="UMPE77Y2R9L46" />
-        <input type="submit" value="here" />
-      </form>.
+        <input type="submit" value="PayPal" />
+      </form>
+      and e-transfer:
+      <button v-if="!isEmailRevealed" @click="isEmailRevealed = true">click to reveal email</button>
+      <span>plantforever.ca@gmail.com</span>.
     </div>
   </div>
 </template>
@@ -36,7 +39,12 @@ export default {
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/donate" }
     ]
-  }
+  },
+  data() {
+    return {
+      isEmailRevealed: false,
+    };
+  },
 }
 </script>
 

@@ -58,7 +58,9 @@
           <option value="" selected disabled>Select</option>
           <option value="Edmonton">Edmonton</option>
           <option value="Saskatoon">Saskatoon</option>
+          <option value="other">Other</option>
         </select>
+        <input v-if="city === 'other'" v-model="cityOther" type="text" name="city" placeholder="City" :required="city === 'other'"/>
         <span class="star">*</span>
       </label>
 
@@ -106,6 +108,7 @@ export default {
       phone: "",
       age: "",
       city: "",
+      cityOther: "",
       taskList: ["Planting", "Advertising", "Transporting", "Other"],
       otherOption: "",
       preferredList: [false, false, false, false],
@@ -151,14 +154,14 @@ export default {
             name: this.name,
             phone: this.phone,
             age: this.age,
-            city: this.city,
+            city: this.city === "other" ? this.cityOther : this.city,
             preferred_task: this.preferredTask,
             availability: this.availability,
             materials: this.materials,
             comments: this.comments
           }
         }).then(() => {
-          this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = this.city = "";
+          this.email = this.name = this.phone = this.age = this.preferredTask = this.otherOption = this.availability = this.materials = this.comments = this.city = this.cityOther = "";
           this.preferredList = [false, false, false, false];
           this.thankYouMessage = true;
         });

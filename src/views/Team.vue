@@ -88,15 +88,6 @@ export default {
             "He develops different marketing strategies to connect homeowners with PlantForever products and services."]
         },
         {
-          name: "Ahad Faruqui",
-          title: "Operations Manager (Edmonton)",
-          photo: "ahad",
-          story: ["Ahad is a 16-year-old highschool student at Old Scona Academic highschool. " +
-            "He loves playing a wide variety of sports including basketball, handball, and swimming. " +
-            "He is an avid environmental activist who joined PlantForever in the effort to reduce the climate crisis. " +
-            "As the Operations Manager, Ahad coordinates tree-planting events and leads a team of volunteers."]
-        },
-        {
           name: "Ching Chang",
           title: "Web Developer",
           photo: "ching",

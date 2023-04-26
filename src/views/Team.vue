@@ -61,13 +61,6 @@ export default {
             "Emeka is passionate about saving the planet and is excited to contribute to that effort through PlantForever."]
         },
         {
-          name: "Bogdan Voroniak",
-          title: "VP of Communications",
-          photo: "bogdan",
-          story: ["Bogdan Voroniak joined the team in 2022 to further integrate his interest in environmentalism with marketing and social media. " +
-            "He manages all team-wide and external communications, and oversees the progress of PlantForever's social media and marketing."]
-        },
-        {
           name: "Kevin Ang",
           title: "VP of Finance",
           photo: "kevin",
@@ -76,6 +69,14 @@ export default {
             "He has had a passion in finance since he was in middle school. " +
             "He has chosen to join PlantForever because he wants to make an impact in the world, " +
             "especially with the climate crisis as lots of recent disasters have been caused by it."]
+        },
+        {
+          name: "Ifrah Abdirizak",
+          title: "Operation Manager (Saskatoon)",
+          photo: "ifrah",
+          story: ["Ifrah Abdirizak is an Environmental Biology student at UofS. " +
+            "She joined plantforever the summer of 2022 and supports tree planting as a means to mitigate climate change. " +
+            "Her interests lie in urban ecology, environmental restoration and conservation."]
         },
         {
           name: "Parshva Shah",

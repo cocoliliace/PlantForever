@@ -85,7 +85,7 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <fieldset v-if="location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
+      <fieldset v-if="allowPreorder && location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
         <label style="text-align: center; font-size: 18px;">
           <input v-model="preorder" type="checkbox" class="checkbox" disabled>
           <span class="checkmark" style="border: 1px solid grey" disabled></span>
@@ -185,8 +185,8 @@ export default {
       phone: "",
       address: "",
       treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabledEdmonton: [true, true, true, true],
-      disabledSaskatoon: [true, true, false, true],
+      disabledEdmonton: [false, false, false, false],
+      disabledSaskatoon: [false, false, false, false],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
       preferredTrees: "",
@@ -196,8 +196,9 @@ export default {
       materials: "",
       comments: "",
       thankYouMessage: false,
-      showPopup: true,
-      preorder: true,
+      showPopup: false,
+      preorder: false,
+      allowPreorder: false,
     };
   },
   computed: {
@@ -242,7 +243,7 @@ export default {
         this.$set(this.preferredList, 1, false);
         this.$set(this.preferredList, 3, false);
       } else {
-        this.preorder = true;
+        //this.preorder = true;
       }
     },
   },

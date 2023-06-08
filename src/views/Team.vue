@@ -61,13 +61,6 @@ export default {
             "Emeka is passionate about saving the planet and is excited to contribute to that effort through PlantForever."]
         },
         {
-          name: "Bogdan Voroniak",
-          title: "VP of Communications",
-          photo: "bogdan",
-          story: ["Bogdan Voroniak joined the team in 2022 to further integrate his interest in environmentalism with marketing and social media. " +
-            "He manages all team-wide and external communications, and oversees the progress of PlantForever's social media and marketing."]
-        },
-        {
           name: "Kevin Ang",
           title: "VP of Finance",
           photo: "kevin",
@@ -78,6 +71,14 @@ export default {
             "especially with the climate crisis as lots of recent disasters have been caused by it."]
         },
         {
+          name: "Ifrah Abdirizak",
+          title: "Operation Manager (Saskatoon)",
+          photo: "ifrah",
+          story: ["Ifrah Abdirizak is an Environmental Biology student at UofS. " +
+            "She joined plantforever the summer of 2022 and supports tree planting as a means to mitigate climate change. " +
+            "Her interests lie in urban ecology, environmental restoration and conservation."]
+        },
+        {
           name: "Parshva Shah",
           title: "Marketing Manager",
           photo: "parshva",
@@ -85,15 +86,6 @@ export default {
             "He became interested in developing marketing strategies to help PlantForever's services reach more people. " +
             "He likes problem-solving and finding innovative solutions which makes the Head of Marketing the perfect position for him. " +
             "He develops different marketing strategies to connect homeowners with PlantForever products and services."]
-        },
-        {
-          name: "Ahad Faruqui",
-          title: "Operations Manager (Edmonton)",
-          photo: "ahad",
-          story: ["Ahad is a 16-year-old highschool student at Old Scona Academic highschool. " +
-            "He loves playing a wide variety of sports including basketball, handball, and swimming. " +
-            "He is an avid environmental activist who joined PlantForever in the effort to reduce the climate crisis. " +
-            "As the Operations Manager, Ahad coordinates tree-planting events and leads a team of volunteers."]
         },
         {
           name: "Ching Chang",

@@ -17,7 +17,7 @@
       <div class="title">ACCEPT A TREE</div>
     </div>
     <div v-if="thankYouMessage" id="thank-you-message">
-      <p>We've received your submission and will contact you back shortly</p>
+      <p>We've received your submission. Please expect a 2 week wait time.</p>
       <p>Thank you for helping the environment!</p>
       <div id="dismiss-button" @click="thankYouMessage = false">OK</div>
     </div>
@@ -56,6 +56,7 @@
       </p>
 
       <div v-if="method">
+        <p>The current wait time is about 2 weeks</p>
         <p v-if="method === 'plant'">
           The first tree is free.
           Each extra tree requires a minimum donation of $10 to keep us running.

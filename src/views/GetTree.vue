@@ -48,7 +48,7 @@
           We plant at your house
         </label>
 
-        <label v-if="location !== 'Saskatoon'">
+        <label>
           <input v-model="method" class="checkbox" type="radio" value="pot" />
           <span class="checkmark radio"></span>
           We give you trees to plant yourself
@@ -237,15 +237,15 @@ export default {
       }
     },
     location() {
-      if (this.location === "Saskatoon") {
-        this.preorder = false;
-        this.method = "plant";
-        this.$set(this.preferredList, 0, false);
-        this.$set(this.preferredList, 1, false);
-        this.$set(this.preferredList, 3, false);
-      } else {
-        //this.preorder = true;
-      }
+      //if (this.location === "Saskatoon") {
+      //  this.preorder = false;
+      //  this.method = "plant";
+      //  this.$set(this.preferredList, 0, false);
+      //  this.$set(this.preferredList, 1, false);
+      //  this.$set(this.preferredList, 3, false);
+      //} else {
+      //  //this.preorder = true;
+      //}
     },
   },
   methods: {

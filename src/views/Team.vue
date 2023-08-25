@@ -71,14 +71,6 @@ export default {
             "especially with the climate crisis as lots of recent disasters have been caused by it."]
         },
         {
-          name: "Ifrah Abdirizak",
-          title: "Operation Manager (Saskatoon)",
-          photo: "ifrah",
-          story: ["Ifrah Abdirizak is an Environmental Biology student at UofS. " +
-            "She joined plantforever the summer of 2022 and supports tree planting as a means to mitigate climate change. " +
-            "Her interests lie in urban ecology, environmental restoration and conservation."]
-        },
-        {
           name: "Parshva Shah",
           title: "Marketing Manager",
           photo: "parshva",

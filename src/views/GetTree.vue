@@ -70,7 +70,6 @@
           We take a deposit of an additional $5 per pot at the meeting, and return them when we get the pot back.
           We accept donations in the form of cash or <router-link :to="{ name: 'Donate' }">PayPal</router-link>.
         <p>
-        <p>For pre-orders, we ask that you order a minimum of 10 trees to help us plan ahead.</p>
         <p v-if="method === 'plant'">Homeowners must provide potting soil.</p>
         <p>The trees are 0.5 to 3 feet in size.</p>
         <p>
@@ -80,7 +79,7 @@
         <p v-if="method === 'plant'">
           It is recommended that you visit
           <a href="http://albertaonecall.com" target="_blank" rel="noopener noreferrer">Call Before You Dig</a>
-          to avoid utilities under you home and determine the areas where the planting is possible.
+          to avoid utilities under your home and determine the areas where the planting is possible.
         </p>
       </div>
     </section>

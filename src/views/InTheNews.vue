@@ -10,6 +10,15 @@
       <hr />
       <div class="cards-container">
         <div class="card">
+            <a class="title" href="https://www.cbc.ca/listen/live-radio/1-429-what-on-earth/clip/16009920-the-last-barrel-alberta-premier-backs-oil-world" target="_blank">CBC Documentary 2023</a>
+            <div class="description">CBC Radio aired an documentary focusing on
+              <a href="https://www.alberta.ca/emissions-reduction-and-energy-development-plan" target="_blank">Alberta's net zero plans</a>,
+              capturing PlantForever's perspectives on planting trees</div>
+            <a href="https://www.cbc.ca/listen/live-radio/1-429-what-on-earth/clip/16009920-the-last-barrel-alberta-premier-backs-oil-world" target="_blank"><img src="@/assets/in-the-news/cbc-2023.png" /></a>
+            <!--div class="spacer"></div-->
+        </div>
+
+        <div class="card">
             <a class="title" href="https://globalnews.ca/news/9166036/edmonton-youth-climate-change-trees/" target="_blank">Global News Interview 2022</a>
             <div class="description">Global News Edmonton interviewed our team members Nate and Ahad, volunteer Khushee, and a homeowner during a planting event</div>
             <a href="https://globalnews.ca/news/9166036/edmonton-youth-climate-change-trees/" target="_blank"><img src="@/assets/in-the-news/global-news.png" /></a>
@@ -44,7 +53,7 @@ export default {
     title: "In the News",
     meta: [
       { name: "description", content: "In the past few years, PlantForever has had the pleasant opportunity to speak to some wonderful news organizations about their tree planting initiatives." },
-      { name: "keywords", content: "cbc, news, journal, article, interview, testimonial, edmonton, organization, plantforever, initiatives" }
+      { name: "keywords", content: "cbc, news, journal, article, interview, testimonial, edmonton, organization, plantforever, global news" }
     ],
     link: [
       { rel: "canonical", href: "https://www.plantforever.org/in-the-news" }

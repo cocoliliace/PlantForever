@@ -10,6 +10,13 @@
       <hr />
       <div class="cards-container">
         <div class="card">
+            <a class="title" href="https://www.cbc.ca/radio/whatonearth/how-to-plant-a-tree-in-2023-1.6967362" target="_blank">CBC News Article 2023</a>
+            <div class="description">CBC Radio wrote a news article on PlantForever's plans and challenges of planting trees</div>
+            <a href="https://www.cbc.ca/radio/whatonearth/how-to-plant-a-tree-in-2023-1.6967362" target="_blank"><img src="@/assets/in-the-news/cbc-article-2023.png" /></a>
+            <!--div class="spacer"></div-->
+        </div>
+
+        <div class="card">
             <a class="title" href="https://www.cbc.ca/listen/live-radio/1-429-what-on-earth/clip/16009920-the-last-barrel-alberta-premier-backs-oil-world" target="_blank">CBC Documentary 2023</a>
             <div class="description">CBC Radio aired an documentary focusing on
               <a href="https://www.alberta.ca/emissions-reduction-and-energy-development-plan" target="_blank">Alberta's net zero plans</a>,

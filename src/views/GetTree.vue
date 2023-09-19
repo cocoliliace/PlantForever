@@ -48,7 +48,7 @@
           We plant at your house
         </label>
 
-        <label v-if="location !== 'Saskatoon'">
+        <label>
           <input v-model="method" class="checkbox" type="radio" value="pot" />
           <span class="checkmark radio"></span>
           We give you trees to plant yourself
@@ -85,7 +85,7 @@
     </section>
 
     <form v-if="method" @submit.prevent="submit">
-      <fieldset v-if="location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
+      <fieldset v-if="allowPreorder && location === 'Edmonton'" class="checkbox-container" style="padding: 10px 0;">
         <label style="text-align: center; font-size: 18px;">
           <input v-model="preorder" type="checkbox" class="checkbox" disabled>
           <span class="checkmark" style="border: 1px solid grey" disabled></span>
@@ -184,8 +184,8 @@ export default {
       name: "",
       phone: "",
       address: "",
-      treeList: ["Colorado Spruce", "Amur Maple", "Schubert Chokecherry", "Bur Oak"],
-      disabledEdmonton: [true, true, true, true],
+      treeList: ["Amur Maple", "Colorado Spruce", "Red Oak", "Schubert Chokecherry"],
+      disabledEdmonton: [false, true, false, true],
       disabledSaskatoon: [true, true, false, true],
       preferredList: [false, false, false, false],
       amountList: [0, 0, 0, 0],
@@ -196,8 +196,9 @@ export default {
       materials: "",
       comments: "",
       thankYouMessage: false,
-      showPopup: true,
-      preorder: true,
+      showPopup: false,
+      preorder: false,
+      allowPreorder: false,
     };
   },
   computed: {
@@ -235,15 +236,15 @@ export default {
       }
     },
     location() {
-      if (this.location === "Saskatoon") {
-        this.preorder = false;
-        this.method = "plant";
-        this.$set(this.preferredList, 0, false);
-        this.$set(this.preferredList, 1, false);
-        this.$set(this.preferredList, 3, false);
-      } else {
-        this.preorder = true;
-      }
+      //if (this.location === "Saskatoon") {
+      //  this.preorder = false;
+      //  this.method = "plant";
+      //  this.$set(this.preferredList, 0, false);
+      //  this.$set(this.preferredList, 1, false);
+      //  this.$set(this.preferredList, 3, false);
+      //} else {
+      //  //this.preorder = true;
+      //}
     },
   },
   methods: {
@@ -263,9 +264,9 @@ export default {
       let link = "https://script.google.com/macros/s/";
       let params;
       if (this.method === "plant") {
-        link += this.location === "Saskatoon" ? "AKfycbxTVqVUSDBqf9IbzCbtiKo9vr3eQcY4au_uoUdDM4Qrm4duZmY5e-Hk65N3R7hsrQkj/exec"
+        link += this.location === "Saskatoon" ? "AKfycbylnm9RPsLQwl3LmmWhuIhDjjnZGyVnqMcWjT6bUvtz0WtO8MoyLzAK4pZq3FOGNExB/exec"
           : this.preorder ? "AKfycbxcghJ8vYc0EyjOc1aDsQpCJcV9idgr1GWfh7337jFwvZdN8bq-Ed1ZbOM0zpBJREU0CA/exec"
-          : "AKfycbw-rxgZ9cs601Y0u8CxnfjCLIR-p7DisgdkMhfn0Q8-L9Q7UpU/exec";
+          : "AKfycbxPVPaPg3U05vj3lTha_oBfL5i8kBpuQa6IXSYJQmgXtDGgSiuFeGY-TfkLdihFL6vA/exec";
         console.log(link);
         params = {
           email: this.email,
@@ -280,7 +281,7 @@ export default {
       } else {
         link += this.location === "Saskatoon" ? "AKfycbztbb_tHIcj-8AEa2cTmmb8SBR_SvnuRzXij3gSjgENTZuXZOrfkcwBYCztTWszQRaH/exec"
           : this.preorder ? "AKfycbxE_d5M613F8hHA0bSaQdKXwnn6hl__yWcrtfBxHu2jHK9A6MrtB5mIKTN_Ink3JEa-/exec"
-          : "AKfycbzFSmJj3YUlEIgNnJeqOhBLQ1J9TyyM2R9zYis1p8k9fmmWjNzI2spDBufaoQ7Iv7cP/exec";
+          : "AKfycbzTbg0JUpxgKe3FAYrwN3gfxIykUnMhW7FwnQtaRoq2zhlIEkdPWkd7dEKSoSqTXfNJdA/exec";
         params = {
           email: this.email,
           name: this.name,

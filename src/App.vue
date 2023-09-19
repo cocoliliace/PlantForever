@@ -79,7 +79,7 @@ export default {
   name: "App",
   metaInfo: {
     title: "Home",
-    titleTemplate: "%s – PlantForever | Edmonton Nonprofit",
+    titleTemplate: "%s – PlantForever | Nonprofit",
     meta: [
       { property: "og:image", content: `https://www.plantforever.org${ ogImage }` }
     ]

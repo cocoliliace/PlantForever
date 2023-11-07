@@ -29,9 +29,9 @@
       </p>
 
       <p class="checkbox-container">Select your location:
-        <label>
-          <input v-model="location" class="checkbox" type="radio" value="Edmonton" />
-          <span class="checkmark radio"></span>
+        <label style="cursor: not-allowed">
+          <input v-model="location" class="checkbox" type="radio" value="Edmonton" disabled />
+          <span class="checkmark radio" style="cursor: not-allowed"></span>
           Edmonton
         </label>
         <label>

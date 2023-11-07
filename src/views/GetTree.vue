@@ -30,7 +30,7 @@
 
       <p class="checkbox-container">Select your location:
         <label>
-          <input v-model="location" class="checkbox" type="radio" value="Edmonton" />
+          <input v-model="location" class="checkbox" type="radio" value="Edmonton" disabled />
           <span class="checkmark radio"></span>
           Edmonton
         </label>

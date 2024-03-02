@@ -47,7 +47,7 @@ export default {
           title: "VP of Operations (Edmonton)",
           photo: "nate",
           story: ["Nathaniel started off as a volunteer for PlantForever back in 2018 helping to plant trees across Edmonton. " +
-            "Now at 18 years of age, this young environmentalist  continues  to make strides in his pursuit to help preserve the environment. " +
+            "Now at 21 years of age, this young environmentalist  continues  to make strides in his pursuit to help preserve the environment. " +
             "By managing the events he once helped with, Nathaniel is an integral part of the team. " +
             "He conducts all of the tree operations for PlantForever, coordinating with both homeowners and volunteers to achieve the goal of mitigating the climate crisis."]
         },
